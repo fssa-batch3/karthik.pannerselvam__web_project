@@ -1,0 +1,121 @@
+body {
+  width: 1440px;
+  height: 1440px;
+  background-color: hsla(222, 47%, 11%, 1);
+  position: fixed;
+}
+.name {
+  background-color: rgb(155, 130, 130);
+  width: 30%;
+  height: 2.9rem;
+  border-radius: 2rem;
+}
+.name p {
+  font-size: x-large;
+  padding: 0.5rem;
+}
+.profilebox {
+  padding-top: 2rem;
+}
+
+.top img {
+  width: 450px;
+  height: 180px;
+  bottom: 2rem;
+  position: relative;
+  border-radius: 2rem;
+}
+
+.container {
+  background-color: hsla(217, 33%, 17%, 1);
+  width: 450px;
+  height: 600px;
+  padding-top: 2rem;
+  border-radius: 2rem;
+}
+
+.bottom-div {
+  background-color: hsla(217, 33%, 17%, 1);
+  height: 550px;
+  border-radius: 2rem;
+}
+
+.profile-img {
+  border: 3px solid white;
+  border-radius: 4rem;
+  width: 100px;
+  height: 100px;
+  margin-left: 10rem;
+  position: relative;
+  bottom: 80px;
+}
+.bottom-div p {
+  bottom: 60px;
+  position: relative;
+  color: rgb(169, 182, 193);
+  margin-left: 9.5rem;
+}
+.bottom-div h2 {
+  bottom: 60px;
+  position: relative;
+  color: rgb(241, 244, 245);
+  margin-left: 8rem;
+}
+.facebook,
+.instagram {
+  width: 2rem;
+  position: relative;
+  bottom: 4rem;
+  margin-left: 10rem;
+  cursor: pointer;
+}
+.instagram {
+  margin-left: 2rem;
+}
+.btn {
+  margin-left: 7rem;
+  bottom: 3rem;
+  position: relative;
+}
+button {
+  padding: 10px 55px;
+  border-radius: 2rem;
+  transition: 0.5s ease-in-out;
+  border-color: rgb(32, 129, 226);
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+button:hover {
+  background-color: rgb(32, 129, 226);
+  color: white;
+}
+h5 {
+  font-weight: 50;
+  margin-left: 9.3rem;
+}
+.right {
+  background-color: hsla(217, 33%, 17%, 1);
+  width: 900px;
+  height: 750px;
+  margin-left: 30rem;
+  bottom: 39rem;
+  position: relative;
+  border-radius: 2rem;
+  color: rgb(169, 182, 193);
+}
+.sales ul {
+  text-decoration: none;
+}
+.down {
+  margin-top: 10rem;
+}
+.nope {
+  font-size: 18px;
+}
+.biodata {
+  margin: 40px;
+  font-size: 18px;
+}
+.heading {
+  color: black;
+}
