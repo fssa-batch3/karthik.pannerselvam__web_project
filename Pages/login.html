@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    <title>NFTGURU-Login</title>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -23,7 +23,11 @@
         box-sizing: border-box;
       }
       body {
-        background-color: hsla(217, 33%, 17%, 1);
+        background: linear-gradient(
+          to right,
+          hsla(262, 83%, 58%, 1),
+          hsla(0, 72%, 51%, 1)
+        );
         width: 80%;
       }
       .logo img{
@@ -37,22 +41,7 @@
         left: 50%;
         top: 50%;
       }
-      .background .shape {
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        border-radius: 50%;
-      }
-      .shape:first-child {
-        background: linear-gradient(#1845ad, #23a2f6);
-        left: -80px;
-        top: -80px;
-      }
-      .shape:last-child {
-        background: linear-gradient(to right, #f5ff2f8e, #bef019);
-        right: -30px;
-        bottom: -80px;
-      }
+      
       form {
         height: 520px;
         width: 400px;
@@ -101,19 +90,29 @@
       ::placeholder {
         color: #e5e5e5;
       }
-      button {
-        margin-top: 50px;
+      .bot{
         width: 100%;
         background-color: #ffffff;
         color: #080710;
-        padding: 15px 0;
+        padding: 10px 55px;
         font-size: 18px;
         font-weight: 600;
         border-radius: 5px;
         cursor: pointer;
+        margin-left: 5rem;
+        text-decoration: none;
+        top: 2rem;
+        position: relative;
+      }
+      .bot:hover{
+        background-color: #1845ad;
+        color: #eaf0fb;
+      }
+      .bot a:hover{
+        color: #ffffff;
       }
       .social {
-        margin-top: 30px;
+        margin-top: 70px;
         display: flex;
       }
       .social div {
@@ -121,9 +120,10 @@
         width: 150px;
         border-radius: 3px;
         padding: 5px 10px 10px 5px;
-        background-color: rgba(255, 255, 255, 0.27);
+        background-color: rgba(26, 79, 236, 0.715);
         color: #eaf0fb;
         text-align: center;
+        cursor: pointer;
       }
       .social div:hover {
         background-color: rgba(255, 255, 255, 0.47);
@@ -134,18 +134,16 @@
       .social i {
         margin-right: 4px;
       }
+    
     </style>
   </head>
   <body>
     <div class="logo">
-      <img src="./Images/logo.png"
+      <img src="../Assets/Images/logo.png"
       width="100"
        height="50"
        >
     <div class="background">
-      <div class="shape"></div>
-      <div class="shape"></div>
-    </div>
     <form>
       <h3>Login Here</h3>
 
@@ -155,11 +153,14 @@
       <label for="password">Password</label>
       <input type="password" placeholder="Password" id="password" />
 
-      <button><a href="./hero-main.html"> Log In</button></a>Log In</button>
+      <a class="bot" href="../Pages/hero-main.html"> Log In</a>
+
       <div class="social">
         <div class="go"><i class="fab fa-google"></i> Google</div>
         <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
       </div>
     </form>
+  </div>
+
   </body>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+
+    <style type="text/css">
+      body {
+        background: linear-gradient(
+          to right,
+          hsla(262, 83%, 58%, 1),
+          hsla(0, 72%, 51%, 1)
+        );
+        padding-top: 10rem;
+        font-family: "pictograph", sans-serif;
+      }
+      .header {
+        border-radius: 20px 20px 0px 0px;
+        padding: 10px 0px;
+        background: white;
+        color: black;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .faq-item {
+        margin-bottom: 40px;
+        margin-top: 30px;
+      }
+      .faq-body {
+        display: none;
+        margin-top: 30px;
+      }
+      .faq-wrapper {
+        width: 60%;
+        margin: 0 auto;
+      }
+      .faq-inner {
+        padding: 30px;
+        background: aliceblue;
+      }
+      .faq-plus {
+        float: right;
+        font-size: 1.2rem;
+        line-height: 1rem;
+        cursor: pointer;
+      }
+      hr {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="faq-wrapper">
+          <div class="header">
+            <h1>FAQs</h1>
+          </div>
+          <div class="faq-linear">
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+            <hr />
+
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+            <hr />
+
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+            <hr />
+
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(".faq-plus").on("click", function () {
+        $(this).parent().parent().find(".faq-body").slideToggle();
+      });
+    </script>
+  </body>
+</html>
