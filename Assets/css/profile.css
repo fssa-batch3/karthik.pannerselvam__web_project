@@ -1,51 +1,87 @@
+:root {
+  --linear-gradient-1: linear-gradient(
+    to top left,
+    hsla(0, 72%, 51%, 0.4) 0%,
+    hsla(262, 83%, 58%, 0.4)
+  );
+
+  --ff-urbanist: "Urbanist", sans-serif;
+}
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 body {
-  width: 1440px;
-  height: 1440px;
-  background-color: hsla(222, 47%, 11%, 1);
-  position: fixed;
+  width: 100%;
+  background: var(--linear-gradient-1) #080710 no-repeat center/cover;
+  font-family: var(--ff-urbanist);
+}
+.previous {
+  bottom: 100px;
+  cursor: pointer;
+  position: relative;
+}
+.previous:hover {
+  box-shadow: 0 0 100px rgb(255, 253, 253);
 }
 .name {
-  background-color: rgb(155, 130, 130);
-  width: 30%;
-  height: 2.9rem;
-  border-radius: 2rem;
+  margin-top: 80px;
+  margin-left: 50px;
+  width: 20%;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.13);
+  color: rgb(238, 242, 245);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 .name p {
-  font-size: x-large;
-  padding: 0.5rem;
+  margin-top: 4px;
+  font-size: 30px;
+  margin-left: 2rem;
 }
 .profilebox {
   padding-top: 2rem;
 }
 
 .top img {
-  width: 450px;
-  height: 180px;
+  width: 370px;
+  height: 120px;
   bottom: 2rem;
   position: relative;
-  border-radius: 2rem;
+  border-radius: 10px;
+  left: 40px;
 }
 
 .container {
-  background-color: hsla(217, 33%, 17%, 1);
   width: 450px;
   height: 600px;
-  padding-top: 2rem;
+  padding-top: 1rem;
   border-radius: 2rem;
 }
 
 .bottom-div {
-  background-color: hsla(217, 33%, 17%, 1);
-  height: 550px;
-  border-radius: 2rem;
+  height: 420px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 14.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
 }
 
 .profile-img {
   border: 3px solid white;
   border-radius: 4rem;
-  width: 100px;
-  height: 100px;
-  margin-left: 10rem;
+  width: 80px;
+  height: 80px;
+  margin-left: 7rem;
   position: relative;
   bottom: 80px;
 }
@@ -53,70 +89,95 @@ body {
   bottom: 60px;
   position: relative;
   color: rgb(169, 182, 193);
-  margin-left: 9.5rem;
+  margin-left: 5.5rem;
 }
 .bottom-div h2 {
   bottom: 60px;
   position: relative;
   color: rgb(241, 244, 245);
-  margin-left: 8rem;
+  margin-left: 4rem;
 }
 .facebook,
 .instagram {
   width: 2rem;
   position: relative;
   bottom: 4rem;
-  margin-left: 10rem;
+  margin-left: 6.5rem;
   cursor: pointer;
 }
 .instagram {
   margin-left: 2rem;
 }
 .btn {
-  margin-left: 7rem;
+  margin-left: 6.5rem;
   bottom: 3rem;
   position: relative;
 }
 button {
-  padding: 10px 55px;
+  padding: 10px 25px;
   border-radius: 2rem;
   transition: 0.5s ease-in-out;
   border-color: rgb(32, 129, 226);
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  position: relative;
+  right: 15px;
 }
 button:hover {
-  background-color: rgb(32, 129, 226);
+  background: rgb(32, 129, 226);
   color: white;
 }
 h5 {
-  font-weight: 50;
-  margin-left: 9.3rem;
+  font-weight: 600;
+  margin-left: 5rem;
 }
 .right {
-  background-color: hsla(217, 33%, 17%, 1);
   width: 900px;
-  height: 750px;
+  height: 580px;
   margin-left: 30rem;
   bottom: 39rem;
   position: relative;
   border-radius: 2rem;
-  color: rgb(169, 182, 193);
+  background-color: rgba(255, 255, 255, 0.13);
+  color: rgb(238, 242, 245);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
-.sales ul {
-  text-decoration: none;
+.sala {
+  position: relative;
+  left: 400px;
+  bottom: 12rem;
 }
-.down {
-  margin-top: 10rem;
-}
-.nope {
-  font-size: 18px;
+.sales {
+  font-size: 15px;
   list-style: none;
 }
+.down {
+  margin-top: 1px;
+  list-style: none;
+}
+.nope {
+  list-style: none;
+  position: relative;
+  display: flex;
+  line-height: 3rem;
+}
 .biodata {
-  margin: 40px;
-  font-size: 18px;
+  bottom: 100px;
+  font-size: 15px;
+  position: relative;
+  left: 45px;
+  width: 90%;
 }
 .heading {
   color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+.split-down {
+  position: relative;
+  bottom: 8rem;
 }

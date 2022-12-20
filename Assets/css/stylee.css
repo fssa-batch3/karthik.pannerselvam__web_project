@@ -255,14 +255,12 @@ body {
   border-radius: var(--radius-pill);
   display: grid;
   place-items: center;
-
   color: var(--white);
-  background-color: hsla(0, 52%, 31%, 1);
+  background-color: var(--blue-violet);
   margin-left: 4rem;
 }
-
-.btn-icon ion-icon {
-  --ionicon-stroke-width: 50px;
+.btn-icon:hover {
+  background-color: var(--electric-indigo);
 }
 
 .btn-icon.primary {

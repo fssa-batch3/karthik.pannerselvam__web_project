@@ -1,0 +1,77 @@
+:root {
+  --linear-gradient-1: linear-gradient(
+    to top left,
+    hsla(0, 72%, 51%, 0.4) 0%,
+    hsla(262, 83%, 58%, 0.4)
+  );
+  --linear-gradiant-2: linear-gradient(
+    to right,
+    hsla(262, 83%, 58%, 1),
+    hsla(0, 72%, 51%, 1)
+  );
+}
+body {
+  height: 100vh;
+  background: var(--linear-gradient-1) #080710 no-repeat center/cover;
+  padding-top: 10rem;
+  font-family: "pictograph", sans-serif;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+}
+h1 {
+  background-image: var(--linear-gradient-2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 100px;
+}
+.head {
+  top: 20rem;
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px 0px;
+  background: transparent;
+  color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.faq-item {
+  margin-bottom: 40px;
+  margin-top: 30px;
+  color: #fff;
+}
+.faq-body {
+  display: none;
+  margin-top: 30px;
+  color: #fff;
+}
+.faq-wrapper {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 15px;
+  transition: 0.8s;
+}
+.faq-wrapper:hover {
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  transition: 0.5s;
+}
+.faq-inner {
+  padding-bottom: 20px;
+  background: aliceblue;
+}
+.faq-plus {
+  float: right;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  cursor: pointer;
+}
+hr {
+  background-color: #fff;
+}
