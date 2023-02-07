@@ -13,7 +13,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../Assets/css/style.css"
     
     <!--Stylesheet-->
     <style media="screen">
@@ -49,12 +48,12 @@
       }
       
       form {
-        height: 720px;
-        width: 450px;
+        height: 620px;
+        width: 400px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
         transform: translate(-50%, -50%);
-        top: 60%;
+        top: 50%;
         left: 50%;
         border-radius: 10px;
         backdrop-filter: blur(10px);
@@ -100,20 +99,17 @@
         margin-top: 25px;
         width: 50%;
         background-color: #ffffff;
-        color: #6558ca;
+        color: #080710;
         padding: 5px 0;
         font-size: 18px;
         font-weight: 600;
         border-radius: 5px;
         cursor: pointer;
-        margin-left: 8rem;
-      }
-      .color:hover{
-        background-color: #1845ad;
-        color: #eaf0fb!important;
+        margin-left: 5rem;
       }
       button:hover{
         background-color: #1845ad;
+        color: #eaf0fb;
       }
       .social {
         margin-top: 30px;
@@ -145,90 +141,32 @@
     </style>
   </head>
   <body>
-
-    <header class="header" data-header>
-        <div class="container">
-          
-            <img
-              src="../Assets/Images/logo.png"
-              width="126"
-              height="38"
-              alt="home"
-              class="logo"
-            />
-  
-          <nav class="navbar" data-navbar>
-            <ul class="navbar-list">
-              <li>
-                <a href="../Pages/hero-main.html" class="navbar-link label-lg link:hover">Home</a>
-              </li>
-  
-              <li>
-                <a href="../Pages/explore.html" class="navbar-link label-lg link:hover">Explore</a>
-              </li>
-  
-              <li>
-                <a href="../Pages/FAQ's.html" class="navbar-link label-lg link:hover">FAQS</a>
-              </li>
-  
-            </ul>
-          </nav>
-  
-            <button 
-              class="btn-icon profil-btn"
-              aria-label="Metalink account: naruto"
-            >
-            <a href="profile.html">
-              <img
-                src="../Assets/Images/naruto.jpg" 
-                width="40"
-                height="50"
-                alt="Fiona doe"
-                class="img1-cover"
-              />
-            </a>
-            </button>
-  
-            <button
-              class="nav-toggle-btn"
-              aria-label="menu toggle"
-              data-nav-toggler
-            >
-              <ion-icon
-                name="menu-outline"
-                aria-hidden="true"
-                class="default-icon"
-              ></ion-icon>
-  
-              <ion-icon
-                name="close-outline"
-                aria-hidden="true"
-                class="active-icon"
-              ></ion-icon>
-            </button>
-          </div>
-        </div>
-      </header>
+    <div class="logo">
+      <a href="../index.html">
+      <img src="../Assets/Images/logo.png"
+      width="100"
+       height="50"
+       alt="logo"
+       >
+      </a>
+    </div>
     <div class="background">
     <form>
-      <h3>Edit Profile</h3>
+      <h3>Signup Here</h3>
 
-      <label for="Firstname">EditName</label>
-      <input type="text" placeholder="Naruto Uzumaki" id="username" />
+      <label for="Firstname">Firstname</label>
+      <input type="text" required="required" placeholder="First name" id="First" value="New" />
 
-      <label for="lastname">Phone Number</label>
-      <input type="text" placeholder="+91 1414141414" id="username" />
+      <label for="lastname">Lastname</label>
+      <input type="text" required="required" placeholder="Last name" id="last"value="User"  />
 
-      <label for=" E-mail">E-mail</label>
-      <input type="text" placeholder="Email" id="username" />
+      <label for=" E-mail">E-mail/Phone</label>
+      <input type="text" required="required" placeholder="Email or Phone" id="E-mail" value="example@gamil.com"/>
 
-      <label for="password">old-Password</label>
-      <input type="password" placeholder="Enter old Password" id="password" />
+      <label for="password">Set-Password</label>
+      <input type="password" required="required" placeholder="Password" id="password" / value=".....">
 
-      <label for="password">Reset-Password</label>
-      <input type="password" placeholder="New-Password" id="password" />
-
-      <button><a class="color"href="../Pages/profile.html">Save Changes </button></a>
+      <button><a href="../Pages/hero-main.html">Sign Up</button></a>
       <div class="social">
         <div class="go"><i class="fab fa-google"></i> Google</div>
         <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
@@ -236,4 +174,11 @@
     </div>
     </form>
   </body>
+  <script>
+    (document.getElementById("First").value);
+    console.log(document.getElementById("last").value);
+    console.log(document.getElementById("E-mail").value);
+    console.log(document.getElementById("password").value);
+  </script>
+
 </html>

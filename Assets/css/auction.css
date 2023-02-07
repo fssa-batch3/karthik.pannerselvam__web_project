@@ -1,0 +1,86 @@
+:root {
+  --linear-gradient-1: linear-gradient(
+    to top left,
+    hsla(0, 72%, 51%, 0.4) 0%,
+    hsla(262, 83%, 58%, 0.4)
+  );
+  --linear-gradient-2: linear-gradient(
+    to right,
+    hsla(262, 83%, 58%, 1),
+    hsla(0, 72%, 51%, 1)
+  );
+
+  --ff-urbanist: "Urbanist", sans-serif;
+}
+.whole {
+  overflow-x: hidden;
+}
+body {
+  background: var(--linear-gradient-2) #080710;
+  background: var(--linear-gradient-1) #080710;
+}
+.hero {
+  position: relative;
+  padding-right: 100rem;
+  bottom: 8rem;
+}
+.headline-lg {
+  align-items: left;
+  position: relative;
+}
+.hero-title .span {
+  display: inline;
+  background-image: var(--linear-gradient-2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero .section-text {
+  color: var(--white);
+  opacity: 0.7;
+  margin-block: 16px 32px;
+}
+.wholebox {
+  display: flex;
+}
+.mainbox {
+  /* height: 220px;
+  width: 600px; */
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  /* padding: 80px 35px;
+  margin-left: 50px; */
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  min-width: 500px;
+  padding: 20px 0;
+  margin-right: 30rem;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.left {
+  text-align: center;
+  font-size: 25px;
+}
+.left img {
+  width: 150px;
+  border-radius: 15px;
+}
+.one {
+  display: flex;
+  margin-left: -10px;
+}
+.logo {
+  width: 32px;
+  height: 22px;
+}

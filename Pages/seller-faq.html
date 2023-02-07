@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FAQ'S</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Assets/css/stylee.css">
+    <link rel="stylesheet" href="../Assets/css/FAQS.css">
+    
+  </head>
+  <body>
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="#">
+          <img
+            src="../Assets/Images/logo.png"
+            width="40"
+            height="40"
+            alt="home"
+            class="logo-small"
+          />
+          <img
+            src="../Assets/Images/logo.png"
+            width="126"
+            height="28"
+            alt="home"
+            class="logo"
+          />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li>
+              <a href="../Pages/Seller-hero-page.html" class="navbar-link label-lg link:hover">Home</a>
+            </li>
+
+            <li>
+              <a href="../Pages/explore.html" class="navbar-link label-lg link:hover">Explore</a>
+            </li>
+
+            <li>
+              <a href="#" class="navbar-link label-lg link:hover">FAQS</a>
+            </li>
+
+           
+          </ul>
+        </nav>
+
+          <button 
+            class="btn-icon profil-btn"
+            aria-label="Metalink account: naruto"
+          >
+          <a href="profile.html">
+            <img
+              src="../Assets/Images/naruto.jpg" 
+              width="40"
+              height="40"
+              alt="naruto"
+              class="img1-cover"
+            />
+          </a>
+          </button>
+
+          <button
+            class="nav-toggle-btn"
+            aria-label="menu toggle"
+            data-nav-toggler
+          >
+            <ion-icon
+              name="menu-outline"
+              aria-hidden="true"
+              class="default-icon"
+            ></ion-icon>
+
+            <ion-icon
+              name="close-outline"
+              aria-hidden="true"
+              class="active-icon"
+            ></ion-icon>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="faq-wrapper">
+          <div class="head">
+            <h1>FAQs</h1>
+          </div>
+          <div class="faq-linear">
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+            <hr />
+
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+            <hr />
+
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+            <hr />
+
+            <div class="faq-item">
+              <h3>
+                How does it works ?
+                <span class="faq-plus">&plus;</span>
+              </h3>
+              <div class="faq-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                debitis vel porro, doloremque animi voluptatibus rem ad quae
+                nesciunt dolores voluptatem amet voluptas a assumenda dolorum
+                eos sapiente eligendi unde!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <script type="text/javascript">
+    $(".faq-plus").on('click',function(){
+      $(this).parent().parent().find('.faq-plus').
+      slideToggle();
+    });
+   </script>
+  </body>
+</html>

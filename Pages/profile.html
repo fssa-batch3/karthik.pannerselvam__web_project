@@ -13,78 +13,79 @@
     </header>
 
     <a class="previous" href="../Pages/hero-main.html">
-      <img src="../Assets/Images/previous.png"
-      width="30"
-      height="30"
-      alt="previous button">
+      <img
+        src="../Assets/Images/previous.png"
+        width="25"
+        height="25"
+        alt="previous button"
+      />
     </a>
-    
 
+    <div class="logout">
+      <button onclick="document.location='../index.html'">Log Out</button>
+    </div>
 
     <div class="profilebox">
       <div class="container">
         <div class="top">
-          <img src="../Assets/Images/background-blue.jpg" /
-          alt="background">
+          <img src="../Assets/Images/background-blue.jpg" / alt="background">
         </div>
 
         <div class="bottom-div">
-          <img class="profile-img" src="../Assets/Images/naruto.jpg" alt="naruto" />
-          <p>@UzumakiMinato</p>
+          <img
+            class="profile-img"
+            src="../Assets/Images/naruto.jpg"
+            alt="naruto"
+          />
+          <p id="user_name">@UzumakiMinato</p>
           <h2>Naruto Uzumaki</h2>
-          <img class="facebook" src="../Assets/Images/facebook.png" alt="facebook" />
-          <img class="instagram" src="../Assets/Images/instagram.png" alt="instagram" />
+          <img
+            class="facebook"
+            src="../Assets/Images/facebook.png"
+            alt="facebook"
+          />
+          <img
+            class="instagram"
+            src="../Assets/Images/instagram.png"
+            alt="instagram"
+          />
           <div class="btn">
-            <button href="../Pages/edit-profile.html">Edit Profile</button>
+            <button onclick="document.location='../pages/edit-profile.html'">
+              Edit Profile
+            </button>
           </div>
-          <h5>Native Currency: ₹INR</h5>
+          <h3>Native Currency: ₹INR</h3>
         </div>
       </div>
 
       <div class="right">
         <div class="split">
           <ul class="sales">
-            <li class="nope">
-              Location
-            </li>
-            <li class="nope">
-              Language
-            </li>
-            <li class="nope">
-              Categories
-            </li>
-            <li class="nope">
-              Reputation Score
-            </li>
-          
+            <li class="nope">Location</li>
+            <li class="nope">Language</li>
+            <li class="nope">Categories</li>
+            <li class="nope">Reputation Score</li>
+          </ul>
 
           <ul class="sala">
-            <li class="nope">
-              India
-            </li>
-            <li class="nope">
-              Tamil,English.
-            </li>
-            <li class="nope">
-              Motion Graphics, Illustriation, Abstract.
-            </li>
-            <li class="nope">
-              Reputation Score
-            </li>
+            <li class="nope">India</li>
+            <li class="nope">Tamil,English.</li>
+            <li class="nope">Motion Graphics, Illustriation, Abstract.</li>
+            <li class="nope">Reputation Score</li>
           </ul>
         </div>
 
         <div class="split-down">
           <ul class="down">
-            <li class="nope">
-              Highest Sale Price Received
-            </li>
-            <li class="nope">
-              Total Combined Sales
-            </li>
-            <li class="nope">
-              Total NFTs Sold
-            </li>
+            <li class="nope">Highest Sale Price Received</li>
+            <li class="nope">Total Combined Sales</li>
+            <li class="nope">Total NFTs Sold</li>
+          </ul>
+
+          <ul class="sala1">
+            <li class="nope">₹ 1,00,500</li>
+            <li class="nope">₹ 3,15,300</li>
+            <li class="nope">252</li>
           </ul>
         </div>
 
@@ -94,10 +95,17 @@
             Iam a digital artist based in Paris, France. My work has been
             featured in various galleries in Paris and New York City. I love
             playing with the characteristics of light in all its forms, and I
-            like to challenge the way color is normally perceived in nature.  
+            like to challenge the way color is normally perceived in nature.
           </p>
         </div>
       </div>
     </div>
   </body>
+
+  <script>
+    const user_name = localStorage.getItem("user_email");
+    console.log(user_name);
+
+    document.getElementById("user_name").innerText = user_name;
+  </script>
 </html>

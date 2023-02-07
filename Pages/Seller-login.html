@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    <title>Sign Up</title>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Login page</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -13,10 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
-    
     <!--Stylesheet-->
     <style media="screen">
-      
       :root{
         --linear-gradient-1: linear-gradient(
     to top left,
@@ -26,21 +24,21 @@
       }
       *,
       *:before,
-      *:after {
+       :after {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
       }
       body {
         height: 100vh;
-        background: var(--linear-gradient-1) #080710 no-repeat center/cover;        
+        background: var(--linear-gradient-1) #080710 no-repeat center/cover;
       }
       .logo img{
         margin: 2rem;
       }
       .background {
         width: 430px;
-        height: 680px;
+        height: 520px;
         position: absolute;
         transform: translate(-50%, -50%);
         left: 50%;
@@ -48,7 +46,7 @@
       }
       
       form {
-        height: 620px;
+        height: 520px;
         width: 400px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
@@ -69,21 +67,21 @@
         border: none;
       }
       form h3 {
-        font-size: 28px;
-        font-weight: 400;
-        line-height: 0px;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
         text-align: center;
       }
 
       label {
         display: block;
-        margin-top: 23px;
+        margin-top: 30px;
         font-size: 16px;
         font-weight: 500;
       }
       input {
         display: block;
-        height: 40px;
+        height: 50px;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.07);
         border-radius: 3px;
@@ -95,24 +93,29 @@
       ::placeholder {
         color: #e5e5e5;
       }
-      button {
-        margin-top: 25px;
-        width: 50%;
+      .bot{
+        width: 100%;
         background-color: #ffffff;
         color: #080710;
-        padding: 5px 0;
+        padding: 10px 55px;
         font-size: 18px;
         font-weight: 600;
         border-radius: 5px;
         cursor: pointer;
         margin-left: 5rem;
+        text-decoration: none;
+        top: 2rem;
+        position: relative;
       }
-      button:hover{
+      .bot:hover{
         background-color: #1845ad;
         color: #eaf0fb;
       }
+      .bot a:hover{
+        color: #ffffff;
+      }
       .social {
-        margin-top: 30px;
+        margin-top: 70px;
         display: flex;
       }
       .social div {
@@ -120,7 +123,7 @@
         width: 150px;
         border-radius: 3px;
         padding: 5px 10px 10px 5px;
-        background-color: rgba(255, 255, 255, 0.27);
+        background-color: rgba(26, 79, 236, 0.715);
         color: #eaf0fb;
         text-align: center;
         cursor: pointer;
@@ -134,92 +137,50 @@
       .social i {
         margin-right: 4px;
       }
-      a{
-        text-decoration: none;
-        color: #080710;
-      }
+    
     </style>
   </head>
   <body>
+    <a href="../Pages/seller.html">
     <div class="logo">
-      <a href="../index.html">
       <img src="../Assets/Images/logo.png"
       width="100"
        height="50"
        alt="logo"
        >
       </a>
-    </div>
     <div class="background">
     <form>
-      <h3>Signup Here</h3>
+      <h3>Login Here</h3>
 
-      <label for="Firstname">Firstname</label>
-      <input type="text" required="required"  placeholder="First name" id="First" />
+      <label for="username">Username</label>
+      <input type="text" required="required" placeholder="Email or Phone" id="username" value="karthik@gmail.com"/>
 
-      <label for="lastname">Lastname</label>
-      <input type="text" required="required" placeholder="Last name" id="last" />
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" id="password" value="panner"/>
 
-      <label for=" E-mail">E-mail/Phone</label>
-      <input type="text" required="required" placeholder="Email or Phone" id="E-mail" "/>
+      <a class="bot" onclick="login()"> Log In</a>
 
-      <label for="password">Set-Password</label>
-      <input type="password" placeholder="Password" id="password" />
-
-      <button onclick="details()">Sign Up</button>
       <div class="social">
         <div class="go"><i class="fab fa-google"></i> Google</div>
         <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
       </div>
-    </div>
     </form>
+  </div>
+
   </body>
+
   <script>
-    function details(){
-      event.preventDefault()
-    let arr = []
-    let userdata = new Object()
-    let firstname = document.getElementById ("First").value;
-    let secondname = document.getElementById("last").value;
-    let email = document.getElementById("E-mail").value.toLowercase();
-    let password = document.getElementById("password").value;
+    function login(){
+    const username = document.getElementById("username").value
+    const password = document.getElementById("password").value
+    alert("Invalid Username!");
 
-    userdata.f_name = firstname;
-    userdata.l_name = secondname;
-    userdata.e_mail = email;
-    userdata.p_word = password;
-    arr.push(userdata);
-
-    if(window.localStorage.getItem("userdetails") === null){
-      window.localStorage.getItem("userdetails", JSON.stringify(arr));
+    console.log(username)
+    console.log(pass_details)
+    
+    // window.location.href = "../pages/seller-hero-page.html"
     }
-    else{
-       let owner = window.localStorage.getItem("userdetails");
-       let json = JSON.parse(owner);
-       json.push(userdata);
-       window.localStorage.setItem("userdetails", JSON.stringify(json));
-    }
-    }
-
-    // const data = JSON.stringify(arr);
-    // localStorage.setItem("userdetails", data);
-    // window.location.href = "../pages/hero-main.html";
-    // console.log(arr);
-    // if(password < 8){
-    //   window.location.href = "../pages/hero-main.html";
-    // }else{
-    //   window.alert("password must be atleast 8 characters")
-    // }
-    // console.log(arr);
-    // }
-
-
-    // console.log(firstname)
-    // console.log(secondname)
-    // console.log(email)
-    // console.log(password)
-
-    // window.location.href = "../pages/hero-main.html"
-
   </script>
+
 </html>

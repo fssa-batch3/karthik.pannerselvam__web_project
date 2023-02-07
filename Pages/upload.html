@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Assets/css/upload.css" />
+    <title>Upload</title>
+  </head>
+  <body>
+    <div class="upside">
+      <h1>Create new item</h1>
+      <h3>Image, Video, Audio, or 3D Model</h3>
+      <p>
+        File types supported: JPG,PNG,GIF,SVG,MP4,WEBM,MP3,WAV,OGG,GLB,GLTF. Max
+        size: 40MB
+      </p>
+    </div>
+    <div class="up-image">
+      <img src="../Assets/Images/Art-2.jpeg" / width="250px" height="250px">
+      <div class="geturl">
+        <input type="url" id="imgurl" placeholder="Upload image link"/ >
+      </div>
+    </div>
+
+    <div class="name">
+      <h2>Name<sup>*</sup></h2>
+      <input type="text" id="nftname" placeholder="new nft for demo" />
+    </div>
+
+    <div class="link">
+      <h2>External Link</h2>
+      <p>
+        Nftguru will include a link to this URL on this item's detail page, so
+        that users can click to learn more about it. You are welcome to link to
+        your own webpage with more details.
+      </p>
+      <input
+        type="url"
+        id="external-link"
+        placeholder="https://www.youtube.com/"
+      />
+    </div>
+
+    <div class="link">
+      <h2>Description</h2>
+      <p>
+        Nftguru will include a link to this URL on this item's detail page, so
+        that users can click to learn more about it. You are welcome to link to
+        your own webpage with more details.
+      </p>
+      <textarea id="description"> </textarea>
+      <div>
+        <button type="submit" onclick="createnft()" id="update">Upload</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function createnft() {
+      const geturl = document.getElementById("imgurl").value;
+      const nftname = document.getElementById("nftname").value;
+      const ext_link = document.getElementById("external-link").value;
+      const desc = document.getElementById("description").value;
+
+      console.log(geturl, nftname, ext_link, desc);
+    }
+    // createnft();
+  </script>
+</html>

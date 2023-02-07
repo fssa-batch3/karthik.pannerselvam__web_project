@@ -626,6 +626,8 @@ body {
 
 .discover-card .card-profile .img {
   border-radius: var(--radius-circle);
+  width: 32px;
+  height: 32px;
 }
 
 .discover-card .card-title {
