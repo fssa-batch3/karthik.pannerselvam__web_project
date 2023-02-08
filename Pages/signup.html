@@ -151,7 +151,7 @@
       </a>
     </div>
     <div class="background">
-    <form>
+    <form onsubmit = "details()">
       <h3>Signup Here</h3>
 
       <label for="Firstname">Firstname</label>
@@ -166,7 +166,7 @@
       <label for="password">Set-Password</label>
       <input type="password" placeholder="Password" id="password" />
 
-      <button onclick="details()">Sign Up</button>
+      <button>Sign Up</button>
       <div class="social">
         <div class="go"><i class="fab fa-google"></i> Google</div>
         <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
@@ -176,28 +176,30 @@
   </body>
   <script>
     function details(){
-      event.preventDefault()
+    event.preventDefault()
     let arr = []
     let userdata = new Object()
     let firstname = document.getElementById ("First").value;
     let secondname = document.getElementById("last").value;
-    let email = document.getElementById("E-mail").value.toLowercase();
+    let email = document.getElementById("E-mail").value
     let password = document.getElementById("password").value;
 
     userdata.f_name = firstname;
     userdata.l_name = secondname;
-    userdata.e_mail = email;
+    userdata.e_mail = email.toLowerCase();
     userdata.p_word = password;
     arr.push(userdata);
 
     if(window.localStorage.getItem("userdetails") === null){
-      window.localStorage.getItem("userdetails", JSON.stringify(arr));
+      window.localStorage.setItem("userdetails", JSON.stringify(arr));
+      console.log("1");
     }
     else{
        let owner = window.localStorage.getItem("userdetails");
        let json = JSON.parse(owner);
        json.push(userdata);
        window.localStorage.setItem("userdetails", JSON.stringify(json));
+       console.log("2");
     }
     }
 

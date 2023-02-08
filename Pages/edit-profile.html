@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     
-    <title>Sign Up</title>
+    <title>Edit-Profile</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -49,12 +49,12 @@
       }
       
       form {
-        height: 720px;
+        height: 620px;
         width: 450px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
         transform: translate(-50%, -50%);
-        top: 60%;
+        top: 50%;
         left: 50%;
         border-radius: 10px;
         backdrop-filter: blur(10px);
@@ -194,17 +194,7 @@
               aria-label="menu toggle"
               data-nav-toggler
             >
-              <ion-icon
-                name="menu-outline"
-                aria-hidden="true"
-                class="default-icon"
-              ></ion-icon>
-  
-              <ion-icon
-                name="close-outline"
-                aria-hidden="true"
-                class="active-icon"
-              ></ion-icon>
+            
             </button>
           </div>
         </div>
@@ -213,27 +203,34 @@
     <form>
       <h3>Edit Profile</h3>
 
-      <label for="Firstname">EditName</label>
-      <input type="text" placeholder="Naruto Uzumaki" id="username" />
+      <label for="Firstname">Name</label>
+      <input type="text"  id="u-name" />
 
       <label for="lastname">Phone Number</label>
-      <input type="text" placeholder="+91 1414141414" id="username" />
+      <input type="text"  id="ph-no" />
 
       <label for=" E-mail">E-mail</label>
-      <input type="text" placeholder="Email" id="username" />
+      <input type="text"  id="mail" />
 
       <label for="password">old-Password</label>
-      <input type="password" placeholder="Enter old Password" id="password" />
+      <input type="password"  id="o-pwd" />
 
-      <label for="password">Reset-Password</label>
-      <input type="password" placeholder="New-Password" id="password" />
+      <label for="password">new-Password</label>
+      <input type="password"  id="n-pwd" />
 
-      <button><a class="color"href="../Pages/profile.html">Save Changes </button></a>
-      <div class="social">
-        <div class="go"><i class="fab fa-google"></i> Google</div>
-        <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
-      </div>
+      <button class="color" onclick="submit">Save Changes</button>
+
     </div>
     </form>
   </body>
+
+  <script>
+
+    let edit = JSON.parse(window.localStorage.getItem("user_data"))
+    console.log(edit)
+    document.getElementById("u-name").value = edit[0]["f_name"]
+    document.getElementById("ph-no").value = edit[0][""]
+    document.getElementById("mail").value = edit[0]["e_mail"]
+    document.getElementById("o-pwd").value = edit[0]["p_word"]
+  </script>
 </html>

@@ -175,20 +175,24 @@
  let form = document.getElementById("information");
  form.addEventListener("submit", (event)=>{
 event.preventDefault()
-
   let storedata = window.localStorage.getItem("userdetails");
   let phone = JSON.parse(storedata);
   let email = document.getElementById("username").value;
   let password = document.getElementById("password").value;
- 
- for(let i = 0; i < phone.length; i++){
+  let arr = []
+ for(let i = 0; i < phone.length; i++){ 
+  // condition to check user name & password
   if( email === phone[i].e_mail && password === phone[i].p_word){
-    return alert("success")
+    arr.push(phone[i])
+    window.localStorage.setItem("user_data",JSON.stringify(arr))
     window.location.href = "../Pages/hero-main.html"
+    return alert("success")
 } 
 }
 return alert("Invalid Email or Password")
 })
+
+
 
 
 
