@@ -35,9 +35,13 @@
         height: 100vh;
         background: var(--linear-gradient-1) #080710 no-repeat center/cover;        
       }
+      input:valid{
+        border-color: #16ee45;
+        border-width: 2px;
+      }
       .logo img{
         margin: 2rem;
-      }
+      }s
       .background {
         width: 430px;
         height: 680px;
@@ -65,7 +69,6 @@
         font-family: "Poppins", sans-serif;
         color: #ffffff;
         letter-spacing: 0.5px;
-        outline: none;
         border: none;
       }
       form h3 {
@@ -92,6 +95,7 @@
         font-size: 14px;
         font-weight: 300;
       }
+      
       ::placeholder {
         color: #e5e5e5;
       }
@@ -138,6 +142,12 @@
         text-decoration: none;
         color: #080710;
       }
+      #first input:valid{
+        border: 5px solid green;
+      }
+      #first input:invalid{
+        border: 5px solid yellow;
+      }
     </style>
   </head>
   <body>
@@ -155,17 +165,18 @@
       <h3>Signup Here</h3>
 
       <label for="Firstname">Firstname</label>
-      <input type="text" required="required"  placeholder="First name" id="First" />
+      <input type="text" required="required" autocomplete="off" pattern="[A-Za-z]{1,32}"  placeholder="First name" id="First" title="Type your first name" />
 
       <label for="lastname">Lastname</label>
-      <input type="text" required="required" placeholder="Last name" id="last" />
+      <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
 
       <label for=" E-mail">E-mail/Phone</label>
-      <input type="text" required="required" placeholder="Email or Phone" id="E-mail" "/>
+      <input type="email" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email or Phone" id="E-mail" "/>
 
       <label for="password">Set-Password</label>
-      <input type="password" placeholder="Password" id="password" />
+      <input type="password"  placeholder="Password" id="password" />
 
+      <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
       <button>Sign Up</button>
       <div class="social">
         <div class="go"><i class="fab fa-google"></i> Google</div>
@@ -174,34 +185,57 @@
     </div>
     </form>
   </body>
+
+  <!-- Script -->
   <script>
     function details(){
     event.preventDefault()
+    // let validate = false;
     let arr = []
+    let validation = false
+    let local =JSON.parse( window.localStorage.getItem("userdetails"))
     let userdata = new Object()
-    let firstname = document.getElementById ("First").value;
-    let secondname = document.getElementById("last").value;
-    let email = document.getElementById("E-mail").value
+    let firstname = document.getElementById ("First").value.trim();
+    let secondname = document.getElementById("last").value.trim();
+    let email = document.getElementById("E-mail").value;
     let password = document.getElementById("password").value;
-
+   
     userdata.f_name = firstname;
     userdata.l_name = secondname;
     userdata.e_mail = email.toLowerCase();
     userdata.p_word = password;
+    
+    console.log(userdata.f_name)
+    if(local !== null){
+      validation = local.find((obj) => obj["e_mail"] === userdata.e_mail)
+      console.log(validation)
+    }
     arr.push(userdata);
-
-    if(window.localStorage.getItem("userdetails") === null){
+    if(validation){
+      return alert("User already Exists")
+    }else{
+    if(local === null){
       window.localStorage.setItem("userdetails", JSON.stringify(arr));
-      console.log("1");
+      console.log(userdata.f_name);
+      window.location.href = "../pages/hero-main.html";
     }
     else{
        let owner = window.localStorage.getItem("userdetails");
        let json = JSON.parse(owner);
+       console.log(userdata.f_name)
        json.push(userdata);
-       window.localStorage.setItem("userdetails", JSON.stringify(json));
-       console.log("2");
+       window.localStorage.setItem("userdetails", JSON.stringify(json));  
+       window.location.href = "../pages/login.html";
+    }
+  
     }
     }
+  
+
+
+  
+  
+
 
     // const data = JSON.stringify(arr);
     // localStorage.setItem("userdetails", data);

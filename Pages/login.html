@@ -154,10 +154,10 @@
       <h3>Login Here</h3>
 
       <label for="username">Username/Email</label>
-      <input type="text" required="required" placeholder="Email or Phone" id="username" />
+      <input type="text"  placeholder="Email or Phone"  id="username" />
 
       <label for="password">Password</label>
-      <input type="password" required="required" placeholder="Password" id="password" />
+      <input type="password"  placeholder="Password" id="password" />
 
       <button class="bot" type="submit"> Log In</button>
 
@@ -167,34 +167,47 @@
       </div>
     </form>
   </div>
+<script>
 
-  </body>
-
-  <script>
-    
- let form = document.getElementById("information");
+  let form = document.getElementById("information");
  form.addEventListener("submit", (event)=>{
 event.preventDefault()
   let storedata = window.localStorage.getItem("userdetails");
   let phone = JSON.parse(storedata);
-  let email = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
+  let email = document.getElementById("username").value.trim();
+  let password = document.getElementById("password").value.trim();
+
+  if(email == "" || email== null ) {
+    alert("Enter Your Email ID")
+    return false;
+  }
+  if(password.length < 6){
+    alert("Please enter password")
+    return false;
+  }
+  
+  
   let arr = []
  for(let i = 0; i < phone.length; i++){ 
-  // condition to check user name & password
   if( email === phone[i].e_mail && password === phone[i].p_word){
     arr.push(phone[i])
     window.localStorage.setItem("user_data",JSON.stringify(arr))
-    window.location.href = "../Pages/hero-main.html"
-    return alert("success")
+    window.location.href = "../Pages/hero-main.html";
+     alert("success")
 } 
 }
-return alert("Invalid Email or Password")
+ alert("Invalid user credentials")
 })
 
 
 
 
+</script>
+  </body>
+  </html>
+  
+    
+ 
 
 
 
@@ -202,32 +215,9 @@ return alert("Invalid Email or Password")
 
 
 
-// function login(){
-    // const username = document.getElementById("username").value
-    // const password = document.getElementById("password").value
-    // const form = document.getElementById("information").value
 
-    // // localStorage.getItem("arr");
-    // const num1 = localStorage.getItem("userdetails");
-    // const num2 = JSON.parse(num1);
+
+
     
 
-    // console.log(num2);
-    // // console.log(username)
-    // // console.log(password)
-    // const variable = num2.find(e=>e.e_mail==username)
 
-    // console.log(variable)
-    //   if (variable["e_mail"]==username && variable["p_word"]==password) {
-    //     window.location.href = "../pages/hero-main.html"
-    //   } else {
-    //     alert("username or password incorrect")
-    //    }
-      // localStorage.setItem("user_email", username)
-      // localStorage.setItem("user_password", password)
-      
-    
-
-  </script>
-  <link href="../Pages/hero-main.html">
-</html>
