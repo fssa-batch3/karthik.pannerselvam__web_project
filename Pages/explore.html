@@ -143,7 +143,7 @@
       -->
 
       <section class="section discover" aria-labelledby="discover-label">
-        <!-- <div class="container">
+       <div class="container">
           <h2
             class="headline-md section-title text-center"
             id="discover-label"
@@ -151,7 +151,7 @@
           Art
           </h2>
 
-          <ul class="grid-list"> -->
+          <ul class="grid-list"> 
             <!-- <li>
               <div class="discover-card card">
                 <div
@@ -2296,9 +2296,6 @@
     - ionicon link
   -->
    <script>
-let container;
-let headline_md_section_title_text_center;
-let grid_list;
 let list;
 let discover_card_card;
 let card_banner_img_holder;
@@ -2312,32 +2309,21 @@ let username;
 let h3_title_sm;
 let a_nftname;
 let card_meta;
+
 let div;
-let highest_bid;
+let price;
 let card_price;
-let etherum;
+let etherum1;
+let highest_bid;
+let etherum2;
 let rate;
 
 
-// <section class="section discover" aria-labelledby="discover-label">//
-container = document.createElement("div");
-container.setAttribute("class", "container");
 
-headline_md_section_title_text_center= document.createElement("h2");
-headline_md_section_title_text_center.innerText="Art";
-headline_md_section_title_text_center.setAttribute("class", "headline-md");
-container.append(headline_md_section_title_text_center);
-
-
-// <ul class="grid-list">//
-grid_list = document.createElement("ul");
-grid_list.setAttribute("class", "grid-list");
-container.append(grid_list);
 
 
 //list//
 list = document.createElement("li");
-grid_list.append(list);
 
 //<div class="discover-card card">//
 
@@ -2411,10 +2397,36 @@ card_profile.append(username);
   a_nftname.innerText= "Genuine Undead #3902";
   h3_title_sm.append(a_nftname);
 
-  // <div>
+  // <div class="card-meta">
   
   card_meta = document.createElement("div");
+  card_meta.setAttribute("class", "card_meta");
+  discover_card_card.append(card_meta);
+
+  //<div>
   
+  div = document.createElement("div");
+  card_meta.append(div);
+
+  // <price>
+  price = document.createElement("p");
+  price.innerText = "Price";
+  div.append(price);
+
+  // <div class="card-price">
+  card_price = document.createElement("div");
+  card_price.setAttribute("class","card-price");
+  div.append(card_price);
+  
+  // <img src="../Assets/Images/ethereum.svg">
+  etherum1 = document.createElement("img")
+  etherum1.setAttribut("src","../Assets/Images/ethereum.svg");
+  card_price.append(etherum1);
+
+  
+
+
+
 
 
 
@@ -2424,7 +2436,7 @@ card_profile.append(username);
 
 let card = document.querySelector("section.section");
 card.append(container);
-
+ 
 
 
 

@@ -52,7 +52,7 @@
       }
       
       form {
-        height: 620px;
+        height: 720px;
         width: 400px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
@@ -170,13 +170,16 @@
       <label for="lastname">Lastname</label>
       <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
 
-      <label for=" E-mail">E-mail/Phone</label>
-      <input type="email" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email or Phone" id="E-mail" "/>
+      <label for=" E-mail">E-mail</label>
+      <input type="email" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email" id="E-mail" "/>
+
+      <label for="ph-no">Phone.no</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter phone-number" required="true">
 
       <label for="password">Set-Password</label>
-      <input type="password"  placeholder="Password" id="password" />
+      <input type="password"  placeholder="Password" id="password" required="true" />
 
-      <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
+      
       <button>Sign Up</button>
       <div class="social">
         <div class="go"><i class="fab fa-google"></i> Google</div>
@@ -197,12 +200,14 @@
     let userdata = new Object()
     let firstname = document.getElementById ("First").value.trim();
     let secondname = document.getElementById("last").value.trim();
+    let phone_no = document.getElementById("phone").value;
     let email = document.getElementById("E-mail").value;
     let password = document.getElementById("password").value;
    
     userdata.f_name = firstname;
     userdata.l_name = secondname;
     userdata.e_mail = email.toLowerCase();
+    userdata.phone_num = phone_no;
     userdata.p_word = password;
     
     console.log(userdata.f_name)
@@ -234,28 +239,6 @@
 
 
   
-  
-
-
-    // const data = JSON.stringify(arr);
-    // localStorage.setItem("userdetails", data);
-    // window.location.href = "../pages/hero-main.html";
-    // console.log(arr);
-    // if(password < 8){
-    //   window.location.href = "../pages/hero-main.html";
-    // }else{
-    //   window.alert("password must be atleast 8 characters")
-    // }
-    // console.log(arr);
-    // }
-
-
-    // console.log(firstname)
-    // console.log(secondname)
-    // console.log(email)
-    // console.log(password)
-
-    // window.location.href = "../pages/hero-main.html"
 
   </script>
 </html>

@@ -96,25 +96,32 @@
       ::placeholder {
         color: #e5e5e5;
       }
-      button {
+      .color {
         margin-top: 25px;
         width: 50%;
         background-color: #ffffff;
         color: #6558ca;
-        padding: 5px 0;
-        font-size: 18px;
+        padding: 2.5px 0;
+        font-size: 16px;
         font-weight: 600;
         border-radius: 5px;
-        cursor: pointer;
-        margin-left: 8rem;
+        margin-left: 2rem;
+      }
+      .delete{
+        width: 50%;
+        background-color: #ffffff;
+        color: #6558ca;
+        padding: 2.5px 0;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin-left: 2rem;
       }
       .color:hover{
         background-color: #1845ad;
         color: #eaf0fb!important;
       }
-      button:hover{
-        background-color: #1845ad;
-      }
+      
       .social {
         margin-top: 30px;
         display: flex;
@@ -200,25 +207,29 @@
         </div>
       </header>
     <div class="background">
-    <form>
+    <form id="edit-form">
       <h3>Edit Profile</h3>
 
-      <label for="Firstname">Name</label>
-      <input type="text"  id="u-name" />
+      <label for="Firstname">First Name</label>
+      <input type="text"  id="f-name" />
 
-      <label for="lastname">Phone Number</label>
-      <input type="text"  id="ph-no" />
+      <label for="lastname">Lastname</label>
+      <input type="text"  id="l-name" />
 
       <label for=" E-mail">E-mail</label>
-      <input type="text"  id="mail" />
+      <input type="text"  id="mail-id" />
 
-      <label for="password">old-Password</label>
-      <input type="password"  id="o-pwd" />
+      <label for="phone-number">phone-number</label>
+      <input type="ph-no" id="ph-no">
 
-      <label for="password">new-Password</label>
-      <input type="password"  id="n-pwd" />
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="dob" name="birthday">
 
-      <button class="color" onclick="submit">Save Changes</button>
+      <label for="address">Address</label>
+      <input type="text" id="u-address">
+
+      <button class="color" type="submit">Save Changes</button>
+      <button class="delete" id="delete" >Delete User</button>
 
     </div>
     </form>
@@ -226,11 +237,115 @@
 
   <script>
 
-    let edit = JSON.parse(window.localStorage.getItem("user_data"))
-    console.log(edit)
-    document.getElementById("u-name").value = edit[0]["f_name"]
-    document.getElementById("ph-no").value = edit[0][""]
-    document.getElementById("mail").value = edit[0]["e_mail"]
-    document.getElementById("o-pwd").value = edit[0]["p_word"]
+
+const user_email = JSON.parse(window.localStorage.getItem("user_data"))
+
+      const user_details = JSON.parse(window.localStorage.getItem("userdetails"))
+      let get_obj = user_details.find(function(user_obj){
+        let check_email = user_obj["e_mail"]
+        if(user_email===check_email){
+          return true ;
+        }
+      });
+      console.log(get_obj)
+
+      const fname = document.getElementById("f-name");
+      const lname = document.getElementById("l-name");
+      const mail = document.getElementById("mail-id");  
+      const phone = document.getElementById("ph-no")
+      // const phone = document.getElementById("mobilenumber");
+      fname.value =  get_obj["f_name"] ;
+      lname.value =  get_obj["l_name"] ;
+      mail.value  =  user_email ;
+      phone.value =  get_obj["phone_num"] ;
+      let form = document.getElementById("edit-form");
+      form.addEventListener("submit" , function(event){
+      event.preventDefault()
+      let fname = document.getElementById("f-name").value;
+      let lname = document.getElementById("l-name").value;
+      let mail = document.getElementById("mail-id").value;
+      let phone = document.getElementById("ph-no").value;
+      let dob = document.getElementById("dob").value;
+      let address = document.getElementById("u-address")
+
+      let new_data = {
+        fname,
+        lname,
+        mail,
+        phone,
+        dob,
+        address,
+      };
+
+      // if( mail.value != user_email ){
+      //   alert("You can't change the email-id")
+      //   return
+      // }
+    let updates = Object.assign(get_obj,new_data);
+    console.log(updates);
+    let index = user_details.indexOf(get_obj)
+
+
+
+    // console.log(index);
+    user_details[index] = updates;
+    localStorage.setItem("userdetails", JSON.stringify(user_details))
+    alert("You have successfully updated your account details!");
+    });
+
+
+      let form1 = document.getElementById("delete")
+      form1.addEventListener("click" ,function(event){
+      event.preventDefault()
+      let index = user_details.indexOf(get_obj)
+    console.log(index);
+   let mation = confirm("delete")
+    if(mation!== true){
+      return
+    }
+    else{
+      user_details.splice(index,1)
+      window.localStorage.setItem("userdetails",JSON.stringify(user_details))
+    }
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let edit = JSON.parse(window.localStorage.getItem("user_data"))
+    // console.log(edit)
+    // document.getElementById("u-name").value = edit[0]["f_name"];
+    // document.getElementById("ph-no").value = edit[0][""];
+    // document.getElementById("mail").value = edit[0]["e_mail"];
+    // document.getElementById("o-pwd").value = edit[0]["p_word"];
+
   </script>
 </html>
