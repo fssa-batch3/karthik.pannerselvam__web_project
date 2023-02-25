@@ -198,6 +198,7 @@
     let validation = false
     let local =JSON.parse( window.localStorage.getItem("userdetails"))
     let userdata = new Object()
+    let id = Date.now();
     let firstname = document.getElementById ("First").value.trim();
     let secondname = document.getElementById("last").value.trim();
     let phone_no = document.getElementById("phone").value;
@@ -209,6 +210,7 @@
     userdata.e_mail = email.toLowerCase();
     userdata.phone_num = phone_no;
     userdata.p_word = password;
+    userdata.id = id;
     
     console.log(userdata.f_name)
     if(local !== null){
