@@ -8,7 +8,7 @@
     <title>Upload</title>
   </head>
   <body>
-    <div class="upside">
+    <form class="upside" id ="new-product">
       <h1>Create new item</h1>
       <h3>Image, Video, Audio, or 3D Model</h3>
       <p>
@@ -53,17 +53,43 @@
       <div>
         <button type="submit" onclick="createnft()" id="update">Upload</button>
       </div>
-    </div>
+    </form>
   </body>
 
   <script>
-    function createnft() {
-      const geturl = document.getElementById("imgurl").value;
-      const nftname = document.getElementById("nftname").value;
-      const ext_link = document.getElementById("external-link").value;
-      const desc = document.getElementById("description").value;
 
-      console.log(geturl, nftname, ext_link, desc);
-    }
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let updates = {};
+
+  let image_url = document.getElementById("imagurl").value;
+  updates["image"] = image_url;
+
+  let rating = document.getElementById("rating").value;
+  // console.log(rating);
+  updates["rate"] = rating;
+
+  let title = document.getElementById("title").value;
+  // console.log(title);
+  updates["title"] = title;
+
+  let link = document.getElementById("link").value;
+  // console.log(link);
+  updates["link"] = link;
+
+  console.log(updates);
+
+  let all = [];
+
+  if (localStorage.getItem("new_card") != null) {
+    all = JSON.parse(localStorage.getItem("new_card"));
+    console.log(all);
+  }
+
+  all.push(updates);
+
+  localStorage.setItem("new_card", JSON.stringify(all));
+});
   </script>
 </html>
