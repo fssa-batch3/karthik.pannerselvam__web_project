@@ -2314,7 +2314,10 @@ let div;
 let price;
 let card_price;
 let etherum1;
+let span2;
+let div2;
 let highest_bid;
+let card_price1;
 let etherum2;
 let rate;
 
@@ -2343,8 +2346,8 @@ discover_card_card.append(card_banner_img_holder);
 img_cover = document.createElement("img");
 img_cover.setAttribute("src","../Assets/Images/Art-1.jpeg");
 img_cover.setAttribute("class", "img-cover");
-img_cover.setAttribute("width", "238");
-img_cover.setAttribute("height", "238");
+img_cover.setAttribute("width", "500");
+img_cover.setAttribute("height", "500");
 card_banner_img_holder.append(img_cover);
 
 // <button class="btn btn-primary">//
@@ -2419,11 +2422,49 @@ card_profile.append(username);
   div.append(card_price);
   
   // <img src="../Assets/Images/ethereum.svg">
-  etherum1 = document.createElement("img")
-  etherum1.setAttribut("src","../Assets/Images/ethereum.svg");
+  etherum1 = document.createElement("img");
+  etherum1.setAttribute("width","16");
+  etherum1.setAttribute("height","24");
+  etherum1.setAttribute("src", "../Assets/Images/ethereum.svg")
   card_price.append(etherum1);
 
+  // <span class="span">3.5 ETH</span>
+
+span2 = document.createElement("span");
+span2.setAttribute("class", "span");
+span2.innerText = "3.5 ETH"
+card_price.append(span2);
+
+// empty div
+
+div2 = document.createElement("div")
+card_meta.append(div2);
+
+// Highest bid
+highest_bid = document.createElement("p");
+highest_bid.innerText = "Highest Bid";
+div2.append(highest_bid);
+
+// <div class="card-price">
   
+card_price1 = document.createElement("div");
+card_price1.setAttribute("class", "card-price");
+div2.append(card_price1);
+
+// etherum 2 
+// <img src="../Assets/Images/ethereum.svg" width="16" height="24" loading="lazy" alt="ethereum icon"
+etherum2 = document.createElement("img");
+etherum2.setAttribute("width","16");
+etherum2.setAttribute("height","24");
+etherum2.setAttribute("src", "../Assets/Images/ethereum.svg");
+div2.append(etherum2);
+
+//<span class="span">3.55 ETH</span>
+
+rate = document.createElement("span");
+rate.setAttribute("class", "span");
+rate.innerText = "3.55 ETH";
+card_price1.append(rate);
 
 
 
@@ -2434,8 +2475,8 @@ card_profile.append(username);
 
 
 
-let card = document.querySelector("section.section");
-card.append(container);
+let card = document.querySelector(".grid-list");
+ card.append(list);
  
 
 
