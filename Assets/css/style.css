@@ -597,6 +597,8 @@ body {
 
 .discover-card .card-banner {
   position: relative;
+  --width: 500;
+  --height: 500;
 }
 
 .discover-card:is(:hover, :focus-within) .img-cover {
