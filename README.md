@@ -9,8 +9,8 @@ List of features
 
 1. User CRUD(done)
 2. NFT CRUD
-  -Add NFT(Working)
-  -NFT list(not started)
+  -Create NFT(finished)
+  -NFT list(working on)
   -NFT details(not started)
   -Update NFT(not started)
-  -Deactivate/Close NFT
+  -Deactivate/Close NFT(not started)
