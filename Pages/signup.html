@@ -41,7 +41,7 @@
       }
       .logo img{
         margin: 2rem;
-      }s
+      }
       .background {
         width: 430px;
         height: 680px;
@@ -52,7 +52,7 @@
       }
       
       form {
-        height: 720px;
+        height: 770px;
         width: 400px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
@@ -84,7 +84,7 @@
         font-size: 16px;
         font-weight: 500;
       }
-      input {
+      input,select {
         display: block;
         height: 40px;
         width: 100%;
@@ -148,6 +148,10 @@
       #first input:invalid{
         border: 5px solid yellow;
       }
+      
+      option{
+        color: #080710; 
+      }
     </style>
   </head>
   <body>
@@ -170,6 +174,12 @@
       <label for="lastname">Lastname</label>
       <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
 
+      <label for="options">Role :</label>
+      <select name="" class="sell-user" id="options">
+        <option value="seller">seller</option>
+        <option value="user">User</option>
+      </select>
+
       <label for=" E-mail">E-mail</label>
       <input type="email" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email" id="E-mail" "/>
 
@@ -179,7 +189,8 @@
       <label for="password">Set-Password</label>
       <input type="password"  placeholder="Password" id="password" required="true" />
 
-      
+     
+    
       <button>Sign Up</button>
       <div class="social">
         <div class="go"><i class="fab fa-google"></i> Google</div>
@@ -199,17 +210,19 @@
     let local =JSON.parse( window.localStorage.getItem("userdetails"))
     let userdata = new Object()
     let id = Date.now();
-    let firstname = document.getElementById ("First").value.trim();
-    let secondname = document.getElementById("last").value.trim();
-    let phone_no = document.getElementById("phone").value;
-    let email = document.getElementById("E-mail").value;
-    let password = document.getElementById("password").value;
+    let firstname = document.getElementById ("First");
+    let secondname = document.getElementById("last");
+    let phone_no = document.getElementById("phone");
+    let email = document.getElementById("E-mail");
+    let password = document.getElementById("password");
+    let user_select = document.getElementById("options");
    
-    userdata.f_name = firstname;
-    userdata.l_name = secondname;
-    userdata.e_mail = email.toLowerCase();
-    userdata.phone_num = phone_no;
-    userdata.p_word = password;
+    userdata.f_name = firstname.value.trim();
+    userdata.l_name = secondname.value.trim();
+    userdata.role = user_select.value;
+    userdata.e_mail = email.value.trim().toLowerCase();
+    userdata.phone_num = phone_no.value.trim();
+    userdata.p_word = password.value.trim();
     userdata.id = id; 
     
     console.log(userdata.f_name)
@@ -236,11 +249,6 @@
     }
   
     }
-    }
-  
-
-
-  
-
+    };
   </script>
 </html>

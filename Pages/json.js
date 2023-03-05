@@ -64,3 +64,4 @@ let art = [
     highestbid: "3.5 ETH",
   },
 ];
+// console.log(art);

@@ -674,6 +674,17 @@ body {
   margin-inline: auto;
   margin-block-start: 32px;
 }
+.upd-dele {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  margin-left: 17rem;
+  gap: 1rem;
+}
+/* span.material-symbols-outlined:hover {
+  background-color: var(--alice-blue-2);
+  color: var(--black);
+} */
 
 /*-----------------------------------*\
   #CONTACT

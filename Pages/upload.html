@@ -19,7 +19,7 @@
     <div class="up-image">
       <img src="../Assets/Images/Art-2.jpeg"  width="250px" height="250px">
       <div class="geturl">
-        <input type="url" id="imgurl" placeholder="Upload image link">
+        <input type="url" id="image" placeholder="Upload image link">
       </div>
     </div>
 
@@ -64,25 +64,25 @@
 document.getElementById("new-product").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let updates = {};
 
-  let image_url = document.getElementById("imgurl").value;
-  console.log(image_url);
+
+  let image_url = document.getElementById("image");
+  // console.log(image_url);
   // updates["image"] = image_url;
 
-  let rating = document.getElementById("nftname").value;
+  let rating = document.getElementById("nftname");
   // console.log(rating);
   // updates["Product_name"] = title;
 
-  let price = document.getElementById("price").value;
+  let price = document.getElementById("price");
   // console.log(title);
   // updates["pro-price"] = title;
 
-  let link = document.getElementById("description").value;
+  let link = document.getElementById("description");
   // console.log(link);
   // updates["link"] = link;
 
-  let obj = {image: image_url, name:rating, p_price: price, p_link: link}
+  let obj = {image: image_url.value, nftname:rating.value, p_price: price.value, p_link: link.value}
   console.log(obj);
 
   let all = [];

@@ -161,7 +161,7 @@
 
       <button class="bot" type="submit"> Log In</button>
 
-      <div class="social">
+      <div class="social">  
         <div class="go"><i class="fab fa-google"></i> Google</div>
         <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
       </div>
@@ -181,14 +181,15 @@ event.preventDefault()
     alert("Enter Your Email ID")
     return false;
   }
-  // if(password.length < 6){
-  //   alert("Please enter password")
-  //   return false;
-  // }
+ 
   
-  
-
  for(let i = 0; i < phone.length; i++){ 
+
+  if (phone[i].roll=="seller") {
+    windows.location.href = "../pages/seller-hero-page.html"
+  }else{
+    window.location.href = "../Pages/hero-main.html";
+  }
   if( email === phone[i].e_mail && password === phone[i].p_word){
     // arr.push(phone[i].e_mail)
     window.localStorage.setItem("user_data",JSON.stringify(phone[i].e_mail))

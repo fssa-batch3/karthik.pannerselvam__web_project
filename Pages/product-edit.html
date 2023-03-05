@@ -35,6 +35,10 @@
         height: 100vh;
         background: var(--linear-gradient-1) #080710 no-repeat center/cover;        
       }
+      input:valid{
+        border-color: #16ee45;
+        border-width: 2px;
+      }
       .logo img{
         margin: 2rem;
       }
@@ -48,7 +52,7 @@
       }
       
       form {
-        height: 620px;
+        height: 470px;
         width: 400px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
@@ -65,7 +69,6 @@
         font-family: "Poppins", sans-serif;
         color: #ffffff;
         letter-spacing: 0.5px;
-        outline: none;
         border: none;
       }
       form h3 {
@@ -81,7 +84,7 @@
         font-size: 16px;
         font-weight: 500;
       }
-      input {
+      input,select {
         display: block;
         height: 40px;
         width: 100%;
@@ -92,6 +95,7 @@
         font-size: 14px;
         font-weight: 300;
       }
+      
       ::placeholder {
         color: #e5e5e5;
       }
@@ -138,6 +142,16 @@
         text-decoration: none;
         color: #080710;
       }
+      #first input:valid{
+        border: 5px solid green;
+      }
+      #first input:invalid{
+        border: 5px solid yellow;
+      }
+      
+      option{
+        color: #080710; 
+      }
     </style>
   </head>
   <body>
@@ -151,34 +165,21 @@
       </a>
     </div>
     <div class="background">
-    <form>
-      <h3>Signup Here</h3>
+    <form onsubmit = "">
+      <h3>Update product</h3>
 
-      <label for="Firstname">Firstname</label>
-      <input type="text" required="required" placeholder="First name" id="First" value="New" />
+      <label for="Firstname">img-link</label>
+      <input type="text" required="required" autocomplete="off" pattern="[A-Za-z]{1,32}"  placeholder="image-link" id="img-link" title="Please provide a image link" />
 
-      <label for="lastname">Lastname</label>
-      <input type="text" required="required" placeholder="Last name" id="last"value="User"  />
+      <label for="lastname">Product-name</label>
+      <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
 
-      <label for=" E-mail">E-mail/Phone</label>
-      <input type="text" required="required" placeholder="Email or Phone" id="E-mail" value="example@gamil.com"/>
+      <label for="u-price">price</label>
+      <input type="number" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="give price for your product" id="E-mail" "/>
+    
+      <button>save changes</button>
 
-      <label for="password">Set-Password</label>
-      <input type="password" required="required" placeholder="Password" id="password" / value=".....">
-
-      <button><a href="../Pages/hero-main.html">Sign Up</button></a>
-      <div class="social">
-        <div class="go"><i class="fab fa-google"></i> Google</div>
-        <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
-      </div>
     </div>
     </form>
   </body>
-  <script>
-    (document.getElementById("First").value);
-    console.log(document.getElementById("last").value);
-    console.log(document.getElementById("E-mail").value);
-    console.log(document.getElementById("password").value);
-  </script>
-
-</html>
+  </html>
