@@ -1181,6 +1181,13 @@
     ></script>
     <script src="../Pages/json.js"></script>
     <script>
+
+      
+      art = JSON.parse(localStorage.getItem("art"))
+      if (!art) {
+        art = []
+        localStorage.setItem("art",JSON.stringify(art))
+      }
       for (let i = 0; i < art.length; i++) {
        const element = art[i];
        list = document.createElement("li");
@@ -1189,6 +1196,7 @@
 
   discover_card_card = document.createElement("div");
   discover_card_card.setAttribute("class", "discover-card card");
+  discover_card_card.setAttribute("id",element["id"]);
   // discover_card_card.style.width = "270px";
   // discover_card_card.style.height = "415px";
   list.append(discover_card_card);
@@ -1262,6 +1270,13 @@ discover_card_card.append(update_delete);
   edit_logo.innerText= "edit";
   update_delete.append(edit_logo);
 
+  edit_logo.addEventListener("click",()=>{
+    // const indexOfCard = art.indexOf(discover_card_card);
+    // art[indexOfCard] = discover_card_card;
+    // localStorage.setItem("art",JSON.stringify(discover_card_card))
+
+    window.location.href = "./product-edit.html?id=" + element["id"]
+  })
 //   <span class="material-symbols-outlined">
 delete_log = document.createElement("span");
 delete_log.setAttribute("class", "material-symbols-outlined");

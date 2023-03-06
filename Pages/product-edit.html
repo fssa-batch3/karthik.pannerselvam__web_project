@@ -165,21 +165,49 @@
       </a>
     </div>
     <div class="background">
-    <form onsubmit = "">
+    <form  id="update-product">
       <h3>Update product</h3>
 
       <label for="Firstname">img-link</label>
-      <input type="text" required="required" autocomplete="off" pattern="[A-Za-z]{1,32}"  placeholder="image-link" id="img-link" title="Please provide a image link" />
+      <input type="text" required="required" autocomplete="off"  placeholder="image-link" id="img-link" title="Please provide a image link" />
 
-      <label for="lastname">Product-name</label>
-      <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
+      <label for="new-product">Product-name</label>
+      <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="new_pname" />
 
       <label for="u-price">price</label>
-      <input type="number" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="give price for your product" id="E-mail" "/>
+      <input type="text" required="required" autocomplete="off" placeholder="give price for your product" id="new-price"/>
     
-      <button>save changes</button>
+      <button type="submit">save changes</button>
 
     </div>
     </form>
+    <script>
+      const c_params = new URLSearchParams(window.location.search);
+      const get_id = c_params.get("id");
+      const cardDetails = JSON.parse(localStorage.getItem("art"));
+      const thisArt = cardDetails.find((e)=> e.id == get_id);
+
+      const n_img_link = document.getElementById("img-link");
+      const n_pname = document.getElementById("new_pname");
+      const n_price = document.getElementById("new-price");
+      const u_product = document.getElementById("update-product")
+
+      n_img_link.value = thisArt["nftname"]      
+      n_pname.value = thisArt["image"]      
+      n_price.value = thisArt["price"]   
+      
+      u_product.addEventListener("submit",()=>{
+        event.preventDefault();
+        thisArt["nftname"] = n_img_link.value      
+        thisArt["image"] = n_pname.value    
+        thisArt["price"] = n_price.value
+        
+        const indexOfCard = cardDetails.indexOf(thisArt);
+        cardDetails[indexOfCard] = thisArt;
+        localStorage.setItem("art",JSON.stringify(cardDetails))
+        window.location.href = "./Seller-hero-page.html"
+      })
+      
+    </script>
   </body>
   </html>
