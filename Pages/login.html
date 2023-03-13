@@ -185,22 +185,19 @@ event.preventDefault()
   
  for(let i = 0; i < phone.length; i++){ 
 
-  if (phone[i].roll=="seller") {
-    windows.location.href = "../pages/seller-hero-page.html"
-  }else{
-    window.location.href = "../Pages/hero-main.html";
-  }
+ 
   if( email === phone[i].e_mail && password === phone[i].p_word){
     // arr.push(phone[i].e_mail)
     window.localStorage.setItem("user_data",JSON.stringify(phone[i].e_mail))
+    if (phone[i].role=="seller") {
+    windows.location.href = "../pages/seller-hero-page.html"
+   }else if(phone[i].role == "user"){
     window.location.href = "../Pages/hero-main.html";
+   }
      alert("success")
 } 
 }
- alert("Invalid user credentials")
-})
-
-
+ })
 
 
 </script>
