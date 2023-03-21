@@ -1,0 +1,51 @@
+.Box {
+  margin-top: 15rem;
+  background-color: antiquewhite;
+  width: 60rem;
+  height: 60rem;
+  border-radius: 10px;
+  display: flex;
+  margin-left: 30px;
+}
+.icons {
+  margin-top: 15px;
+  width: 30px;
+  height: 30px;
+}
+#like {
+  margin-left: 50rem;
+  cursor: pointer;
+}
+.img-card {
+  position: absolute;
+  margin-top: 50px;
+  margin-right: 10rem;
+}
+.show-img {
+  width: 60rem;
+  height: 55rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.right-box {
+  position: absolute;
+  margin-left: 70rem;
+  bottom: 10rem;
+}
+.right-box p {
+  display: flex;
+  gap: 10px;
+}
+.icons {
+  display: flex;
+  gap: 30px;
+}
+.mini-box {
+  gap: 20px;
+  width: 60rem;
+  height: 25rem;
+  background-color: antiquewhite;
+}
+button.btn {
+  display: flex;
+}

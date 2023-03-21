@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-details</title>
+</head>
+<body>
+    
+    <link
+      rel="shortcut icon"
+      href="../Assets/Images/logo.png"
+  "
+    />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../Assets/css/style.css" />
+    <link rel="stylesheet" href="../Assets/css/pro-details.css">
+  </head>
+
+  <body id="top">
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="#">
+          <img
+            src="../Assets/Images/logo.png"
+            width="40"
+            height="40"
+            alt="home"
+            class="logo-small"
+          />
+          <img
+            src="../Assets/Images/logo.png"
+            width="126"
+            height="28"
+            alt="home"
+            class="logo"
+          />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li>
+              <a href="#" class="navbar-link label-lg link:hover">Home</a>
+            </li>
+
+            <li>
+              <a href="../Pages/explore.html" class="navbar-link label-lg link:hover">Explore</a>
+            </li>
+
+            <li>
+              <a href="../Pages/FAQ's.html" class="navbar-link label-lg link:hover">FAQS</a>
+            </li>
+            <li>
+              <a href="../Pages/auction.html" class="navbar-link label-lg link:hover">My Auctions</a>
+            </li>
+
+          </ul>
+        </nav>
+
+          <button 
+            class="btn-icon profil-btn"
+            aria-label="Metalink account: naruto"
+          >
+          <a href="profile.html">
+            <img
+              src="../Assets/Images/naruto.jpg" 
+              width="40"
+              height="40"
+              alt="Fiona doe"
+              class="img1-cover"
+            />
+          </a>
+          </button>
+
+          <button
+            class="nav-toggle-btn"
+            aria-label="menu toggle"
+            data-nav-toggler
+          >
+            <ion-icon
+              name="menu-outline"
+              aria-hidden="true"
+              class="default-icon"
+            ></ion-icon>
+
+            <ion-icon
+              name="close-outline"
+              aria-hidden="true"
+              class="active-icon"
+            ></ion-icon>
+          </button>
+        </div>
+      </div>
+    </header>
+     <div class="whole-container"></div>
+    <!-- <div class="Box">
+      <img src="../Assets/Images/ethereum.png" alt="ethereum" class="icons">
+      <img src="../Assets/Images/heart.png" alt="like"  class="icons" id="like" >
+      <div class="img-card">
+        <img src="../Assets/Images/samurai.png" alt="samurai" class="show-img">
+      </div>
+    </div>
+
+    <div class="right-box">
+      <h1 id="p-name">Samuraixsensastion</h1>
+      <p>Owned by <span id="s-name">####</p></span>
+      <div class="icons">
+        <p>#2,001</p>
+        <img src="../Assets/Images/eye.gif" alt="count">
+        <p>100</p>
+      </div>
+      <div class="mini-box">
+        <p>Sale ends in </p>
+        <div class="inner-box">
+          <p>Price</p>
+          <H6>0.12334 ETH</H6>
+          <button class="btn">Buy</button>
+          <button class="btn">Cart</button>
+        </div>
+      </div>
+    </div> -->
+    <script>
+      let whole_box;
+      let eth_icon;
+      let like_icon;
+      let img_card;
+      let show_img;
+      let right_box;
+      let p_name;
+      let ownedby;
+      let s_name;
+      let div_icons;
+      let position;
+      let view_icon;
+      let tot_views;
+      let mini_box;
+      let sale_end;
+      let inner_box;
+      let p_price;
+      let nft_price;
+      let btn_buy;
+      let btn_cart;
+
+
+      whole_box = document.createElement("div");
+      whole_box.setAttribute("class", "Box");
+      
+
+      eth_icon= document.createElement("img");
+      eth_icon.setAttribute("src","../Assets/Images/ethereum.png");
+      eth_icon.setAttribute("class", "icons");
+      whole_box.append(eth_icon);
+
+      like_icon =document.createElement("img");
+      like_icon.setAttribute("src", "../Assets/Images/heart.png");
+      like_icon.setAttribute("class", "icons");
+      like_icon.setAttribute("id","like");
+      whole_box.append(like_icon);
+
+      img_card = document.createElement("div");
+      img_card.setAttribute("class", "img-card");
+      whole_box.append(img_card);
+      
+  
+
+      show_img = document.createElement("img");
+      show_img.setAttribute("src", "../Assets/Images/samurai.png");
+      show_img.setAttribute("class", "show-img");
+      show_img.setAttribute("alt", "samurai");
+      img_card.append(show_img);
+
+      right_box = document.createElement("div");
+      right_box.setAttribute("class", "right-box");
+      whole_box.append(right_box);
+
+      p_name = document.createElement("h1");
+      p_name.setAttribute("id","p-name");
+      p_name.innerText= "Samuraixsensastion";
+      right_box.append(p_name);
+
+      ownedby = document.createElement("p");
+      ownedby.innerText = "Owned by";
+      right_box.append(ownedby);
+
+      s_name = document.createElement("span");
+      s_name.innerText = "Samurai"
+      s_name.setAttribute("id", "s-name");
+      ownedby.append(s_name);
+
+      div_icons = document.createElement("div")
+      div_icons.setAttribute("class", "icons");
+      s_name.append(div_icons);
+
+      position = document.createElement("p")
+      position.innerText = "#20202";
+      div_icons.append(position);
+
+      view_icon = document.createElement("img");
+      view_icon.setAttribute("alt", "count");
+      view_icon.setAttribute("src", "../Assets/Images/eye.gif")
+      div_icons.append(view_icon);
+
+      tot_views = document.createElement("p");
+      tot_views.innerText = "100";
+      div_icons.append(tot_views);
+
+      mini_box  = document.createElement("div");
+      mini_box.setAttribute("class", "mini-box");
+      right_box.append(mini_box);
+
+      sale_end = document.createElement("p");
+      sale_end.innerText= "Sale ends in";
+      mini_box.append(sale_end);
+
+      inner_box = document.createElement("div");
+      inner_box.setAttribute("class","inner-box");
+      mini_box.append(inner_box);
+
+      p_price = document.createElement("p");
+      p_price.innerText = "Price";
+      inner_box.append(p_price);
+
+      nft_price= document.createElement("h3");
+      nft_price.innerText = "1.2684 ETH";
+      p_price.append(nft_price);
+
+      btn_buy = document.createElement("button");
+      btn_buy.setAttribute("class","btn");
+      btn_buy.innerText = "Buy";
+      nft_price.append(btn_buy);
+
+      btn_cart = document.createElement("button");
+      btn_cart.setAttribute("class","btn");
+      btn_cart.innerText = "Cart";
+      nft_price.append(btn_cart)
+
+
+
+
+      
+
+
+
+      document.querySelector("body").append(whole_box)
+    </script>
+</body>
+</html>
