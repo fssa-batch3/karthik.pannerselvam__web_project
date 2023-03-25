@@ -154,7 +154,7 @@
           Art
           </h2>
 
-          <ul class="grid-list" id="grid"> 
+          <ul class="grid-list" id="Grid"> 
             
           </ul>
 
@@ -1682,7 +1682,7 @@
     
    <!-- <script src="../Assets/Js/product_CRUD.js"> -->
   </script>
-  <script src="./json.js"></script>
+  <!-- <script src="./json.js"></script> -->
 
      <!-- 
     - ionicon link
@@ -1690,14 +1690,17 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    >
-     
-
-  </script>
+    ></script>
   <script>
-    for (let i = 0; i < art.length; i++) {
+    let art = JSON.parse(localStorage.getItem("art"))
+     for (let i = 0; i < art.length; i++) {
        const element = art[i];
        list = document.createElement("li");
+       // url params
+
+       let redirect = document.createElement("a");
+       redirect.setAttribute("href", "pro-details.html?name =" + element["nftname"] );
+       list.append(redirect);
 
   //<div class="discover-card card">//
 
@@ -1705,7 +1708,7 @@
   discover_card_card.setAttribute("class", "discover-card card");
   // discover_card_card.style.width = "270px";
   // discover_card_card.style.height = "415px";
-  list.append(discover_card_card);
+  redirect.append(discover_card_card);
 
   // <div class="card-banner img-holder">
   card_banner_img_holder = document.createElement("div");
@@ -1838,12 +1841,12 @@
   rate.innerText = "3.55 ETH";
   card_price1.append(rate);
 
-  let card = document.getElementById("grid");
+  let card = document.getElementById("Grid");
   card.append(list);
         // Art_collection(".grid-list",element);
       }
   
-     console.log(art)
+     console.log(art);
   </script>
   </body>
 </html>

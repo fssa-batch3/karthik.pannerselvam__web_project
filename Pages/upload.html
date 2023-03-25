@@ -22,7 +22,14 @@
         <input type="url" id="image" placeholder="Upload image link">
       </div>
     </div>
-
+    <div class="categories">
+      <label for="select">Categories :</label>
+  <select name="card" id="Categories">
+    <option value="Art">Art</option>
+    <option value="Anime">Anime</option>
+    <option value="Sports">Sports</option>
+  </select>
+    </div>
     <div class="name">
       <h2>Name<sup>*</sup></h2>
       <input type="text" id="nftname" placeholder="new nft for demo" />
@@ -44,6 +51,7 @@
         placeholder="https://www.youtube.com/"
       />
     </div>
+
 
     <div class="link">
       <h2>Description</h2>
@@ -74,6 +82,8 @@ document.getElementById("new-product").addEventListener("submit", function (even
   // console.log(rating);
   // updates["Product_name"] = title;
 
+  let list = document.getElementById("Categories");
+
   let price = document.getElementById("price");
   // console.log(title);
   // updates["pro-price"] = title;
@@ -82,19 +92,24 @@ document.getElementById("new-product").addEventListener("submit", function (even
   // console.log(link);
   // updates["link"] = link;
 
-  let obj = {image: image_url.value, nftname:rating.value, p_price: price.value, p_link: link.value}
+  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value}
   console.log(obj);
 
   let all = [];
 
   if (localStorage.getItem("new_card") != null) {
     all = JSON.parse(localStorage.getItem("new_card"));
+    all.push(obj);
     console.log(all);
   }
+  else{
+  
 
   all.push(obj);
 
-  localStorage.setItem("new_card", JSON.stringify(all));
+  let art = localStorage.setItem("art", JSON.stringify(all));
+  console.log(art)
+  }
 });
   </script>
 </html>

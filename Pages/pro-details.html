@@ -111,34 +111,24 @@
         </div>
       </div>
     </header>
-     <div class="whole-container"></div>
-    <!-- <div class="Box">
-      <img src="../Assets/Images/ethereum.png" alt="ethereum" class="icons">
-      <img src="../Assets/Images/heart.png" alt="like"  class="icons" id="like" >
-      <div class="img-card">
-        <img src="../Assets/Images/samurai.png" alt="samurai" class="show-img">
-      </div>
-    </div>
-
-    <div class="right-box">
-      <h1 id="p-name">Samuraixsensastion</h1>
-      <p>Owned by <span id="s-name">####</p></span>
-      <div class="icons">
-        <p>#2,001</p>
-        <img src="../Assets/Images/eye.gif" alt="count">
-        <p>100</p>
-      </div>
-      <div class="mini-box">
-        <p>Sale ends in </p>
-        <div class="inner-box">
-          <p>Price</p>
-          <H6>0.12334 ETH</H6>
-          <button class="btn">Buy</button>
-          <button class="btn">Cart</button>
-        </div>
-      </div>
-    </div> -->
+     <div class="whole-container"></div>  
     <script>
+
+
+let details= JSON.parse(localStorage.getItem("art"));
+console.log(details)
+const url = window.location.search;
+console.log(url)
+const urlParams = new URLSearchParams(url)
+console.log(urlParams)
+const change = urlParams.get("name ")
+console.log(change)
+
+const use = details.find((details) => details["nftname"] === change)
+console.log(use)
+
+
+
       let whole_box;
       let eth_icon;
       let like_icon;
@@ -183,7 +173,7 @@
   
 
       show_img = document.createElement("img");
-      show_img.setAttribute("src", "../Assets/Images/samurai.png");
+      show_img.setAttribute("src", use["image"]);
       show_img.setAttribute("class", "show-img");
       show_img.setAttribute("alt", "samurai");
       img_card.append(show_img);
@@ -260,7 +250,7 @@
 
 
 
-      document.querySelector("body").append(whole_box)
+      document.querySelector("div.whole-container").append(whole_box)
     </script>
 </body>
 </html>

@@ -1183,7 +1183,7 @@
     <script>
 
       
-      art = JSON.parse(localStorage.getItem("art"))
+     let art = JSON.parse(localStorage.getItem("art"))
       if (!art) {
         art = []
         localStorage.setItem("art",JSON.stringify(art))
@@ -1323,8 +1323,9 @@ update_delete.append(delete_log);
 
   span2 = document.createElement("span");
   span2.setAttribute("class", "span");
-  span2.innerText = element["price"];
+  span2.innerText = element["p_price"];
   card_price.append(span2);
+  console.log(span2)
 
   // empty div
 
