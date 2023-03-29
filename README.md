@@ -7,9 +7,24 @@ Sonarcloud: https://sonarcloud.io/project/overview?id=fssa-batch3_karthik.panner
 
 List of features
 
-1. User CRUD(done)
-2. NFT CRUD
+1. User CRUD
+  -Create user(completed)
+  -Read user(completed)
+  -Update user(completed)
+  -Delete user(completed)
+  
+  2.Seller CRUD
+  -Create seller(completed)
+  -Read seller(completed)
+  -Update seller(completed)
+  -Delete seller(completed)
+  
+3. NFT CRUD
   -Create NFT(finished)
   -NFT list(finished)
   -Update NFT(finished)
-  -Deactivate/Close NFT(not started)
+  -Deactivate/Close NFT(yet to start)
+  
+4.payment(yet to start)
+
+  
