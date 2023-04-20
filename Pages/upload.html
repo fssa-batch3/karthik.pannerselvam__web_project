@@ -91,24 +91,35 @@ document.getElementById("new-product").addEventListener("submit", function (even
   let link = document.getElementById("description");
   // console.log(link);
   // updates["link"] = link;
+  let id = crypto.randomUUID();
 
-  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value}
+  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id}
   console.log(obj);
 
   let all = [];
+  all.push(obj)
 
-  if (localStorage.getItem("new_card") != null) {
-    all = JSON.parse(localStorage.getItem("new_card"));
-    all.push(obj);
-    console.log(all);
+  // if (localStorage.getItem("new_card") !== null) {
+  //   all = JSON.parse(localStorage.getItem("new_card"));
+  //   all.push(obj);
+  //   console.log(all);
+  // }
+  // else{
+  
+
+  // all.push(obj);
+
+  // let art = localStorage.setItem("art", JSON.stringify(all));
+  // console.log(art)
+    if (localStorage.getItem("art") === null) {
+   localStorage.setItem("art",JSON.stringify(all));
+  
   }
   else{
   
-
-  all.push(obj);
-
-  let art = localStorage.setItem("art", JSON.stringify(all));
-  console.log(art)
+   let tot = JSON.parse(localStorage.getItem("art"))
+   tot.push(obj)
+   localStorage.setItem("art",JSON.stringify(tot))
   }
 });
   </script>

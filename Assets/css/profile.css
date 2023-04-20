@@ -12,7 +12,6 @@ html {
   overflow-y: hidden;
 }
 body {
-  width: 100%;
   background: var(--linear-gradient-1) #080710 no-repeat center/cover;
   font-family: var(--ff-urbanist);
 }
@@ -86,13 +85,13 @@ body {
   position: relative;
   bottom: 80px;
 }
-.bottom-div p {
+.user_email {
   bottom: 60px;
   position: relative;
   color: rgb(169, 182, 193);
   margin-left: 5.5rem;
 }
-.bottom-div h2 {
+.user_name {
   bottom: 60px;
   position: relative;
   color: rgb(241, 244, 245);
@@ -110,9 +109,7 @@ body {
   margin-left: 2rem;
 }
 .btn {
-  margin-left: 6.5rem;
-  bottom: 3rem;
-  position: relative;
+  margin-left: 0.5rem;
 }
 button {
   padding: 10px 25px;
@@ -122,14 +119,12 @@ button {
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
-  position: relative;
-  right: 15px;
 }
-button:hover {
+.btn:hover {
   background: rgb(32, 129, 226);
   color: white;
 }
-h3 {
+.country-code {
   font-weight: 200;
   margin-left: 3.5rem;
   color: white;
@@ -182,7 +177,6 @@ h3 {
 .heading {
   color: hwb(0 100% 0%);
   font-size: 20px;
-  font-weight: bold;
 }
 .split-down {
   position: relative;

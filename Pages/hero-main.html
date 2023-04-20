@@ -21,7 +21,7 @@
     <link
       rel="shortcut icon"
       href="../Assets/Images/logo.png"
-  "
+
     />
 
     <!-- 
@@ -81,6 +81,9 @@
             <li>
               <a href="../Pages/auction.html" class="navbar-link label-lg link:hover">My Auctions</a>
             </li>
+            <li>
+              <a href="../Pages/About.html" class="navbar-link label-lg link:hover">About Us</a>
+            </li>
 
           </ul>
         </nav>
@@ -91,12 +94,12 @@
           >
           <a href="profile.html">
             <img
-              src="../Assets/Images/naruto.jpg" 
               width="40"
               height="40"
               alt="Fiona doe"
               class="img1-cover"
-            />
+              id="view_image"
+            /> 
           </a>
           </button>
 
@@ -1556,6 +1559,32 @@
           </div>
         </section>
 
+        <!-- Feedback -->
+
+        <h3>Contact Form</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
         <!-- 
         - #NEWSLETTER
       -->
@@ -1793,7 +1822,29 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <script>
-      
-    </script>
+      let user_details = JSON.parse(localStorage.getItem("userdetails"));
+console.log(user_details);
+let get_obj = user_details.find(function (user_obj) {
+  let check_email = user_obj["email"];
+  if (get_email === check_email) {
+    return true;
+  }
+});
+console.log(get_obj);
+let viewImage = document.getElementById("view_image");
+viewImage.setAttribute("src", get_obj["u_img"]);
+</script>
+<!-- Feedback -->
+<script>
+  function toggle_visibility() {
+       var e = document.getElementById('feedback-main');
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+
+</script>
+
   </body>
 </html>

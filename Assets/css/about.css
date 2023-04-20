@@ -1,0 +1,82 @@
+.whole {
+  display: flex;
+}
+.left {
+  height: 500px;
+  width: 720px;
+  margin-left: 10rem;
+}
+h1 {
+  font-size: 4rem;
+}
+.right {
+  margin-left: 15rem;
+  border-radius: 30px;
+}
+
+.abt-para p {
+  margin-top: 30px;
+  font-size: 19px;
+}
+form {
+  height: 300px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+label {
+  font-size: 20px;
+  font-weight: 500;
+}
+input {
+  color: #e5e5e5;
+  height: 40px;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.f-form {
+  margin-left: 50rem;
+}
+.form_div {
+  display: flex;
+  flex-direction: column;
+}
+.userfeedbacks {
+  width: 400px;
+  height: 150px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  border-radius: 1.5rem;
+}
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+}
+.like_cmnt_delete {
+  display: flex;
+  flex-direction: row;
+}
+.like_cmnt_delete {
+  width: 30px;
+  height: 30px;
+  margin-left: 6rem;
+  gap: 15px;
+}
+.content {
+  display: flex;
+  height: 75px;
+  width: 400px;
+}
+.logo {
+  display: flex;
+  justify-content: stretch;
+}

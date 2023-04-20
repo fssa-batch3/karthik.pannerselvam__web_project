@@ -185,27 +185,53 @@
       const c_params = new URLSearchParams(window.location.search);
       const get_id = c_params.get("id");
       const cardDetails = JSON.parse(localStorage.getItem("art"));
-      const thisArt = cardDetails.find((e)=> e.id == get_id);
+      console.log(cardDetails)
+     const thisArt = cardDetails.find((e)=> e.uuid == get_id);
+    
+    
+      // console.log(thisArt)
+      // const thisArt = cardDetails.find (function(object){
+      //   let iid= object["uuid"]
+      //   if(iid == get_id){
+      //     return true
+      //   } 
+      // })
 
-      const n_img_link = document.getElementById("img-link");
-      const n_pname = document.getElementById("new_pname");
-      const n_price = document.getElementById("new-price");
-      const u_product = document.getElementById("update-product")
-
-      n_img_link.value = thisArt["nftname"]      
-      n_pname.value = thisArt["image"]      
-      n_price.value = thisArt["price"]   
+      const image = document.getElementById("img-link");
+      const nftname  = document.getElementById("new_pname");
+      const p_price = document.getElementById("new-price");
+      // const u_product = document.getElementById("update-product")
+     
+     nftname.value = thisArt["nftname"]      
+      image.value = thisArt["image"]      
+      p_price.value = thisArt["p_price"] 
       
-      u_product.addEventListener("submit",()=>{
+    let form=document.getElementById("update-product")
+      form.addEventListener("submit",()=>{
         event.preventDefault();
-        thisArt["nftname"] = n_img_link.value      
-        thisArt["image"] = n_pname.value    
-        thisArt["price"] = n_price.value
-        
+        let newCard = {};
+        newCard["nftname"] =nftname.value      
+        newCard["image"] = image.value    
+        newCard["p_price"] = p_price.value
+        console.log(newCard)
+
+      //   const nftname = document.getElementById("img-link");
+      // const image = document.getElementById("new_pname");
+      // const p_price = document.getElementById("new-price");
+        let nlink = {
+       nftname, image,p_price
+      }
+
+      console.log(nlink)
+      
+        let up = Object.assign(thisArt,newCard)
+        console.log(up)
         const indexOfCard = cardDetails.indexOf(thisArt);
-        cardDetails[indexOfCard] = thisArt;
+       console.log(up)
+        console.log(indexOfCard)
+        cardDetails[indexOfCard] = up;
         localStorage.setItem("art",JSON.stringify(cardDetails))
-        window.location.href = "./Seller-hero-page.html"
+        //window.location.href = "./Seller-hero-page.html"
       })
       
     </script>

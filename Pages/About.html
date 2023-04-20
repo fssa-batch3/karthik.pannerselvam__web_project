@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link
+      rel="shortcut icon"
+      href="../Assets/Images/logo.png"
+
+    />
+    <link rel="stylesheet" href="../Assets/css/about.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">   
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../Assets/css/style.css" />
+  </head>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#">
+        <img
+          src="../Assets/Images/logo.png"
+          width="40"
+          height="40"
+          alt="home"
+          class="logo-small"
+        />
+        <img
+          src="../Assets/Images/logo.png"
+          width="126"
+          height="28"
+          alt="home"
+          class="logo"
+        />
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="#" class="navbar-link label-lg link:hover">Home</a>
+          </li>
+
+          <li>
+            <a href="../Pages/explore.html" class="navbar-link label-lg link:hover">Explore</a>
+          </li>
+
+          <li>
+            <a href="../Pages/FAQ's.html" class="navbar-link label-lg link:hover">FAQS</a>
+          </li>
+          <li>
+            <a href="../Pages/auction.html" class="navbar-link label-lg link:hover">My Auctions</a>
+          </li>
+        </ul>
+      </nav>
+
+        <button 
+          class="btn-icon profil-btn"
+          aria-label="Metalink account: naruto"
+        >
+        <a href="profile.html">
+          <img
+            width="40"
+            height="40"
+            alt="Fiona doe"
+            class="img1-cover"
+            id="view_image"
+          /> 
+        </a>
+        </button>
+
+        <button
+          class="nav-toggle-btn"
+          aria-label="menu toggle"
+          data-nav-toggler
+        >
+          <ion-icon
+            name="menu-outline"
+            aria-hidden="true"
+            class="default-icon"
+          ></ion-icon>
+
+          <ion-icon
+            name="close-outline"
+            aria-hidden="true"
+            class="active-icon"
+          ></ion-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  </head>
+  <body >
+    <main>
+          <!-- 
+          - #HERO
+        -->
+  
+          <section class="section hero" aria-label="home">
+            <div class="container">
+              <h1 class="headline-lg hero-title">
+                 <span class="span">About Us</span>
+              </h1>
+  
+              <p class="section-text body-lg">
+                We are a huge marketplace dedicated to connecting great artists of
+                all nftguru with their fans and unique token collectors!
+              </p>
+  
+              <a href="./explore.html" class="btn">Explore now</a>
+            </div>
+          </section>
+
+          <div class="whole">
+            <div class="left">
+                <div class="title">
+                    <h1>Building an open digital economy</h1>
+                </div>
+                <div class="abt-para">
+                    <p>
+                        At NftGuru, we're excited about a brand new type of digital good called a non-fungible token, or NFT. NFTs have exciting new properties: they’re unique, provably scarce, tradeable, and usable across multiple applications. Just like physical goods, you can do whatever you want with them! You could throw them in the trash, gift them to a friend across the world, or go sell them on an open marketplace. But unlike physical goods, they're armed with all the programmability of digital goods.
+
+A core part of our vision is that open protocols like Ethereum and interoperable standards like ERC-721 and ERC-1155 will enable vibrant new economies. We're building tools that allow consumers to trade their items freely, creators to launch new digital works, and developers to build rich, integrated marketplaces for their digital items.
+
+We’re proud to be the largest marketplace for NFTs.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="right">
+                <img src="../Assets/Images/abt-icon.png" alt="Nft-image" class="logo-nft">
+            </div>
+          </div>
+          <div class="feed-whole-box">
+          <h2>Give us feedback what to improve in our website</h2>
+            <form class="f-form" onsubmit="feedbacks()">
+              <label for="feedback">Write your Reviews</label>
+              <textarea name="reviews" id="suggestion" cols="60" rows="5"></textarea>
+              <button class="btn" type="submit">Submit</button>
+            </form>  
+          </div>
+          
+
+           
+    
+       
+
+
+<!-- <script src="../Assets/Js/Feedback.js"></script> -->
+<script>
+  function feedbacks() {
+  let arr = [];
+  let feed_username = document.getElementById("f-username").value;
+  let feedback_email = document
+    .getElementById("f-email")
+    .value;
+    let feedback_id = Date.now();
+  let feedbacks = document.getElementById("suggestion").value;
+
+  let suggestion_details = {
+    feed_username,
+    feedback_email,
+    feedback_id,
+    feedbacks
+  };
+  if (localStorage.getItem("user-feedbacks")!= null) {
+    arr = JSON.parse(localStorage.getItem("user-feedbacks"))
+  }
+  arr.push(suggestion_details);
+  localStorage.setItem("user-feedbacks", JSON.stringify(arr));
+  console.log(arr);
+}
+
+head_div = document.createElement("div");
+
+heading = document.createElement("h2");
+heading.innerText = "Our user Reviews";
+head_div.append(heading);
+
+let userfeedbacks = document.createElement("div");
+userfeedbacks.setAttribute("class", "userfeedbacks");
+head_div.append(userfeedbacks);
+
+let logo = document.createElement("div");
+logo.setAttribute("class","logo")
+userfeedbacks.append(logo);
+
+let user_img = document.createElement("img");
+user_img.setAttribute("class", "user-img");
+user_img.setAttribute("src","../Assets/Images/anime-1.jpg");
+user_img.setAttribute("alt","userimg");
+logo.append(user_img);
+
+user_name = document.createElement("h3");
+user_name.innerText = "@jjjjj";
+
+
+
+
+document.querySelector("feed-whole-box").append;
+
+
+
+
+</script>
+  </body>
+</html>
+
+
+ <!-- <h2>Our user Reviews</h2>
+            <div class="userfeedbacks">
+              <div class="logo">
+                 <img src="../Assets/Images/anime-1.jpg" class="user-img" alt="sfsaf">
+                <h3>@sdfddf</h3>
+                <div class="like_cmnt_delete">
+                  <img src="../Assets/Images/edit.png" alt="edit">
+                  <img src="../Assets/Images/delete.png" alt="delete">
+             
+              <div class="content">
+                <p>Hi, this is testing</p>
+              </div>
+            </div> -->

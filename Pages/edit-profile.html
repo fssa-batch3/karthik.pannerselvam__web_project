@@ -76,7 +76,8 @@
       </header>
     <div class="background">
     <form id="edit-form">
-      <h3>Edit Profile</h3>
+      <h3 class="edit
+      ">Edit Profile</h3>
 
       <div class="left">
       <label for="Firstname">First Name</label>
@@ -99,9 +100,15 @@
       <label for="address">Address</label>
       <input type="text" id="u-address">
 
-      <label for="address">categories</label>
-      <input type="text" id="u-categories">
+      <label for="address" id="u-categories">categories</label>
+      <select name="card" id="Categories">
+        <option value="Art">Art</option>
+        <option value="Anime">Anime</option>
+        <option value="Sports">Sports</option>
+      </select>     
 
+      <label for="Bio">Bio</label>
+      <input type="text" id="User-bio">
       <label for="location">location</label>
       <input type="text" id="u-location">
 
@@ -132,6 +139,9 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
       });
       console.log(get_obj)
 
+
+
+      
       const fname = document.getElementById("f-name");
       const lname = document.getElementById("l-name");
       const mail = document.getElementById("mail-id");  
@@ -139,8 +149,11 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
       // const phone = document.getElementById("mobilenumber");
       fname.value =  get_obj["f_name"] ;
       lname.value =  get_obj["l_name"] ;
-      mail.value  =  user_email ;
+      mail.value  =  get_obj["e_mail"];
       phone.value =  get_obj["phone_num"] ;
+
+      
+      // const phone = document.getElementById("mobilenumber")
       let form = document.getElementById("edit-form");
       form.addEventListener("submit" , function(event){
       event.preventDefault()
@@ -149,16 +162,26 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
       let mail = document.getElementById("mail-id").value;
       let phone = document.getElementById("ph-no").value;
       let dob = document.getElementById("dob").value;
-      let address = document.getElementById("u-address")
+      let address = document.getElementById("u-address").value;
+      let categories = document.getElementById("u-categories").value;
+      let User_bio = document.getElementById("User-bio").value;
+      let user_location = document.getElementById("u-location").value;
+      let user_language = document.getElementById("u-language").value;
+      
 
       let new_data = {
-        fname,
-        lname,
-        mail,
-        phone,
+        f_name:fname,
+        l_name:lname,
+        e_mail:mail,
+        phone_num:phone,
         dob,
         address,
+        categories,
+        User_bio,
+        user_location,
+        user_language
       };
+      console.log(new_data)
 
       // if( mail.value != user_email ){
       //   alert("You can't change the email-id")
@@ -188,7 +211,8 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
     }
     else{
       user_details.splice(index,1)
-      window.localStorage.setItem("userdetails",JSON.stringify(user_details))
+      window.localStorage.setItem("userdetails",JSON.stringify(user_details));
+      window.location.href="../index.html";
     }
       });
 

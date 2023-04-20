@@ -1184,12 +1184,13 @@
 
       
      let art = JSON.parse(localStorage.getItem("art"))
-      if (!art) {
-        art = []
-        localStorage.setItem("art",JSON.stringify(art))
-      }
+      // if (!art) {
+      //   art = []
+      //   localStorage.setItem("art",JSON.stringify("art"))
+      // }
       for (let i = 0; i < art.length; i++) {
        const element = art[i];
+       console.log(element)
        list = document.createElement("li");
 
   //<div class="discover-card card">//
@@ -1275,14 +1276,24 @@ discover_card_card.append(update_delete);
     // art[indexOfCard] = discover_card_card;
     // localStorage.setItem("art",JSON.stringify(discover_card_card))
 
-    window.location.href = "./product-edit.html?id=" + element["id"]
+    window.location.href = "./product-edit.html?id=" + element["uuid"]
   })
 //   <span class="material-symbols-outlined">
 delete_log = document.createElement("span");
 delete_log.setAttribute("class", "material-symbols-outlined");
+delete_log.setAttribute("id", element["uuid"]);
 delete_log.innerText= "delete";
 update_delete.append(delete_log);
 
+delete_log.addEventListener("click",(e)=>{
+  let id = element["uuid"]
+  let del = art.find((e)=>e["uuid"] === id)
+  art.splice(i,1)
+  localStorage.setItem("art",JSON.stringify(art))
+})
+
+
+//function
 
 
   // <a href="#" class="link:hover">Genuine Undead #3902</a>

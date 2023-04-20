@@ -174,6 +174,11 @@
       <label for="lastname">Lastname</label>
       <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
 
+      <label for="username">username</label>
+      <input type="text" required="required" autocomplete="off"  placeholder="@example1234" id="u-name" />
+
+
+
       <label for="options">Role :</label>
       <select name="" class="sell-user" id="options">
         <option value="seller">seller</option>
@@ -189,7 +194,8 @@
       <label for="password">Set-Password</label>
       <input type="password"  placeholder="Password" id="password" required="true" />
 
-     
+      <label for="img-url">Profile Img URL</label>
+      <input type="text" id="u-img">
     
       <button>Sign Up</button>
       <div class="social">
@@ -208,27 +214,31 @@
     let arr = []
     let validation = false
     let local =JSON.parse( window.localStorage.getItem("userdetails"))
-    let userdata = new Object()
     let id = Date.now();
-    let firstname = document.getElementById ("First");
-    let secondname = document.getElementById("last");
-    let phone_no = document.getElementById("phone");
-    let email = document.getElementById("E-mail");
-    let password = document.getElementById("password");
-    let user_select = document.getElementById("options");
+    let f_name = document.getElementById ("First").value.trim();
+    let l_name = document.getElementById("last").value.trim();
+    let u_name = document.getElementById("u-name").value.trim();
+    let phone_num = document.getElementById("phone").value.trim();
+    let e_mail = document.getElementById("E-mail").value.trim().toLowerCase();
+    let p_word = document.getElementById("password").value.trim();
+    let role = document.getElementById("options").value;
+    let u_img = document.getElementById("u-img").value.trim();
    
-    userdata.f_name = firstname.value.trim();
-    userdata.l_name = secondname.value.trim();
-    userdata.role = user_select.value;
-    userdata.e_mail = email.value.trim().toLowerCase();
-    userdata.phone_num = phone_no.value.trim();
-    userdata.p_word = password.value.trim();
-    userdata.id = id; 
+    let userdata ={
+      f_name,
+      l_name,
+      u_name,
+      phone_num,
+      p_word,
+      role,
+      e_mail,
+      u_img,
+    }
+
+    console.log(userdata)
     
-    console.log(userdata.f_name)
     if(local !== null){
       validation = local.find((obj) => obj["e_mail"] === userdata.e_mail)
-      console.log(validation)
     }
     arr.push(userdata);
     if(validation){
