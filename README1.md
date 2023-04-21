@@ -2,7 +2,7 @@
 
 ## Buyer
 
-# Create an account
+# Create an account for Buyer
 - Scenario 1: Successfully create an account
     - Steps:
         1. Navigate to the registration page by sign up button.
@@ -11,7 +11,7 @@
     - Expected Result:
         - The user is redirected to the login page.
 
-# Create an account
+# Create an account Buyer
 - Scenario 1: Successfully login in to account
     - Steps:
         1. Navigate to the login page.
@@ -20,7 +20,25 @@
     - Expected Result:
         - The user is redirected to the user profile page.
 
-
+# Create an account for Seller
+- Scenario 1: Successfully create an account
+    - Steps:
+        1. Navigate to the registration page by sign up button.
+        2. Enter the required information such as name, email, and password.
+        3. Click the "Create Account" button.
+    - Expected Result:
+        - The user is redirected to the login page.
+        - 
+# Create an account for Sellere
+- Scenario 1: Successfully create an account
+    - Steps:
+        1. Navigate to the login page.
+        2. Enter the correct information such as email, and password.
+        3. Click the "login" button.
+        
+    - Expected Result:
+        - The user is redirected to the login page.
+        - 
 # View nft
 - Scenario 1: Successfully view nft1
     - Steps:
