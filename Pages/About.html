@@ -153,9 +153,40 @@ We’re proud to be the largest marketplace for NFTs.
               <button class="btn" type="submit">Submit</button>
             </form>  
           </div>
-          
+       
+          <ul class="comment-msg">
+            <!-- <li>
+            
+            <div class="userfeedbacks">
+              <div class="logo">
+                 <img src="../Assets/Images/anime-1.jpg" class="user-img" alt="sfsaf">
+                <h3>@sdfddf</h3>
+                <div class="like_cmnt_delete">
+                  <img src="../Assets/Images/edit.png" alt="edit">
+                  <img src="../Assets/Images/delete.png" alt="delete">
+                </div>
 
-           
+              <div class="content">
+                <p>Hi, this is testing idfvhjlksdfhjiaf ndskfusdfuuia</p>
+              </div>
+          </li>
+
+            <li>
+            <div class="userfeedbacks">
+              <div class="logo">
+                 <img src="../Assets/Images/anime-1.jpg" class="user-img" alt="sfsaf">
+                <h3>@sdfddf</h3>
+                <div class="like_cmnt_delete">
+                  <img src="../Assets/Images/edit.png" alt="edit">
+                  <img src="../Assets/Images/delete.png" alt="delete">
+                </div>
+              <div class="content">
+                <p>Hi, this is testing idfvhjlksdfhjiaf ndskfusdfuuia</p>
+              </div>
+            
+          </li> -->
+
+          </ul>
     
        
 
@@ -184,10 +215,12 @@ We’re proud to be the largest marketplace for NFTs.
   localStorage.setItem("user-feedbacks", JSON.stringify(arr));
   console.log(arr);
 }
+let list = document.createElement("li");
 
-head_div = document.createElement("div");
+let head_div = document.createElement("div");
+list.append(head_div);
 
-heading = document.createElement("h2");
+let heading = document.createElement("h2");
 heading.innerText = "Our user Reviews";
 head_div.append(heading);
 
@@ -207,11 +240,34 @@ logo.append(user_img);
 
 user_name = document.createElement("h3");
 user_name.innerText = "@jjjjj";
+logo.append(user_name);
+
+let like_cmnt_delete = document.createElement("div");
+like_cmnt_delete.setAttribute("class","like_cmnt_delete");
+logo.append(like_cmnt_delete);
+
+let cmnt_edit = document.createElement("img");
+cmnt_edit.setAttribute("src","../Assets/Images/edit.png");
+cmnt_edit.setAttribute("alt","edit-btn");
+like_cmnt_delete.append(cmnt_edit);
+
+let del_edit=document.createElement("img");
+del_edit.setAttribute("src", "../Assets/Images/delete.png");
+del_edit.setAttribute("alt","delete-btn");
+like_cmnt_delete.append(del_edit);
+
+let cmnt_content = document.createElement("div");
+cmnt_content.setAttribute("class","content");
+like_cmnt_delete.append(cmnt_content);
+
+let content_para = document.createElement("p");
+content_para.innerText = "Hi, this is testing";
+cmnt_content.append(content_para);
 
 
 
 
-document.querySelector("feed-whole-box").append;
+document.querySelector(".feed-whole-box").append(list);
 
 
 
@@ -221,16 +277,3 @@ document.querySelector("feed-whole-box").append;
 </html>
 
 
- <!-- <h2>Our user Reviews</h2>
-            <div class="userfeedbacks">
-              <div class="logo">
-                 <img src="../Assets/Images/anime-1.jpg" class="user-img" alt="sfsaf">
-                <h3>@sdfddf</h3>
-                <div class="like_cmnt_delete">
-                  <img src="../Assets/Images/edit.png" alt="edit">
-                  <img src="../Assets/Images/delete.png" alt="delete">
-             
-              <div class="content">
-                <p>Hi, this is testing</p>
-              </div>
-            </div> -->

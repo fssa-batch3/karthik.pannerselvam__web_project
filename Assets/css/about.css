@@ -19,7 +19,7 @@ h1 {
   font-size: 19px;
 }
 form {
-  height: 300px;
+  height: 230px;
   width: 500px;
   background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
@@ -33,7 +33,7 @@ label {
 input {
   color: #e5e5e5;
   height: 40px;
-  width: 50%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
   padding: 0 10px;
@@ -56,27 +56,37 @@ input {
   margin-top: 4rem;
   border-radius: 1.5rem;
 }
+h3 {
+  padding: 15px;
+}
 .user-img {
   width: 50px;
   height: 50px;
   border-radius: 30px;
+  margin: 5px;
 }
 .like_cmnt_delete {
   display: flex;
   flex-direction: row;
-}
-.like_cmnt_delete {
   width: 30px;
   height: 30px;
   margin-left: 6rem;
   gap: 15px;
+  cursor: pointer;
 }
 .content {
   display: flex;
+  margin-top: 5rem;
   height: 75px;
-  width: 400px;
+  width: 100%;
 }
 .logo {
   display: flex;
   justify-content: stretch;
+}
+.comment-msg {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  margin-left: 10rem;
 }

@@ -67,7 +67,7 @@
     container.append(bottom);
 
     profile_img = document.createElement("img");
-    profile_img.setAttribute("src", "");
+    profile_img.setAttribute("src", user.user_img);
     profile_img.setAttribute("alt", "User-img");
     profile_img.setAttribute("class", "profile-img");
     bottom.append(profile_img);
@@ -79,7 +79,7 @@
     bottom.append(user_email);
 
     user_name = document.createElement("h2");
-    user_name.innerText = user.f_name;
+    user_name.innerText = user.u_name;
     user_name.setAttribute("class", "user_name");
     user_email.append(user_name);
 
@@ -134,18 +134,18 @@
     list3 = document.createElement("li");
     list3.setAttribute("class", "nope");
     list3.setAttribute("id", "language");
-    list3.innerText = "Location";
+    list3.innerText = user.user_location;
     un_list2.append(list3);
 
     list4 = document.createElement("li");
     list4.setAttribute("class", "nope");
     list4.setAttribute("id", "categories");
-    list4.innerText = "Language";
+    list4.innerText = user.user_language;
     un_list2.append(list4);
 
     list5 = document.createElement("li");
     list5.setAttribute("class", "nope");
-    list5.innerText = `Motion Graphics, Illustriation, Abstract.`;
+    list5.innerText = user.categories;
     un_list2.append(list5);
 
     list6 = document.createElement("li");
@@ -159,7 +159,7 @@
 
     un_list3 = document.createElement("ul");
     un_list3.setAttribute("class", "down");
-    box_split.append(un_list3);
+    split_down.append(un_list3);
 
     list7 = document.createElement("li");
     list7.setAttribute("class", "nope");
@@ -178,7 +178,7 @@
 
     un_list4 = document.createElement("ul");
     un_list4.setAttribute("class", "sala1");
-    box_split.append(un_list4);
+    un_list3.append(un_list4);
 
     list10 = document.createElement("li");
     list10.setAttribute("class", "nope");
@@ -207,10 +207,7 @@
     bio_description = document.createElement("p");
     bio_description.setAttribute("class", "bio");
     bio_description.setAttribute("id", "description");
-    bio_description.innerText = `Iam a digital artist based in Paris, France. My work has been
-          featured in various galleries in Paris and New York City. I love
-          playing with the characteristics of light in all its forms, and I
-          like to challenge the way color is normally perceived in nature.`;
+    bio_description.innerText = user.User_bio;
     description.append(bio_description);
 
     body.append(profilebox);

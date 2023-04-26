@@ -172,10 +172,10 @@
       <input type="text" required="required" autocomplete="off" pattern="[A-Za-z]{1,32}"  placeholder="First name" id="First" title="Type your first name" />
 
       <label for="lastname">Lastname</label>
-      <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
+      <input type="text" required="required" autocomplete="off" pattern="[A-Za-z]{1,32}" placeholder="Last name" id="last" />
 
       <label for="username">username</label>
-      <input type="text" required="required" autocomplete="off"  placeholder="@example1234" id="u-name" />
+      <input type="text" required="required" autocomplete="off" pattern="^[a-zA-Z0-9_]*$" placeholder="@example1234" id="u-name" />
 
 
 
@@ -189,13 +189,11 @@
       <input type="email" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email" id="E-mail" "/>
 
       <label for="ph-no">Phone.no</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter phone-number" required="true">
+      <input type="tel" id="phone" name="phone" placeholder="Enter phone-number" pattern="[0-9]{10}"required="true">
 
       <label for="password">Set-Password</label>
       <input type="password"  placeholder="Password" id="password" required="true" />
 
-      <label for="img-url">Profile Img URL</label>
-      <input type="text" id="u-img">
     
       <button>Sign Up</button>
       <div class="social">
@@ -222,7 +220,7 @@
     let e_mail = document.getElementById("E-mail").value.trim().toLowerCase();
     let p_word = document.getElementById("password").value.trim();
     let role = document.getElementById("options").value;
-    let u_img = document.getElementById("u-img").value.trim();
+
    
     let userdata ={
       f_name,
@@ -232,7 +230,6 @@
       p_word,
       role,
       e_mail,
-      u_img,
     }
 
     console.log(userdata)
@@ -247,7 +244,8 @@
     if(local === null){
       window.localStorage.setItem("userdetails", JSON.stringify(arr));
       console.log(userdata.f_name);
-      window.location.href = "../pages/hero-main.html";
+      alert("User successfuly added");
+      window.location.href = "../pages/login.html";
     }
     else{
        let owner = window.localStorage.getItem("userdetails");
@@ -255,6 +253,7 @@
        console.log(userdata.f_name)
        json.push(userdata);
        window.localStorage.setItem("userdetails", JSON.stringify(json));  
+       alert("User successfuly added");
        window.location.href = "../pages/login.html";
     }
   

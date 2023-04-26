@@ -190,11 +190,13 @@ event.preventDefault()
     // arr.push(phone[i].e_mail)
     window.localStorage.setItem("user_data",JSON.stringify(phone[i].e_mail))
     if (phone[i].role=="seller") {
-    window.location.href = "../pages/seller-hero-page.html"
+      alert("successfully logged In");
+    window.location.href = "../pages/seller-hero-page.html";
+    
    }else if(phone[i].role == "user"){
+    alert("success logged In");
     window.location.href = "../Pages/hero-main.html";
    }
-     alert("success")
 } 
 }
  })

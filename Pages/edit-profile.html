@@ -109,6 +109,10 @@
 
       <label for="Bio">Bio</label>
       <input type="text" id="User-bio">
+
+      <label for="User_img">Upload Image Link</label>
+      <input type="text" id="User-img">
+
       <label for="location">location</label>
       <input type="text" id="u-location">
 
@@ -117,6 +121,7 @@
 
       <button class="color" type="submit">Save Changes</button>
       <button class="delete" id="delete" >Delete User</button>
+      
     </div>
 
     
@@ -163,8 +168,9 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
       let phone = document.getElementById("ph-no").value;
       let dob = document.getElementById("dob").value;
       let address = document.getElementById("u-address").value;
-      let categories = document.getElementById("u-categories").value;
+      let categories = document.getElementById("Categories").value;
       let User_bio = document.getElementById("User-bio").value;
+      let user_img = document.getElementById("User-img").value
       let user_location = document.getElementById("u-location").value;
       let user_language = document.getElementById("u-language").value;
       
@@ -178,6 +184,7 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
         address,
         categories,
         User_bio,
+        user_img,
         user_location,
         user_language
       };
@@ -197,6 +204,7 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
     user_details[index] = updates;
     localStorage.setItem("userdetails", JSON.stringify(user_details))
     alert("You have successfully updated your account details!");
+    window.location  = "../Pages/profile.html";
     });
 
 

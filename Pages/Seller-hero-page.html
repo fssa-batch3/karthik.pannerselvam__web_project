@@ -1289,7 +1289,10 @@ delete_log.addEventListener("click",(e)=>{
   let id = element["uuid"]
   let del = art.find((e)=>e["uuid"] === id)
   art.splice(i,1)
+
   localStorage.setItem("art",JSON.stringify(art))
+  alert("sucessfully deleted");
+  location.reload()
 })
 
 

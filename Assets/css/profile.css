@@ -162,17 +162,12 @@ button {
 }
 .nope {
   list-style: none;
-  position: relative;
   display: flex;
   line-height: 2.5rem;
 }
 .biodata {
-  bottom: 200px;
   font-size: 16px;
-  position: relative;
   left: 45px;
-  width: 90%;
-  line-height: 25px;
 }
 .heading {
   color: hwb(0 100% 0%);
