@@ -20,11 +20,15 @@ List of features
   -Delete seller(completed)
   
 3. NFT CRUD
-  -Create NFT(finished)
-  -NFT list(finished)
-  -Update NFT(finished)
-  -Deactivate/Close NFT(yet to start)
+  -Create NFT(completed)
+  -NFT list(completed)
+  -Update NFT(completed)
+  -Deactivate/Close NFT(completed)
   
-4.payment(yet to start)
-
+4. Comment CRUD
+  -Create comment(completed)
+  -List comment(yet to start)
+  -Update comment(yet to start)
+  -Deactivate/Close comment(yet to start)
+  
   
