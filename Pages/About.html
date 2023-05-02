@@ -154,37 +154,9 @@ We’re proud to be the largest marketplace for NFTs.
             </form>  
           </div>
        
+          <h2>Our user Reviews</h2>
           <ul class="comment-msg">
-            <!-- <li>
-            
-            <div class="userfeedbacks">
-              <div class="logo">
-                 <img src="../Assets/Images/anime-1.jpg" class="user-img" alt="sfsaf">
-                <h3>@sdfddf</h3>
-                <div class="like_cmnt_delete">
-                  <img src="../Assets/Images/edit.png" alt="edit">
-                  <img src="../Assets/Images/delete.png" alt="delete">
-                </div>
-
-              <div class="content">
-                <p>Hi, this is testing idfvhjlksdfhjiaf ndskfusdfuuia</p>
-              </div>
-          </li>
-
-            <li>
-            <div class="userfeedbacks">
-              <div class="logo">
-                 <img src="../Assets/Images/anime-1.jpg" class="user-img" alt="sfsaf">
-                <h3>@sdfddf</h3>
-                <div class="like_cmnt_delete">
-                  <img src="../Assets/Images/edit.png" alt="edit">
-                  <img src="../Assets/Images/delete.png" alt="delete">
-                </div>
-              <div class="content">
-                <p>Hi, this is testing idfvhjlksdfhjiaf ndskfusdfuuia</p>
-              </div>
-            
-          </li> -->
+      
 
           </ul>
     
@@ -193,36 +165,46 @@ We’re proud to be the largest marketplace for NFTs.
 
 <!-- <script src="../Assets/Js/Feedback.js"></script> -->
 <script>
+  let feedbackData  = JSON.parse(localStorage.getItem("user_feedbacks"));
+  let userData = JSON.parse(localStorage.getItem("userdetails"))
   function feedbacks() {
   let arr = [];
-  let feed_username = document.getElementById("f-username").value;
-  let feedback_email = document
-    .getElementById("f-email")
-    .value;
+  let feedback_email = JSON.parse(localStorage.getItem("user_data"))
     let feedback_id = Date.now();
   let feedbacks = document.getElementById("suggestion").value;
 
   let suggestion_details = {
-    feed_username,
     feedback_email,
     feedback_id,
     feedbacks
   };
-  if (localStorage.getItem("user-feedbacks")!= null) {
-    arr = JSON.parse(localStorage.getItem("user-feedbacks"))
+  if (feedbackData!== null) {
+    arr = feedbackData
   }
   arr.push(suggestion_details);
-  localStorage.setItem("user-feedbacks", JSON.stringify(arr));
+  localStorage.setItem("user_feedbacks", JSON.stringify(arr));
   console.log(arr);
 }
+
+let user_det = JSON.parse(localStorage.getItem("userdetail"));
+
+
+
+
+for (let i = 0; i < feedbackData.length; i++) {
+
+  
+let check_id = JSON.parse(localStorage.getItem("user_data") )
+let user = userData.find((e) =>e["e_mail"] === feedbackData[i]["feedback_email"] )
+console.log(user)
+
+
 let list = document.createElement("li");
+
+
 
 let head_div = document.createElement("div");
 list.append(head_div);
-
-let heading = document.createElement("h2");
-heading.innerText = "Our user Reviews";
-head_div.append(heading);
 
 let userfeedbacks = document.createElement("div");
 userfeedbacks.setAttribute("class", "userfeedbacks");
@@ -234,12 +216,12 @@ userfeedbacks.append(logo);
 
 let user_img = document.createElement("img");
 user_img.setAttribute("class", "user-img");
-user_img.setAttribute("src","../Assets/Images/anime-1.jpg");
+user_img.setAttribute("src",user.u_img);
 user_img.setAttribute("alt","userimg");
 logo.append(user_img);
 
 user_name = document.createElement("h3");
-user_name.innerText = "@jjjjj";
+user_name.innerText = "@" + user.u_name;
 logo.append(user_name);
 
 let like_cmnt_delete = document.createElement("div");
@@ -261,7 +243,7 @@ cmnt_content.setAttribute("class","content");
 like_cmnt_delete.append(cmnt_content);
 
 let content_para = document.createElement("p");
-content_para.innerText = "Hi, this is testing";
+content_para.innerText = user.feedbacks;
 cmnt_content.append(content_para);
 
 
@@ -269,7 +251,7 @@ cmnt_content.append(content_para);
 
 document.querySelector(".feed-whole-box").append(list);
 
-
+}
 
 
 </script>
