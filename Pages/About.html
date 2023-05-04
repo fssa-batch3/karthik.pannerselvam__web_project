@@ -192,7 +192,7 @@ let user_det = JSON.parse(localStorage.getItem("userdetail"));
 
 
 for (let i = 0; i < feedbackData.length; i++) {
-
+console.log();
   
 let check_id = JSON.parse(localStorage.getItem("user_data") )
 let user = userData.find((e) =>e["e_mail"] === feedbackData[i]["feedback_email"] )
@@ -228,6 +228,8 @@ let like_cmnt_delete = document.createElement("div");
 like_cmnt_delete.setAttribute("class","like_cmnt_delete");
 logo.append(like_cmnt_delete);
 
+
+
 let cmnt_edit = document.createElement("img");
 cmnt_edit.setAttribute("src","../Assets/Images/edit.png");
 cmnt_edit.setAttribute("alt","edit-btn");
@@ -243,7 +245,7 @@ cmnt_content.setAttribute("class","content");
 like_cmnt_delete.append(cmnt_content);
 
 let content_para = document.createElement("p");
-content_para.innerText = user.feedbacks;
+content_para.innerText = feedbackData[i]["feedbacks"];
 cmnt_content.append(content_para);
 
 

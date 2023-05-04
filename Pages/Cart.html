@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Assets/css/cart.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Shopping Cart</h1>
+
+    <div class="shopping-cart">
+      <div class="column-labels">
+        <label class="product-image">Image</label>
+        <label class="product-details">Product</label>
+        <label class="product-price">Price</label>
+        <label class="product-quantity">Quantity</label>
+        <label class="product-removal">Remove</label>
+        <label class="product-line-price">Total</label>
+      </div>
+
+      <!-- <div class="product">
+        <div class="product-image">
+          <img src="" />
+        </div>
+        <div class="product-details">
+          <div class="product-title">Dingo Dog Bones</div>
+          <p class="product-description">
+            The best dog bones of all time. Holy crap. Your dog will be begging
+            for these things! I got curious once and ate one myself. I'm a fan.
+          </p>
+        </div> -->
+      <!-- <div class="product-price">12.99</div>
+        <div class="product-quantity">
+          <input type="number" value="2" min="1" />
+        </div>
+        <div class="product-removal">
+          <button class="remove-product">Remove</button>
+        </div>
+        <div class="product-line-price">25.98</div>
+      </div> -->
+
+      <!-- <div class="totals">
+        <div class="totals-item">
+          <label>Subtotal</label>
+          <div class="totals-value" id="cart-subtotal">71.97</div>
+        </div>
+        <div class="totals-item">
+          <label>Tax (5%)</label>
+          <div class="totals-value" id="cart-tax">3.60</div>
+        </div>
+        <div class="totals-item">
+          <label>Shipping</label>
+          <div class="totals-value" id="cart-shipping">15.00</div>
+        </div>
+        <div class="totals-item totals-item-total">
+          <label>Grand Total</label>
+          <div class="totals-value" id="cart-total">90.57</div>
+        </div> -->
+      </div>
+
+      <!-- <button class="checkout">Checkout</button> -->
+    </div>
+    <script>
+      let whole_div = document.createElement("div");
+      whole_div.setAttribute("class", "product");
+
+      let product_img = document.createElement("div");
+      product_img.setAttribute("class", "product-image");
+      whole_div.append(product_img);
+
+      let img_src = document.createElement("img");
+      img_src.setAttribute("src", "https://s.cdpn.io/3/dingo-dog-bones.jpg");
+      product_img.append(img_src);
+
+      let product_details = document.createElement("div");
+      product_details.setAttribute("class", "product-details");
+      whole_div.append(product_details);
+
+      let product_heading = document.createElement("div");
+      product_heading.setAttribute("class", "product-title");
+      product_heading.innerText = "Dingo Dog Bones";
+      product_details.append(product_heading);
+
+      let product_description = document.createElement("p");
+      product_description.setAttribute("class", "product-description");
+      product_description.innerText = `The best dog bones of all time. Holy crap. Your dog will be begging
+            for these things! I got curious once and ate one myself. I'm a fan.`;
+      product_heading.append(product_description);
+
+      let product_price = document.createElement("div");
+      product_price.setAttribute("class", "product-price");
+      product_price.innerText = "12.99";
+      whole_div.append(product_price);
+
+      let product_quantity = document.createElement("div");
+      product_quantity.setAttribute("class", "product-quantity");
+      whole_div.append(product_quantity);
+
+      let input_type = document.createElement("input");
+      input_type.setAttribute("type", "number");
+      input_type.setAttribute("value", "1");
+      input_type.setAttribute("min", "1");
+      product_quantity.append(input_type);
+
+      let product_removal = document.createElement("div");
+      whole_div.append(product_removal);
+
+      let remove_button = document.createElement("button");
+      remove_button.setAttribute("class", "remove-product");
+      remove_button.innerText = "Remove";
+      product_removal.append(remove_button);
+
+      let total_amnt= document.createElement("div");
+      total_amnt.setAttribute("class","totals");
+      whole_div.append(total_amnt);
+
+      // <div class="totals-item">
+
+        let totals_item = document.createElement("div");
+        totals_item.setAttribute("class","totals-item");
+        total_amnt.append(totals_item);
+
+       // <label>Subtotal</label>
+       let label_subtot = document.createElement("label");
+       label_subtot.innerText="Subtotal"
+        totals_item.append(label_subtot);
+
+      // <div class="totals-value" id="cart-subtotal">71.97</div>
+        let tot_value = document.createElement("div");
+        tot_value.setAttribute("class","totals-value");
+        tot_value.setAttribute("id","cart-subtotal");
+        tot_value.innerText = "71.97"
+        totals_item.append(tot_value);
+
+         // <div class="totals-item">
+
+        let totals_item1 = document.createElement("div");
+        totals_item1.setAttribute("class","totals-item");
+        total_amnt.append(totals_item1);
+
+        // <label>Subtotal</label>
+       let label_subtot1 = document.createElement("label");
+       label_subtot1.innerText="Tax (5%)"
+        totals_item1.append(label_subtot1);
+
+
+
+      document.querySelector(".column-labels").append(whole_div);
+    </script>
+    <!-- <script src="../Assets/Js/cart.js"></script> -->
+  </body>
+</html>
