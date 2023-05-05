@@ -121,10 +121,10 @@ const url = window.location.search;
 console.log(url)
 const urlParams = new URLSearchParams(url)
 console.log(urlParams)
-const change = urlParams.get("name ")
+const change = urlParams.get("name")
 console.log(change)
 
-const use = details.find((details) => details["nftname"] === change)
+const use = details.find((details) => details["uuid"] === change)
 console.log(use)
 
 
@@ -184,7 +184,7 @@ console.log(use)
 
       p_name = document.createElement("h1");
       p_name.setAttribute("id","p-name");
-      p_name.innerText= "Samuraixsensastion";
+      p_name.innerText= use["nftname"];
       right_box.append(p_name);
 
       ownedby = document.createElement("p");
@@ -230,7 +230,7 @@ console.log(use)
       inner_box.append(p_price);
 
       nft_price= document.createElement("h3");
-      nft_price.innerText = "1.2684 ETH";
+      nft_price.innerText = use["p_price"];
       p_price.append(nft_price);
 
       btn_buy = document.createElement("button");
@@ -239,18 +239,53 @@ console.log(use)
       nft_price.append(btn_buy);
 
       btn_cart = document.createElement("button");
+      btn_cart.setAttribute("id","Add-to-cart");
       btn_cart.setAttribute("class","btn");
-      btn_cart.innerText = "Cart";
-      nft_price.append(btn_cart)
+      btn_cart.innerText = "Add to Cart"; 
+      nft_price.append(btn_cart);
 
 
-
+      
 
       
 
 
 
-      document.querySelector("div.whole-container").append(whole_box)
+      document.querySelector("div.whole-container").append(whole_box);
+
+
+
+
+
+      
+      document.getElementById("Add-to-cart").addEventListener("click",function (e) {
+        e.preventDefault();
+     
+
+
+        let arr=[]
+
+       
+
+        let logged_user = JSON.parse(localStorage.getItem("user_data"));
+        let p_uuid = change;
+
+        let obj={
+          logged_user,
+          p_uuid
+        }
+        
+        if(localStorage.getItem != null){
+          arr=JSON.parse(localStorage.getItem("cart_details"))
+        }
+
+        arr.push(obj);
+        console.log(obj)
+
+        localStorage.setItem("cart_details",JSON.stringify(arr))
+
+      })
+
     </script>
 </body>
 </html>

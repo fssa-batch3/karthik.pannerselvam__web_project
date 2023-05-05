@@ -13,7 +13,6 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--linear-gradient-1);
   background: #080710;
   display: flex;
 }

@@ -42,22 +42,22 @@
       </div> -->
 
       <!-- <div class="totals">
-        <div class="totals-item">
+        <!-- <div class="totals-item">
           <label>Subtotal</label>
           <div class="totals-value" id="cart-subtotal">71.97</div>
-        </div>
-        <div class="totals-item">
+        </div> -->
+        <!-- <div class="totals-item">
           <label>Tax (5%)</label>
           <div class="totals-value" id="cart-tax">3.60</div>
-        </div>
-        <div class="totals-item">
+        </div> -->
+        <!-- <div class="totals-item">
           <label>Shipping</label>
           <div class="totals-value" id="cart-shipping">15.00</div>
-        </div>
-        <div class="totals-item totals-item-total">
+        </div> -->
+        <!-- <div class="totals-item totals-item-total">
           <label>Grand Total</label>
           <div class="totals-value" id="cart-total">90.57</div>
-        </div> -->
+        </div> --> 
       </div>
 
       <!-- <button class="checkout">Checkout</button> -->
@@ -145,7 +145,35 @@
        label_subtot1.innerText="Tax (5%)"
         totals_item1.append(label_subtot1);
 
+        // <div class="totals-value" id="cart-tax">3.60</div>
+        let total_tax = document.createElement("div");
+        total_tax.innerText = "3.60";
+        total_tax.setAttribute("class","totals-value");
+        total_tax.setAttribute("id","cart-shipping");
+        totals_item1.append(total_tax);
 
+        // <div class="totals-item totals-item-total">
+
+          let totals_item3 = document.createElement("div");
+        totals_item3.setAttribute("class","totals-item totals-item-total");
+        total_amnt.append(totals_item3);
+
+        // <label>Grand TOtal</label>
+        let label_subtot2 = document.createElement("label");
+       label_subtot2.innerText="Grand Total";
+        totals_item3.append(label_subtot2);
+
+        // <div class="totals-value" id="cart-total">15.00</div>
+
+        let grand_total = document.createElement("div");
+        grand_total.setAttribute("class","totals-value");
+        grand_total.setAttribute("id","cart-total")
+        grand_total.innerText = "90.57"
+        totals_item3.append(grand_total);
+
+          
+        
+          
 
       document.querySelector(".column-labels").append(whole_div);
     </script>
