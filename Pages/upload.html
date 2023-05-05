@@ -99,18 +99,6 @@ document.getElementById("new-product").addEventListener("submit", function (even
   let all = [];
   all.push(obj)
 
-  // if (localStorage.getItem("new_card") !== null) {
-  //   all = JSON.parse(localStorage.getItem("new_card"));
-  //   all.push(obj);
-  //   console.log(all);
-  // }
-  // else{
-  
-
-  // all.push(obj);
-
-  // let art = localStorage.setItem("art", JSON.stringify(all));
-  // console.log(art)
     if (localStorage.getItem("art") === null) {
    localStorage.setItem("art",JSON.stringify(all));
   
