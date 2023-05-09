@@ -39,6 +39,19 @@
     - Expected Result:
         - The user can view the details of the selected nft.
 
+
+### Adding nft's to cart
+- Scenario 1: Successfully view nft details
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the product listing page.
+        3. Select a product/item to view its details.
+        4. After selecting it will show the product details  and Add to cart & Buy button.
+        5. After clicking Add to cart It will redirect to Cart page to checkout.
+        
+    - Expected Result:
+        - The user can add the products in the cart.
+
 ## Seller
 
 # Create an account for Seller
@@ -50,7 +63,7 @@
     - Expected Result:
         - The user is redirected to the login page.
         - 
-# Create an account for Sellere
+# Create an account for Seller
 
 - Scenario 1: Successfully create an account
     - Steps:
