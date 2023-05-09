@@ -13,6 +13,11 @@
   float: left;
   width: 10%;
 }
+.product-quantity input {
+  background-color: azure;
+  border-radius: 0.5rem;
+}
+
 .product-removal {
   float: left;
   width: 9%;
@@ -124,9 +129,9 @@ label {
   width: 40px;
 }
 
-.remove-product {
+.btn {
   border: 0;
-  padding: 4px 8px;
+  padding: 4px 4px;
   background-color: #c66;
   color: #fff;
   font-size: 12px;
@@ -172,5 +177,3 @@ label {
 .checkout:hover {
   background-color: #494;
 }
-
-/* Make adjustments for tablet */
