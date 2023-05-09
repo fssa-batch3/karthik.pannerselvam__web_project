@@ -70,7 +70,7 @@
               <a href="../Pages/FAQ's.html" class="navbar-link label-lg link:hover">FAQS</a>
             </li>
             <li>
-              <a href="../Pages/auction.html" class="navbar-link label-lg link:hover">My Auctions</a>
+              <a href="../Pages/Cart.html" class="navbar-link label-lg link:hover">My Cart</a>
             </li>
 
           </ul>
@@ -116,17 +116,23 @@
 
 
 let details= JSON.parse(localStorage.getItem("art"));
-console.log(details)
+
+let userdetails = JSON.parse(localStorage.getItem("userdetails"))
+// console.log(details)
 const url = window.location.search;
-console.log(url)
+// console.log(url)
 const urlParams = new URLSearchParams(url)
-console.log(urlParams)
+// console.log(urlParams)
 const change = urlParams.get("name")
-console.log(change)
+// console.log(change)
 
 const use = details.find((details) => details["uuid"] === change)
-console.log(use)
 
+let userName = userdetails.find((e)=> e["e_mail"] === details[0]["email"])
+
+// console.log(use)
+
+// console.log(userName , userdetails , details)
 
 
       let whole_box;
@@ -192,7 +198,7 @@ console.log(use)
       right_box.append(ownedby);
 
       s_name = document.createElement("span");
-      s_name.innerText = "Samurai"
+      s_name.innerText = userName["u_name"]
       s_name.setAttribute("id", "s-name");
       ownedby.append(s_name);
 
@@ -261,6 +267,7 @@ console.log(use)
       document.getElementById("Add-to-cart").addEventListener("click",function (e) {
         e.preventDefault();
      
+        
 
 
         let arr=[]
@@ -275,14 +282,18 @@ console.log(use)
           p_uuid
         }
         
-        if(localStorage.getItem != null){
+        if(localStorage.getItem("cart_details") != null){
           arr=JSON.parse(localStorage.getItem("cart_details"))
         }
 
         arr.push(obj);
-        console.log(obj)
+        console.log(obj,arr)
 
-        localStorage.setItem("cart_details",JSON.stringify(arr))
+        localStorage.setItem("cart_details",JSON.stringify(arr));
+
+        alert("Succesfully Added To Cart 🎉! Check Your Cart")
+
+         window.location.href = "../Pages/Cart.html"
 
       })
 

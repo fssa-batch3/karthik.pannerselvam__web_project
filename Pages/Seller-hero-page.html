@@ -133,7 +133,7 @@
         <section class="section hero" aria-label="home">
           <div class="container">
             <h1 class="headline-lg hero-title">
-              Discover rate collection or <span class="span">Arts & NFTs</span>
+              Discover rate collection of <span class="span">Arts & NFTs</span>
             </h1>
 
             <p class="section-text body-lg">
@@ -1193,6 +1193,14 @@
        console.log(element)
        list = document.createElement("li");
 
+       let user_details = JSON.parse(localStorage.getItem("userdetails"));
+console.log(user_details);
+let get_email = JSON.parse(localStorage.getItem("user_data"))
+console.log(get_email,user_details[1].e_mail);
+
+let get_obj = user_details.find((F) => F.e_mail == get_email)
+console.log(get_obj)
+
   //<div class="discover-card card">//
 
   discover_card_card = document.createElement("div");
@@ -1243,7 +1251,7 @@
 
   // <img class="img"> //
   img = document.createElement("img");
-  img.setAttribute("src", element["profile"]);
+  img.setAttribute("src", get_obj.user_img);
   img.setAttribute("class", "img");
   card_profile.append(img);
 
@@ -1251,7 +1259,7 @@
 
   username = document.createElement("a");
   username.setAttribute("class", "link:hover");
-  username.innerText = element["username"];
+  username.innerText = get_obj.u_name;
   card_profile.append(username);
 
   // <h3 class="title-sm card-title">

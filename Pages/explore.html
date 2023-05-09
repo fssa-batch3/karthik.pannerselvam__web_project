@@ -86,6 +86,9 @@
             <li>
               <a href="#" class="navbar-link label-lg link:hover">Explore</a>
             </li>
+            <li>
+              <a href="./Cart.html" class="navbar-link label-lg link:hover">My Cart</a>
+            </li>
             
           </ul>
         </nav>
@@ -1692,9 +1695,40 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
   <script>
+let user_details = JSON.parse(localStorage.getItem("userdetails"));
+console.log(user_details);
+let get_email = JSON.parse(localStorage.getItem("user_data"))
+
+
+
+console.log(get_email,user_details[1].e_mail);
+
+let get_obj = user_details.find((F) => F.e_mail == get_email)
+console.log(get_obj);
+ 
+
+let viewImage = document.createElement("img");
+viewImage.setAttribute("class","img1-cover");
+viewImage.setAttribute("width","40");
+viewImage.setAttribute("height","40");
+viewImage.setAttribute("alt","img1-cover");
+viewImage.setAttribute("id","view_image");
+viewImage.setAttribute("src",get_obj.user_img)
+
+document.querySelector(".img1-cover").remove();
+document.querySelector(".profil-btn a").append(viewImage);
+
+console.log(viewImage);
+
+
+
+
+
     let art = JSON.parse(localStorage.getItem("art"))
      for (let i = 0; i < art.length; i++) {
        const element = art[i];
+       let userName = user_details.find((e)=> e["e_mail"] === element["email"])
+       console.log(userName)
        list = document.createElement("li");
        // url params
 
@@ -1702,9 +1736,11 @@
        redirect.setAttribute("href", "pro-details.html?name=" + element["uuid"] );
        list.append(redirect);
 
+       console
+
        
 
-  //<div class="discover-card card">//
+  //<div class="discover-card card">//  
 
   discover_card_card = document.createElement("div");
   discover_card_card.setAttribute("class", "discover-card card");
@@ -1753,7 +1789,7 @@
 
   // <img class="img"> //
   img = document.createElement("img");
-  img.setAttribute("src", element["profile"]);
+  img.setAttribute("src", userName["user_img"]);
   img.setAttribute("class", "img");
   card_profile.append(img);
 
@@ -1761,7 +1797,7 @@
 
   username = document.createElement("a");
   username.setAttribute("class", "link:hover");
-  username.innerText = element["username"];
+  username.innerText = userName["u_name"];
   card_profile.append(username);
 
   // <h3 class="title-sm card-title">

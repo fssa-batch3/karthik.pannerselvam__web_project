@@ -19,7 +19,7 @@
     <div class="up-image">
       <img src="../Assets/Images/Art-2.jpeg"  width="250px" height="250px">
       <div class="geturl">
-        <input type="url" id="image" placeholder="Upload image link">
+        <input type="url" id="image" placeholder="Upload image link" pattern="https://.+">
       </div>
     </div>
     <div class="categories">
@@ -32,7 +32,7 @@
     </div>
     <div class="name">
       <h2>Name<sup>*</sup></h2>
-      <input type="text" id="nftname" placeholder="new nft for demo" />
+      <input type="text" id="nftname" placeholder="new nft for demo" pattern="[A-Za-z]{0-10}" />
     </div>
     <div>
       <h2>Price</h2>
@@ -72,6 +72,7 @@
 document.getElementById("new-product").addEventListener("submit", function (event) {
   event.preventDefault();
 
+  let Logged_email = JSON.parse(localStorage.getItem("user_data"));
 
 
   let image_url = document.getElementById("image");
@@ -93,7 +94,7 @@ document.getElementById("new-product").addEventListener("submit", function (even
   // updates["link"] = link;
   let id = crypto.randomUUID();
 
-  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id}
+  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id,email:Logged_email}
   console.log(obj);
 
   let all = [];
@@ -109,6 +110,8 @@ document.getElementById("new-product").addEventListener("submit", function (even
    tot.push(obj)
    localStorage.setItem("art",JSON.stringify(tot))
   }
+
+  
 });
   </script>
 </html>
