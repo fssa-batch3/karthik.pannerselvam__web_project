@@ -109,7 +109,8 @@ body {
   margin-left: 2rem;
 }
 .btn {
-  margin-left: 0.5rem;
+  margin-left: -2rem;
+  margin-top: 1rem;
 }
 button {
   padding: 10px 25px;
@@ -168,6 +169,8 @@ button {
 .biodata {
   font-size: 16px;
   left: 45px;
+  display: flex;
+  flex-direction: column;
 }
 .heading {
   color: hwb(0 100% 0%);

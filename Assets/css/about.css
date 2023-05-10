@@ -84,9 +84,16 @@ h3 {
   display: flex;
   justify-content: stretch;
 }
+.comment-whole {
+  margin-top: 10rem;
+}
+.reviews {
+  margin-left: 70rem;
+}
 .comment-msg {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 130rem;
   gap: 5rem;
   margin-left: 10rem;
 }

@@ -157,7 +157,7 @@
       <input type="text"  placeholder="Email or Phone" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="username" />
 
       <label for="password">Password</label>
-      <input type="password"  placeholder="Password" id="password" />
+      <input type="password"  placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
 
       <button class="bot" type="submit"> Log In</button>
 
@@ -190,11 +190,11 @@ event.preventDefault()
     // arr.push(phone[i].e_mail)
     window.localStorage.setItem("user_data",JSON.stringify(phone[i].e_mail))
     if (phone[i].role=="seller") {
-      alert("successfully logged In");
+      alert("successfully logged In as a seller");
     window.location.href = "../pages/seller-hero-page.html";
     
    }else if(phone[i].role == "user"){
-    alert("success logged In");
+    alert("success logged In as a customer");
     window.location.href = "../Pages/hero-main.html";
    }
 } 
