@@ -65,10 +65,8 @@ body {
   height: 420px;
   width: 300px;
   background-color: rgba(255, 255, 255, 0.13);
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 60%;
-  left: 14.5rem;
+  margin-left: 2.3rem;
+  margin-top: -4rem;
   border-radius: 10px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -76,26 +74,31 @@ body {
   padding: 50px 35px;
 }
 
-.profile-img {
+/* .profile-img {
   border: 3px solid white;
-  border-radius: 4rem;
+  border-radius: 60%;
   width: 80px;
   height: 80px;
   margin-left: 7rem;
-  position: relative;
-  bottom: 80px;
+  margin-top: -10rem;
+} */
+
+.bottom-div img {
+  border: 1px solid white;
+  margin-left: 7rem;
+  margin-top: -10rem;
+  width: 6rem;
+  border-radius: 50%;
 }
+
 .user_email {
   bottom: 60px;
-  position: relative;
   color: rgb(169, 182, 193);
   margin-left: 5.5rem;
 }
 .user_name {
-  bottom: 60px;
-  position: relative;
   color: rgb(241, 244, 245);
-  margin-left: 4rem;
+  margin-left: 1rem;
 }
 .facebook,
 .instagram {

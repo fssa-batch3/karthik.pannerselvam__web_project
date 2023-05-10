@@ -5,9 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../Assets/css/upload.css" />
+    <link rel="stylesheet" href="../Assets/css/style.css">
     <title>Upload</title>
   </head>
-  <body>
+  <body> <header class="header" data-header>
+    <div class="container">
+      
+        <img
+          src="../Assets/Images/logo.png"
+          width="126"
+          height="38"
+          alt="home"
+          class="logo"
+        />
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="../Pages/hero-main.html" class="navbar-link label-lg link:hover">Home</a>
+          </li>
+
+          <li>
+            <a href="../Pages/explore.html" class="navbar-link label-lg link:hover">Explore</a>
+          </li>
+
+          <li>
+            <a href="../Pages/FAQ's.html" class="navbar-link label-lg link:hover">FAQS</a>
+          </li>
+
+        </ul>
+      </nav>
+
+        <button 
+          class="btn-icon profil-btn"
+          aria-label="Metalink account: naruto"
+        >
+        <a href="profile.html">
+          <img
+            src="../Assets/Images/naruto.jpg" 
+            width="40"
+            height="50"
+            alt="Fiona doe"
+            class="img1-cover"
+          />
+        </a>
+        </button>
+
+        <button
+          class="nav-toggle-btn"
+          aria-label="menu toggle"
+          data-nav-toggler
+        >
+        
+        </button>
+      </div>
+    </div>
+
+    <!-- Upload section -->
+  </header>
     <form class="upside" id ="new-product">
       <h1>Create new item</h1>
       <h3>Image, Video, Audio, or 3D Model</h3>
@@ -19,7 +74,7 @@
     <div class="up-image">
       <img src="../Assets/Images/Art-2.jpeg"  width="250px" height="250px">
       <div class="geturl">
-        <input type="url" id="image" placeholder="Upload image link" pattern="https://.+">
+        <input type="url" id="image" class="Input_details"   placeholder="Upload image link" pattern="[A-Za-z]{0-16}>
       </div>
     </div>
     <div class="categories">
@@ -32,11 +87,11 @@
     </div>
     <div class="name">
       <h2>Name<sup>*</sup></h2>
-      <input type="text" id="nftname" placeholder="new nft for demo" pattern="[A-Za-z]{0-10}" />
+      <input type="text" id="nftname" class="Input_details" placeholder="new nft for demo" pattern="[A-Za-z]{0-10}" />
     </div>
     <div>
       <h2>Price</h2>
-      <input type="text" id="price" pattern="[0-9]{2}" >
+      <input type="text" class="Input_details" id="price" pattern="[0-9]{2}" >
     </div>
     <div class="link">
       <h2>External Link</h2>
@@ -48,6 +103,7 @@
       <input
         type="url"
         id="external-link"
+        class="Input_details"
         placeholder="https://www.youtube.com/"
       />
     </div>
@@ -62,7 +118,8 @@
       </p>
       <textarea id="description"> </textarea>
       <div>
-        <button type="submit" id="update" href="./upload.html" >Upload</button>
+        <button type="submit" class="btn
+        " id="update" href="./upload.html" >Upload</button>
       </div>
     </form>
   </body>
