@@ -13,8 +13,10 @@
   box-sizing: border-box;
 }
 body {
-  background: #080710;
-  display: flex;
+  width: 900px;
+  height: 900px;
+  background-image: var(--linear-gradient-1);
+  border-radius: var(--radius-circle);
 }
 .logo img {
   margin: 2rem;
@@ -30,13 +32,9 @@ body {
 
 form {
   display: flex;
-  height: 620px;
-  width: 550px;
+  height: 720px;
+  width: 650px;
   background-color: rgba(255, 255, 255, 0.13);
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -78,6 +76,12 @@ input {
 ::placeholder {
   color: #e5e5e5;
 }
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .color {
   margin-top: 25px;
   width: 50%;
@@ -87,7 +91,6 @@ input {
   font-size: 16px;
   font-weight: 600;
   border-radius: 5px;
-  margin-left: 2rem;
 }
 .delete {
   width: 50%;
@@ -97,7 +100,6 @@ input {
   font-size: 16px;
   font-weight: 600;
   border-radius: 5px;
-  margin-left: 2rem;
 }
 .color:hover {
   background-color: #1845ad;

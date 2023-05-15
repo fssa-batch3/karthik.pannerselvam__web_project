@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../Assets/css/upload.css" />
     <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="./Seller-hero-page.html">
     <title>Upload</title>
   </head>
-  <body> <header class="header" data-header>
+  <body>
+     <header class="header" data-header>
     <div class="container">
       
         <img
@@ -36,7 +38,7 @@
         </ul>
       </nav>
 
-        <button 
+        <!-- <button 
           class="btn-icon profil-btn"
           aria-label="Metalink account: naruto"
         >
@@ -49,15 +51,9 @@
             class="img1-cover"
           />
         </a>
-        </button>
+        </button> -->
 
-        <button
-          class="nav-toggle-btn"
-          aria-label="menu toggle"
-          data-nav-toggler
-        >
-        
-        </button>
+      
       </div>
     </div>
 
@@ -70,11 +66,11 @@
         File types supported: JPG,PNG,GIF,SVG,MP4,WEBM,MP3,WAV,OGG,GLB,GLTF. Max
         size: 40MB
       </p>
-    </div>
     <div class="up-image">
       <img src="../Assets/Images/Art-2.jpeg"  width="250px" height="250px">
+      <form>
       <div class="geturl">
-        <input type="url" id="image" class="Input_details"   placeholder="Upload image link" pattern="[A-Za-z]{0-16}>
+        <input type="url" id="image" class="Input_details"   placeholder="Upload image link" required="enter a valide link" >
       </div>
     </div>
     <div class="categories">
@@ -87,26 +83,13 @@
     </div>
     <div class="name">
       <h2>Name<sup>*</sup></h2>
-      <input type="text" id="nftname" class="Input_details" placeholder="new nft for demo" pattern="[A-Za-z]{0-10}" />
+      <input type="text" id="nftname" class="Input_details" placeholder="new nft for demo" pattern="[A-Za-z]{0-16}" required title="Enter only alphabets only" />
     </div>
     <div>
       <h2>Price</h2>
-      <input type="text" class="Input_details" id="price" pattern="[0-9]{2}" >
+      <input type="text" class="Input_details" id="price" pattern="[0-9]{0-3}" required="Enter your price for the product" >
     </div>
-    <div class="link">
-      <h2>External Link</h2>
-      <p>
-        Nftguru will include a link to this URL on this item's detail page, so
-        that users can click to learn more about it. You are welcome to link to
-        your own webpage with more details.
-      </p>
-      <input
-        type="url"
-        id="external-link"
-        class="Input_details"
-        placeholder="https://www.youtube.com/"
-      />
-    </div>
+    
 
 
     <div class="link">
@@ -116,7 +99,8 @@
         that users can click to learn more about it. You are welcome to link to
         your own webpage with more details.
       </p>
-      <textarea id="description"> </textarea>
+      <textarea id="description" required="Write the description for your product
+      "> </textarea>
       <div>
         <button type="submit" class="btn
         " id="update" href="./upload.html" >Upload</button>
@@ -125,6 +109,39 @@
   </body>
 
   <script>
+     let userdatas = JSON.parse(localStorage.getItem("userdetails"));
+    console.log(userdatas);
+
+    let user_data = JSON.parse(localStorage.getItem("user_data"));
+    console.log(user_data);
+
+    let user = userdatas.find((e) => e["e_mail"] == user_data);
+
+// Create button element
+const button = document.createElement('button');
+button.classList.add('btn-icon', 'profil-btn');
+button.setAttribute('aria-label', 'Metalink account: naruto');
+
+
+// Create link element
+const link = document.createElement('a');
+link.setAttribute('href', 'profile.html');
+
+// Create image element
+const image = document.createElement('img');
+image.setAttribute('src', userdatas.user_img);
+image.setAttribute('width', '40');
+image.setAttribute('height', '50');
+image.setAttribute('alt', 'Fiona doe');
+image.classList.add('img1-cover');
+
+// Append the image element to the link element
+link.appendChild(image);
+
+// Append the link element to the button element
+button.appendChild(link);
+
+document.querySelector(".container").append(button)
 
 document.getElementById("new-product").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -159,6 +176,7 @@ document.getElementById("new-product").addEventListener("submit", function (even
 
     if (localStorage.getItem("art") === null) {
    localStorage.setItem("art",JSON.stringify(all));
+   window.location.href="./Seller-hero-page.html"
   
   }
   else{

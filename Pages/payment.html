@@ -3,89 +3,212 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="../Assets/css/payment.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Assets/css/payment.css" />
     <title>payment</title>
   </head>
   <body>
-    <div class="whole-box">
-      <div class="pro-img">
-        <img src="../Assets/Images/anime-1.jpg" alt="sdvd" />
-      </div>
-      <div class="total">
-        <h4>Total Price</h4>
-        <h3>$232</h3>
-        <p>Price include taxes and all costs</p>
-      </div>
-
-
-          <div class="input-container">
-            <input id="bike" type="radio" name="radio" />
-            <div class="radio-tile">
-              <img src="../Assets/Images/credit-card.png" alt="card" />
-              <label for="bike">Credit/ Debit Card</label>
-            </div>
-          </div>
-          <div class="left">
-            <label for="Firstname">Cardholder Name</label>
-            <input type="text" id="f-name" />
-            <div class="creditCardForm">
-                <div class="heading">
-                    <h1>Confirm Purchase</h1>
-                </div>
-                <div class="payment">
-                    <form>
-                        <div class="form-group owner">
-                            <label for="owner">Owner</label>
-                            <input type="text" class="form-control" id="owner">
-                        </div>
-                        <div class="form-group CVV">
-                            <label for="cvv">CVV</label>
-                            <input type="text" class="form-control" id="cvv">
-                        </div>
-                        <div class="form-group" id="card-number-field">
-                            <label for="cardNumber">Card Number</label>
-                            <input type="text" class="form-control" id="cardNumber">
-                        </div>
-                        <div class="form-group" id="expiration-date">
-                            <label>Expiration Date</label>
-                            <select>
-                                <option value="01">January</option>
-                                <option value="02">February </option>
-                                <option value="03">March</option>
-                                <option value="04">April</option>
-                                <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
-                            </select>
-                            <select>
-                                <option value="16"> 2016</option>
-                                <option value="17"> 2017</option>
-                                <option value="18"> 2018</option>
-                                <option value="19"> 2019</option>
-                                <option value="20"> 2020</option>
-                                <option value="21"> 2021</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="credit_cards">
-                            <img src="assets/images/visa.jpg" id="visa" alt="visa">
-                            <img src="assets/images/mastercard.jpg" id="mastercard" alt="card_img">
-                            <img src="assets/images/amex.jpg" id="amex" alt="img">
-                        </div>
-                        <div class="form-group" id="pay-now">
-                            <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-          </div>
+    <!-- <section id="left">
+        <div id="head">
+          <h1>Life has great moments</h1>
+          <p>Enjoy them with music!</p>
         </div>
-      </div>
-    </div>
+        <h3>Only 9.99$</h3>
+      </section>
+      <section id="right">
+        <h1>Purchase</h1>
+        <form action="#">
+          <div id="form-card" class="form-field">
+            <label for="cc-number">Card number:</label>
+            <input
+              id="cc-number"
+              maxlength="16"
+              placeholder="1111 2222 3333 4444"
+              required
+            />
+          </div>
+
+          <div id="form-date" class="form-field">
+            <label for="expiry-month">Expiry date:</label>
+            <div id="date-val">
+              <select id="expiry-month" required>
+                <option
+                  id="trans-label_month"
+                  value=""
+                  default="default"
+                  selected="selected"
+                >
+                  Month
+                </option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <select id="expiry-year" required>
+                <option
+                  id="trans-label_year"
+                  value=""
+                  default=""
+                  selected="selected"
+                >
+                  Year
+                </option>
+                <option value="2018">18</option>
+                <option value="2019">19</option>
+                <option value="2020">20</option>
+                <option value="2021">21</option>
+                <option value="2022">22</option>
+                <option value="2023">23</option>
+                <option value="2024">24</option>
+                <option value="2025">25</option>
+                <option value="2026">26</option>
+                <option value="2027">27</option>
+                <option value="2028">28</option>
+                <option value="2029">29</option>
+                <option value="2030">30</option>
+                <option value="2031">31</option>
+                <option value="2032">32</option>
+                <option value="2033">33</option>
+                <option value="2034">34</option>
+                <option value="2035">35</option>
+                <option value="2036">36</option>
+                <option value="2037">37</option>
+                <option value="2038">38</option>
+                <option value="2039">39</option>
+                <option value="2040">40</option>
+                <option value="2041">41</option>
+                <option value="2042">42</option>
+                <option value="2043">43</option>
+                <option value="2044">44</option>
+                <option value="2045">45</option>
+                <option value="2046">46</option>
+                <option value="2047">47</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="form-sec-code" class="form-field">
+            <label for="sec-code">Security code:</label>
+            <input type="password" maxlength="3" placeholder="123" required />
+          </div>
+
+          <button type="submit">Proceed to pay</button>
+        </form>
+      </section> -->
+    <script>
+      let main = document.createElement("main");
+      main.setAttribute("id", "main");
+
+      // Create the left section
+      const leftSection = document.createElement("section");
+      leftSection.setAttribute("id", "left");
+      main.append(leftSection);
+
+      // Create the header div and its content
+      const headDiv = document.createElement("div");
+      headDiv.setAttribute("id", "head");
+      leftSection.append(headDiv);
+
+      const header1 = document.createElement("h1");
+      header1.textContent = "eDIT";
+      headDiv.append(header1);
+
+      // Create the h3 element
+      const h3 = document.createElement("h3");
+      h3.textContent = "Only 9.99$";
+      leftSection.append(h3);
+
+      // Create the right section
+      const rightSection = document.createElement("section");
+      rightSection.setAttribute("id", "right");
+      main.append(rightSection);
+
+      // Create the h1 element
+      const h1 = document.createElement("h1");
+      h1.textContent = "Purchase";
+      rightSection.append(h1);
+
+      // Create the form element
+      const form = document.createElement("form");
+      form.setAttribute("action", "#");
+      rightSection.append(form);
+
+      // Create the card number field
+      const formCardDiv = document.createElement("div");
+      formCardDiv.setAttribute("id", "form-card");
+      formCardDiv.setAttribute("class", "form-field");
+      form.append(formCardDiv);
+
+      const cardNumberLabel = document.createElement("label");
+      cardNumberLabel.setAttribute("for", "cc-number");
+      cardNumberLabel.textContent = "Card number:";
+      formCardDiv.append(cardNumberLabel);
+
+      const cardNumberInput = document.createElement("input");
+      cardNumberInput.setAttribute("id", "cc-number");
+      cardNumberInput.setAttribute("maxlength", "19");
+      cardNumberInput.setAttribute("placeholder", "1111 2222 3333 4444");
+      cardNumberInput.setAttribute("required", true);
+      formCardDiv.append(cardNumberInput);
+
+      // Create the expiry date field
+      const formDateDiv = document.createElement("div");
+      formDateDiv.setAttribute("id", "form-date");
+      formDateDiv.setAttribute("class", "form-field");
+      main.append(formDateDiv);
+
+      const expiryDateLabel = document.createElement("label");
+      expiryDateLabel.setAttribute("for", "expiry-month");
+      expiryDateLabel.textContent = "Expiry date:";
+      formDateDiv.append(expiryDateLabel);
+
+      const dateValDiv = document.createElement("div");
+      dateValDiv.setAttribute("id", "date-val");
+      formDateDiv.append(dateValDiv);
+
+      const expiryMonthSelect = document.createElement("select");
+      expiryMonthSelect.setAttribute("id", "expiry-month");
+      expiryMonthSelect.setAttribute("required", true);
+      const monthOptionDefault = document.createElement("option");
+      monthOptionDefault.setAttribute("id", "trans-label_month");
+      monthOptionDefault.setAttribute("value", "");
+      monthOptionDefault.setAttribute("default", "");
+      monthOptionDefault.setAttribute("selected", "selected");
+      monthOptionDefault.textContent = "Month";
+      const monthOption1 = document.createElement("option");
+      monthOption1.setAttribute("value", "1");
+      monthOption1.textContent = "01";
+      // ... Create options for other months here
+      expiryMonthSelect.append(monthOptionDefault);
+      expiryMonthSelect.append(monthOption1);
+      // ... Append other options to the expiry month select element here
+      const expiryYearSelect = document.createElement("select");
+      expiryYearSelect.setAttribute("id", "expiry-year");
+      expiryYearSelect.setAttribute("required", true);
+      const yearOptionDefault = document.createElement("option");
+      yearOptionDefault.setAttribute("id", "trans-label_year");
+      yearOptionDefault.setAttribute("value", "");
+      yearOptionDefault.setAttribute("default", "");
+      yearOptionDefault.setAttribute("selected", "selected");
+      yearOptionDefault.textContent = "Year";
+      const yearOption2018 = document.createElement("option");
+      yearOption2018.setAttribute("value", "2018");
+      yearOption2018.textContent = "18";
+      // ... Create options for other years here
+      expiryYearSelect.append(yearOptionDefault);
+      expiryYearSelect.append(yearOption2018);
+      // ... Append other options to the expiry year select
+
+      document.querySelector("body").append(main);
+    </script>
   </body>
 </html>

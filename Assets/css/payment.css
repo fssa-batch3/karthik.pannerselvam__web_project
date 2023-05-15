@@ -1,159 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
+:root {
+  --gradient: linear-gradient(
+    135deg,
+    rgba(91, 36, 122, 0.45) 0%,
+    rgba(27, 206, 223, 0.55) 100%
+  );
+  --shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  --primary: #4183d7;
+  --secondary: #66cc99;
+}
+
+html,
 body {
-  background-color: #1e2b35;
-}
-.whole-box {
-  width: 800px;
-  height: 650px;
-  background-color: whitesmoke;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radio-tile-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.input-container {
-  position: relative;
-  height: 7rem;
-  width: 12rem;
-  margin: 3rem;
-}
-
-.input-container input {
-  position: absolute;
-  height: 100%;
   width: 100%;
+  height: 100%;
   margin: 0;
-  cursor: pointer;
-  z-index: 2;
-  opacity: 0;
+  padding: 0;
 }
 
-.input-container .radio-tile {
+body {
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+
+  background: linear-gradient(#e6e6e6, #bbbbbb);
+
+  font-family: "Raleway", sans-serif;
+}
+
+#main {
+  position: relative;
+  width: 650px;
+  height: 330px;
+
+  left: 30px;
+
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+
+  background-color: white;
+}
+
+#left {
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+
   height: 100%;
-  border: 2px solid blueviolet;
-  border-radius: 8px;
-  transition: all 300ms ease;
-}
+  width: 40%;
 
-.input-container label {
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+  padding: 5px 25px;
 
-input:checked + .radio-tile {
-  background-color: rgba(176, 82, 171, 0.609);
-  box-shadow: 0 0 12px black;
-  transform: scale(1.1);
-}
+  box-shadow: var(--shadow);
 
-input:hover + .radio-tile {
-  box-shadow: 0 0 12px #1e2b35;
-}
-
-input:checked + .radio-tile ion-icon,
-input:checked + .radio-tile label {
-  color: white;
-}
-.left {
   display: flex;
-  flex-direction: column;
-}
-.card-num {
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
-.creditCardForm {
-  max-width: 700px;
-  background-color: #fff;
-  margin: 100px auto;
-  overflow: hidden;
-  padding: 25px;
-  color: #4c4e56;
+#left #head {
+  opacity: 0.95;
 }
-.creditCardForm label {
+
+#right {
+  position: absolute;
+  width: calc(60% - 40px);
+  height: 100%;
+  top: 0;
+  left: 40%;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding-left: 20px;
+}
+
+#right form {
+  display: flex;
+  flex-flow: column nowrap;
+
   width: 100%;
-  margin-bottom: 10px;
 }
-.creditCardForm .heading h1 {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  color: #4c4e56;
-}
-.creditCardForm .payment {
-  float: left;
-  font-size: 18px;
-  padding: 10px 25px;
-  margin-top: 20px;
+
+#right form input,
+#right form select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  border: none;
+  border-bottom: 1.5px solid #ccc;
+
+  padding: 5px;
+  margin-top: 2.5px;
   position: relative;
 }
-.creditCardForm .payment .form-group {
-  float: left;
-  margin-bottom: 15px;
+
+#right form .form-field {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  margin-bottom: 12.5px;
 }
-.creditCardForm .payment .form-control {
-  line-height: 40px;
-  height: auto;
-  padding: 0 16px;
+
+#right form #date-val {
+  display: flex;
+  justify-content: space-between;
 }
-.creditCardForm .owner {
-  width: 63%;
-  margin-right: 10px;
+
+#right form #date-val select {
+  width: 45%;
 }
-.creditCardForm .CVV {
-  width: 35%;
-}
-.creditCardForm #card-number-field {
-  width: 100%;
-}
-.creditCardForm #expiration-date {
-  width: 49%;
-}
-.creditCardForm #credit_cards {
-  width: 50%;
-  margin-top: 25px;
-  text-align: right;
-}
-.creditCardForm #pay-now {
-  width: 100%;
-  margin-top: 25px;
-}
-.creditCardForm .payment .btn {
-  width: 100%;
-  margin-top: 3px;
-  font-size: 24px;
-  background-color: #2ec4a5;
+
+#right form button[type="submit"] {
+  background: linear-gradient(135deg, --primary 0%, --secondary 100%);
+  padding: 5px;
+  border: none;
+  border-radius: 50px;
   color: white;
+  font-weight: 400;
+  font-size: 12pt;
+  margin-top: 10px;
 }
-.creditCardForm .payment select {
-  padding: 10px;
-  margin-right: 15px;
-}
-.transparent {
-  opacity: 0.2;
-}
-@media (max-width: 650px) {
-  .creditCardForm .owner,
-  .creditCardForm .CVV,
-  .creditCardForm #expiration-date,
-  .creditCardForm #credit_cards {
-    width: 100%;
-  }
-  .creditCardForm #credit_cards {
-    text-align: left;
-  }
+
+#right form button[type="submit"]:hover {
+  background: transparent;
+  box-shadow: 0 0 0 3px var(--primary);
+  color: var(--primary);
 }

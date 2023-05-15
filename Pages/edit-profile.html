@@ -81,13 +81,13 @@
 
       <div class="left">
       <label for="Firstname">First Name</label>
-      <input type="text"  id="f-name" />
+      <input type="text"  id="f-name" pattern="[A-Za-z]{0-10}" />
 
       <label for="lastname">Lastname</label>
-      <input type="text"  id="l-name" />
+      <input type="text"  id="l-name" pattern="[A-Za-z]{0-10}"/>
 
       <label for=" E-mail">E-mail</label>
-      <input type="text"  id="mail-id" />
+      <input type="text"  id="mail-id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
 
       <label for="phone-number">phone-number</label>
       <input type="ph-no" id="ph-no">
@@ -108,20 +108,20 @@
       </select>     
 
       <label for="Bio">Bio</label>
-      <input type="text" id="User-bio">
+      <input type="text" required="Enter about yourself" id="User-bio">
 
       <label for="User_img">Upload Image Link</label>
-      <input type="text" id="User-img">
+      <input type="url" required="Upload your image as a link" id="User-img">
 
       <label for="location">location</label>
-      <input type="text" id="u-location">
+      <input type="text"  required="" id="u-location">
 
       <label for="language">Language</label>
       <input type="text" id="u-language">
-
+<div class="buttons">
       <button class="color" type="submit">Save Changes</button>
       <button class="delete" id="delete" >Delete User</button>
-      
+    </div>
     </div>
 
     

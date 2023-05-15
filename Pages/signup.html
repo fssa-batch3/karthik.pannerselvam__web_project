@@ -282,7 +282,6 @@
         } else {
           let owner = window.localStorage.getItem("userdetails");
           let json = JSON.parse(owner);
-          console.log(userdata.f_name);
           json.push(userdata);
           window.localStorage.setItem("userdetails", JSON.stringify(json));
           alert("User successfuly added");

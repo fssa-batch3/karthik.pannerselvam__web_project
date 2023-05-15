@@ -1,3 +1,16 @@
+:root {
+  --linear-gradient-1: linear-gradient(
+    to top left,
+    hsla(0, 72%, 51%, 0.4) 0%,
+    hsla(262, 83%, 58%, 0.4)
+  );
+}
+body {
+  width: none;
+  height: 900px;
+  background-image: var(--linear-gradient-1);
+  border-radius: var(--radius-circle);
+}
 .product-image {
   width: 50%;
 }
@@ -89,6 +102,12 @@ body {
 }
 .shopping-cart {
   margin-top: 25rem;
+  height: 520px;
+  background-color: rgba(49, 24, 24, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 h1 {

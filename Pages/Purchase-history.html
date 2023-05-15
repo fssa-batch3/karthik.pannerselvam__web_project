@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Assets/css/cart.css" />
+    <link rel="stylesheet" href="../Assets/css/purchase-history.css">
     <link rel="stylesheet" href="../Assets/css/style.css">
-    <title>Cart page</title>
+    <title>My Purchase history</title>
   </head>
   <body>
-
-    <header class="header" data-header>
+    <header class="header">
       <div class="container">
         <a href="../Pages/hero-main.html">
           <img
@@ -61,152 +60,189 @@
           </a>
           </button>
 
+          <button
+            class="nav-toggle-btn"
+            aria-label="menu toggle"
+            data-nav-toggler
+          >
+            <ion-icon
+              name="menu-outline"
+              aria-hidden="true"
+              class="default-icon"
+            ></ion-icon>
+
+            <ion-icon
+              name="close-outline"
+              aria-hidden="true"
+              class="active-icon"
+            ></ion-icon>
+          </button>
         </div>
       </div>
     </header>
- 
-    <div class="shopping-cart">
-      <div class="column-labels">
-        <label class="product-image">Image</label>
-        <label class="product-details">Product</label>
-        <label class="product-price">Price</label>
-        <label class="product-quantity">Quantity</label>
-        <label class="product-removal">Remove</label>
-        <label class="product-line-price">Total</label>
-      </div>
 
-      </div>
+      <h1 class="hero-title">
+        <span class="span">My order History</span>
+     </h1>  
 
-      <button class="checkout btn" onclick="purchase()">Checkout</button>
+     <!-- <div class="History-name">
+      <div class="order-Synopsis">
+
+    <div class="Synopsis-text">
+      <p>s.no</p>
     </div>
+
+    <div class="Synopsis-text">
+      <p>NFT Image</p>
+    </div>
+
+    <div class="Synopsis-text">
+      <p>NFT Price</p>
+    </div>
+
+    <div class="Synopsis-text">
+      <p>Order Summary</p>
+    </div>
+
+    <div class="Synopsis-text">
+      <p>Date Of Purchase</p>
+    </div>
+
+  </div>
+
+  <div class="p-lists">
+    <div class="p-row">
+      <p>1.</p>
+    </div>
+    <div class="p-row">
+      <img src="../Assets/Images/anime-1.jpg" alt="p-img">
+    </div>
+    <div class="p-row">
+      <p>$25</p>
+    </div>
+    <div class="p-row">
+      <p>This item is bought by this user  & with this card</p>
+    </div>
+    <div class="p-row">
+      <p>25-04-2023</p>
+    </div>
+  </div>
+     </div> -->
+
     <script>
-             let cart = JSON.parse(localStorage.getItem("cart_details"));
-
-for (let i = 0; i < cart.length; i++) {
-  
-
-
-      let whole_div = document.createElement("div");
-      whole_div.setAttribute("class", "product");
-
-      let product_img = document.createElement("div");
-      product_img.setAttribute("class", "product-image");
-      whole_div.append(product_img);
-
-      let img_src = document.createElement("img");
-      img_src.setAttribute("src", cart[i]["p_img"]);
-      product_img.append(img_src);
-
-      let product_details = document.createElement("div");
-      product_details.setAttribute("class", "product-details");
-      whole_div.append(product_details);
-
-      let product_heading = document.createElement("div");
-      product_heading.setAttribute("class", "product-title");
-      product_heading.innerText = cart[i]["nft_name"];
-      product_details.append(product_heading);
-
-      // let product_description = document.createElement("p");
-      // product_description.setAttribute("class", "product-description");
-      // product_description.innerText = `The best dog bones of all time. Holy crap. Your dog will be begging
-      //       for these things! I got curious once and ate one myself. I'm a fan.`;
-      // product_heading.append(product_description);
-
-      let product_price = document.createElement("div");
-      product_price.setAttribute("class", "product-price");
-      product_price.innerText = cart[i]["p_price"]
-      whole_div.append(product_price);
-
-      let product_quantity = document.createElement("div");
-      product_quantity.setAttribute("class", "product-quantity");
-      whole_div.append(product_quantity);
-
-      let input_type = document.createElement("input");
-      input_type.setAttribute("type", "number");
-      input_type.setAttribute("value", "1");
-      input_type.setAttribute("min", "1");
-      product_quantity.append(input_type);
-
-      let product_removal = document.createElement("div");
-      whole_div.append(product_removal);
-
-      let remove_button = document.createElement("button");
-      remove_button.setAttribute("class", "btn");
-      remove_button.innerText = "Remove";
-      product_removal.append(remove_button);
-
-      let total_amnt= document.createElement("div");
-      total_amnt.setAttribute("class","totals");
-      whole_div.append(total_amnt);
-
-      // <div class="totals-item">
-
-        let totals_item = document.createElement("div");
-        totals_item.setAttribute("class","totals-item");
-        total_amnt.append(totals_item);
-
-       // <label>Subtotal</label>
-       let label_subtot = document.createElement("label");
-       label_subtot.innerText="Subtotal"
-        totals_item.append(label_subtot);
-
-      // <div class="totals-value" id="cart-subtotal">71.97</div>
-        let tot_value = document.createElement("div");
-        tot_value.setAttribute("class","totals-value");
-        tot_value.setAttribute("id","cart-subtotal");
-        tot_value.innerText = "71.97"
-        totals_item.append(tot_value);
-
-         // <div class="totals-item">
-
-        let totals_item1 = document.createElement("div");
-        totals_item1.setAttribute("class","totals-item");
-        total_amnt.append(totals_item1);
-
-        // <label>Subtotal</label>
-       let label_subtot1 = document.createElement("label");
-       label_subtot1.innerText="Tax (5%)"
-        totals_item1.append(label_subtot1);
-
-        // <div class="totals-value" id="cart-tax">3.60</div>
-        let total_tax = document.createElement("div");
-        total_tax.innerText = "3.60";
-        total_tax.setAttribute("class","totals-value");
-        total_tax.setAttribute("id","cart-shipping");
-        totals_item1.append(total_tax);
-
-        // <div class="totals-item totals-item-total">
-
-          let totals_item3 = document.createElement("div");
-        totals_item3.setAttribute("class","totals-item totals-item-total");
-        total_amnt.append(totals_item3);
-
-        // <label>Grand TOtal</label>
-        let label_subtot2 = document.createElement("label");
-       label_subtot2.innerText="Grand Total";
-        totals_item3.append(label_subtot2);
-
-        // <div class="totals-value" id="cart-total">15.00</div>
-
-        let grand_total = document.createElement("div");
-        grand_total.setAttribute("class","totals-value");
-        grand_total.setAttribute("id","cart-total")
-        grand_total.innerText = "90.57"
-        totals_item3.append(grand_total);
-
-          
-       
-
-
-      document.querySelector(".column-labels").append(whole_div);
-      function purchase(){
-        if( localStorage.getItem("cart_details") !== null){
-        alert(" successfully purchased")
-      }
-      }
       
-        }
+      let History_name = document.createElement("div")
+      History_name.setAttribute("class","History-name");
+
+      let order_Synopsis = document.createElement("div");
+      order_Synopsis.setAttribute("class","order-Synopsis");
+      History_name.append(order_Synopsis);
+
+      let text_synopsis = document.createElement("div")
+      text_synopsis.setAttribute("class","Synopsis-text");
+      order_Synopsis.append(text_synopsis);
+
+      let para1 = document.createElement("p");
+      para1.innerText="S.no"
+      text_synopsis.append(para1);
+
+      // <div class="Synopsis-text">
+      let text_synopsis1 = document.createElement("div")
+      text_synopsis1.setAttribute("class","Synopsis-text");
+      order_Synopsis.append(text_synopsis1);
+
+      let para2 = document.createElement("p");
+      para2.innerText="NFT Image"
+      text_synopsis1.append(para2);
+
+      // <div class="Synopsis-text">
+
+      let text_synopsis2 = document.createElement("div")
+      text_synopsis2.setAttribute("class","Synopsis-text");
+      order_Synopsis.append(text_synopsis2);
+
+      let para3 = document.createElement("p");
+      para3.innerText="NFT Price"
+      text_synopsis2.append(para3);
+
+      // <div class="Synopsis-text">
+
+      let text_synopsis3 = document.createElement("div")
+      text_synopsis3.setAttribute("class","Synopsis-text");
+      order_Synopsis.append(text_synopsis3);
+
+      let para4 = document.createElement("p");
+      para4.innerText="Order Summary"
+      text_synopsis3.append(para4);
+
+
+      let text_synopsis4 = document.createElement("div")
+      text_synopsis4.setAttribute("class","Synopsis-text");
+      order_Synopsis.append(text_synopsis4);
+
+      let para5 = document.createElement("p");
+      para5.innerText="Date of Purchase"
+      text_synopsis4.append(para5);
+
+      // <div class="p-lists">
+
+        let p_lists = document.createElement("div");
+        p_lists.setAttribute("class","p-lists");
+        History_name.append(p_lists);
+
+        // <div class="p-row">
+        let p_row = document.createElement("div");
+        p_row.setAttribute("class","p-row");
+        p_lists.append(p_row);
+
+        // <p>1.</p>
+        let p_row_para = document.createElement("p");
+        p_row_para.innerText = "1."
+        p_row.append(p_row_para);
+
+         // <div class="p-row">
+          let p_row1 = document.createElement("div");
+        p_row1.setAttribute("class","p-row");
+        p_lists.append(p_row1);
+
+        // <p>1.</p>
+        let p_row_para1 = document.createElement("img");
+        p_row_para1.setAttribute("src","../Assets/Images/anime-1.jpg");
+        p_row_para1.setAttribute("alt","p-img");
+        p_row1.append(p_row_para1);
+
+         // <div class="p-row">
+          let p_row2 = document.createElement("div");
+        p_row2.setAttribute("class","p-row");
+        p_lists.append(p_row2);
+
+        // <p>1.</p>
+        let p_row_para2 = document.createElement("p");
+        p_row_para2.innerText = "$25";
+        p_row2.append(p_row_para2);
+
+        // <div class="p-row">
+        let p_row3 = document.createElement("div");
+        p_row3.setAttribute("class","p-row");
+        p_lists.append(p_row3);
+
+        // <p>1.</p>
+        let p_row_para3 = document.createElement("p");
+        p_row_para3.innerText = "This item is bought by this user  & with this card";
+        p_row3.append(p_row_para3);
+
+         // <div class="p-row">
+          let p_row4 = document.createElement("div");
+        p_row4.setAttribute("class","p-row");
+        p_lists.append(p_row4);
+
+        // <p>1.</p>
+        let p_row_para4 = document.createElement("p");
+        p_row_para4.innerText = "25-04-2023";
+        p_row4.append(p_row_para4);
+
+      
+      document.querySelector("body").append(History_name);
     </script>
-    <!-- <script src="../Assets/Js/cart.js"></script> -->
   </body>
 </html>
