@@ -131,6 +131,10 @@
 
     <script>
       
+      let get_email = JSON.parse(localStorage.getItem("user_data"));
+        let purchse_History = JSON.parse(localStorage.getItem("purchaseHistory"));
+        console.log(purchse_History);
+
       let History_name = document.createElement("div")
       History_name.setAttribute("class","History-name");
 
@@ -207,7 +211,7 @@
 
         // <p>1.</p>
         let p_row_para1 = document.createElement("img");
-        p_row_para1.setAttribute("src","../Assets/Images/anime-1.jpg");
+        p_row_para1.setAttribute("src",purchse_History[0]["src"]);
         p_row_para1.setAttribute("alt","p-img");
         p_row1.append(p_row_para1);
 
@@ -218,7 +222,7 @@
 
         // <p>1.</p>
         let p_row_para2 = document.createElement("p");
-        p_row_para2.innerText = "$25";
+        p_row_para2.innerText = "$" + purchse_History[0]["tot_amnt"];
         p_row2.append(p_row_para2);
 
         // <div class="p-row">
@@ -240,6 +244,12 @@
         let p_row_para4 = document.createElement("p");
         p_row_para4.innerText = "25-04-2023";
         p_row4.append(p_row_para4);
+
+
+    
+
+        
+
 
       
       document.querySelector("body").append(History_name);

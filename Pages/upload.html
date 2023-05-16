@@ -177,16 +177,14 @@ document.getElementById("new-product").addEventListener("submit", function (even
     if (localStorage.getItem("art") === null) {
    localStorage.setItem("art",JSON.stringify(all));
    window.location.href="./Seller-hero-page.html"
-  
   }
   else{
   
    let tot = JSON.parse(localStorage.getItem("art"))
    tot.push(obj)
-   localStorage.setItem("art",JSON.stringify(tot))
+   localStorage.setItem("art",JSON.stringify(tot));
+   window.location.href="./Seller-hero-page.html"
   }
-
-  
 });
   </script>
 </html>

@@ -11,6 +11,7 @@ html {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
 body {
   background: var(--linear-gradient-1) #080710 no-repeat center/cover;
   font-family: var(--ff-urbanist);
@@ -74,14 +75,10 @@ body {
   padding: 50px 35px;
 }
 
-/* .profile-img {
-  border: 3px solid white;
+.profile-img {
+  border: 5px solid rgb(0, 0, 0);
   border-radius: 60%;
-  width: 80px;
-  height: 80px;
-  margin-left: 7rem;
-  margin-top: -10rem;
-} */
+}
 
 .bottom-div img {
   border: 1px solid white;
@@ -171,9 +168,9 @@ button {
 }
 .biodata {
   font-size: 16px;
-  left: 45px;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  bottom: 12rem;
+  left: 3rem;
 }
 .heading {
   color: hwb(0 100% 0%);
