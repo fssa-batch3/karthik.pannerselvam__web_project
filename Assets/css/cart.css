@@ -11,6 +11,7 @@ body {
   background-image: var(--linear-gradient-1);
   border-radius: var(--radius-circle);
 }
+
 .product-image {
   width: 50%;
 }
@@ -130,6 +131,7 @@ label {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px;
+  border: 10px solid;
 }
 
 .product-image img {

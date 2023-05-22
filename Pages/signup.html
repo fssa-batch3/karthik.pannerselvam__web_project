@@ -177,6 +177,7 @@
           placeholder="First name"
           id="First"
           title="Type your first name"
+          value="karthik"
         />
 
         <label for="lastname">Lastname</label>
@@ -187,6 +188,7 @@
           pattern="[A-Za-z]{1,32}"
           placeholder="Last name"
           id="last"
+          value="pannerselvam"
         />
 
         <label for="username">username</label>
@@ -195,8 +197,9 @@
           required="required"
           autocomplete="off"
           pattern="^[a-zA-Z0-9_]*$"
-          placeholder="@example1234"
+          placeholder="example_1234"
           id="u-name"
+          value="karthik_xoxo"
         />
 
         <label for="options">Role :</label>
@@ -206,9 +209,16 @@
         </select>
 
         <label for=" E-mail">E-mail</label>
-        <input type="email" required="required" autocomplete="off"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter
-        Email" id="E-mail" "/>
+        <input
+          type="email"
+          required="required"
+          autocomplete="off"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          placeholder="Enter
+        Email"
+          id="E-mail"
+          value="karthik@gmail.com"
+        />
 
         <label for="ph-no">Phone.no</label>
         <input
@@ -218,6 +228,7 @@
           placeholder="Enter phone-number"
           pattern="[0-9]{10}"
           required="true"
+          value="7814420767"
         />
 
         <label for="password">Set-Password</label>
@@ -227,6 +238,7 @@
           id="password"
           required="true"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          value="Karthik@123"
         />
 
         <button>Sign Up</button>
@@ -254,6 +266,7 @@
       let e_mail = document.getElementById("E-mail").value.trim().toLowerCase();
       let p_word = document.getElementById("password").value.trim();
       let role = document.getElementById("options").value;
+      let uuid = Date.now();
 
       let userdata = {
         f_name,
@@ -263,6 +276,7 @@
         p_word,
         role,
         e_mail,
+        uuid,
       };
 
       console.log(userdata);

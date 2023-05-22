@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="shortcut icon"
+    href="../Assets/Images/logo.png"
+
+  />
     <link rel="stylesheet" href="../Assets/css/purchase-history.css">
     <link rel="stylesheet" href="../Assets/css/style.css">
     <title>My Purchase history</title>
@@ -131,9 +136,17 @@
 
     <script>
       
-      let get_email = JSON.parse(localStorage.getItem("user_data"));
+      let userdatas = JSON.parse(localStorage.getItem("userdetails"));
+
+    let user_data = JSON.parse(localStorage.getItem("user_data"));
+
+    let user = userdatas.find((e) => e["e_mail"] == user_data["email"]);
+      
         let purchse_History = JSON.parse(localStorage.getItem("purchaseHistory"));
         console.log(purchse_History);
+
+for (let i = 0; i < purchse_History.length; i++) {
+  
 
       let History_name = document.createElement("div")
       History_name.setAttribute("class","History-name");
@@ -211,7 +224,7 @@
 
         // <p>1.</p>
         let p_row_para1 = document.createElement("img");
-        p_row_para1.setAttribute("src",purchse_History[0]["src"]);
+        p_row_para1.setAttribute("src",purchse_History[i]["nft_img"]);
         p_row_para1.setAttribute("alt","p-img");
         p_row1.append(p_row_para1);
 
@@ -222,7 +235,7 @@
 
         // <p>1.</p>
         let p_row_para2 = document.createElement("p");
-        p_row_para2.innerText = "$" + purchse_History[0]["tot_amnt"];
+        p_row_para2.innerText = "$" + purchse_History[i]["tot_amnt"];
         p_row2.append(p_row_para2);
 
         // <div class="p-row">
@@ -242,17 +255,20 @@
 
         // <p>1.</p>
         let p_row_para4 = document.createElement("p");
-        p_row_para4.innerText = "25-04-2023";
+        p_row_para4.innerText = purchse_History[i]["fullDate"];
         p_row4.append(p_row_para4);
 
 
-    
+        document.querySelector("body").append(History_name);
+
+
+
+         }
 
         
 
 
       
-      document.querySelector("body").append(History_name);
     </script>
   </body>
 </html>

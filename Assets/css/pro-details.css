@@ -12,6 +12,9 @@
   width: 30px;
   height: 30px;
 }
+.inner-box {
+  margin-top: 1.5rem;
+}
 #like {
   margin-left: 50rem;
   cursor: pointer;
@@ -36,16 +39,18 @@
   display: flex;
   gap: 10px;
 }
-.icons {
-  display: flex;
-  gap: 30px;
-}
+
 .mini-box {
   gap: 20px;
   width: 60rem;
   height: 25rem;
-  background-color: antiquewhite;
 }
-button.btn {
+.button-box,
+.author-art,
+.icons,
+.inner-box {
   display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+  gap: 2rem;
 }

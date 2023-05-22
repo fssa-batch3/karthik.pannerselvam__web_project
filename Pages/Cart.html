@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="shortcut icon"
+    href="../Assets/Images/logo.png"
+
+  />
     <link rel="stylesheet" href="../Assets/css/cart.css" />
     <link rel="stylesheet" href="../Assets/css/style.css">
     <title>Cart page</title>
@@ -42,6 +47,9 @@
             <li>
               <a href="../Pages/explore.html" class="navbar-link label-lg link:hover">Explore</a>
             </li>
+            <li>
+              <a href="../Pages/Purchase-history.html" class="navbar-link label-lg link:hover">My NFT's</a>
+            </li>
             
           </ul>
         </nav>
@@ -79,202 +87,7 @@
 
       <button class="checkout btn" id ="purch">Checkout</button>
     </div>
-    <script>
-             let cart = JSON.parse(localStorage.getItem("cart_details"));
-
-
-             console.log( cart[0]["p_price"])
-
-          
-
-for (let i = 0; i < cart.length; i++) {
-  
-
-
-      let whole_div = document.createElement("div");
-      whole_div.setAttribute("class", "product");
-
-      let product_img = document.createElement("div");
-      product_img.setAttribute("class", "product-image");
-      whole_div.append(product_img);
-
-      let img_src = document.createElement("img");
-      img_src.setAttribute("src", cart[i]["p_img"]);
-      img_src.setAttribute("id", "src");
-      product_img.append(img_src);
-
-      let product_details = document.createElement("div");
-      product_details.setAttribute("class", "product-details");
-      whole_div.append(product_details);
-
-      let product_heading = document.createElement("div");
-      product_heading.setAttribute("class", "product-title");
-      product_heading.setAttribute("id", "productTitle");
-      product_heading.innerText = cart[i]["nft_name"];
-      product_details.append(product_heading);
-
-      // let product_description = document.createElement("p");
-      // product_description.setAttribute("class", "product-description");
-      // product_description.innerText = `The best dog bones of all time. Holy crap. Your dog will be begging
-      //       for these things! I got curious once and ate one myself. I'm a fan.`;
-      // product_heading.append(product_description);
-
-      let product_price = document.createElement("div");
-      product_price.setAttribute("class", "product-price");      
-      product_price.innerText = cart[i]["p_price"]
-      whole_div.append(product_price);
-
-      let product_quantity = document.createElement("div");
-      product_quantity.setAttribute("class", "product-quantity");
-      whole_div.append(product_quantity);
-
-      let input_type = document.createElement("input");
-      input_type.setAttribute("type", "number");
-      input_type.setAttribute("id", "num");
-      input_type.setAttribute("value", "1");
-      
-      input_type.setAttribute("min", "1");
-      product_quantity.append(input_type);
-
-
-
-
-
-
-      
-      let product_removal = document.createElement("div");
-      whole_div.append(product_removal);
-
-      let remove_button = document.createElement("button");
-      remove_button.setAttribute("class", "btn");
-      remove_button.innerText = "Remove";
-      product_removal.append(remove_button);
-
-      let total_amnt= document.createElement("div");
-      total_amnt.setAttribute("class","totals");
-      whole_div.append(total_amnt);
-
-      // <div class="totals-item">
-
-      let totals_item = document.createElement("div");
-      totals_item.setAttribute("class","totals-item");
-      total_amnt.append(totals_item);
-
-       // <label>Subtotal</label>
-       let label_subtot = document.createElement("label");
-       label_subtot.innerText="Subtotal"
-        totals_item.append(label_subtot);
-
-      // <div class="totals-value" id="cart-subtotal">71.97</div>
-        let tot_value = document.createElement("div");
-        tot_value.setAttribute("class","totals-value");
-        tot_value.setAttribute("id","cart-subtotal");
-        tot_value.innerText = ""
-        totals_item.append(tot_value);
-
-         // <div class="totals-item">
-       
-        let totals_item1 = document.createElement("div");
-        totals_item1.setAttribute("class","totals-item");
-        total_amnt.append(totals_item1);
-
-        // <label>Subtotal</label>
-       let label_subtot1 = document.createElement("label");
-       label_subtot1.innerText="Tax (30%)"
-        totals_item1.append(label_subtot1);
-
-        // <div class="totals-value" id="cart-tax">3.60</div>
-        let total_tax = document.createElement("div");
-        total_tax.innerText = "";
-        total_tax.setAttribute("class","totals-value");
-        total_tax.setAttribute("id","cart-shipping");
-        totals_item1.append(total_tax);
-
-        // <div class="totals-item totals-item-total">
-
-          let totals_item3 = document.createElement("div");
-        totals_item3.setAttribute("class","totals-item totals-item-total");
-        total_amnt.append(totals_item3);
-
-        // <label>Grand TOtal</label>
-        let label_subtot2 = document.createElement("label");
-       label_subtot2.innerText="Grand Total";
-        totals_item3.append(label_subtot2);
-
-        // <div class="totals-value" id="cart-total">15.00</div>
-
-        let grand_total = document.createElement("div");
-        grand_total.setAttribute("class","totals-value");
-        grand_total.setAttribute("id","cart-total")
-        grand_total.innerText = ""
-        totals_item3.append(grand_total);
-        
-      document.querySelector(".column-labels").append(whole_div);
-      
-        
-        }
-        
-        let input_type=   document.getElementById("num");
-        console.log(input_type);
-
-        // price calculation code
-        input_type.addEventListener("change", function(event) {
-        let price = cart[0]["p_price"]
-        console.log(price);
-
-        let sub_total = price * event.target.value;
-        console.log(sub_total);
-
-        document.querySelector("#cart-subtotal").innerText=sub_total;
-        let calculate = calculateRemaining(sub_total)
-        console.log(calculate);
-
-        document.querySelector("#cart-shipping").innerText = calculate;
-
-        let total_amnt_to_pay = sub_total + calculate;
-        document.querySelector("#cart-total").innerText = total_amnt_to_pay;
-       
-});
-// Function to calculate tax amount
-function calculateRemaining(num) {
-  const percentage = 30;
-  const remaining = (num * percentage) / 100;
-  return remaining;
-}
-
-// Setting the buyed item
-let img =document.getElementById("src");
-let src = img.src;
-
-let nftName = document.getElementById("productTitle");
-let name_of_nft = nftName.innerText;
-console.log(name_of_nft);
-
-
-// let paid_amnt = total_price.value;
-// console.log(paid_amnt);
-
-
-let purchase = document.getElementById("purch");
-
-
-purchase.addEventListener("click",function (e){
-  e.preventDefault()
- 
-
-  let  total_price =  document.getElementById("cart-total");
-let tot_amnt = total_price.innerHTML
-console.log(total_price);
-
-let obj = {
- src,name_of_nft,tot_amnt
-}
-let arr = [];
-arr.push(obj)
-console.log(arr)
-       window.localStorage.setItem("purchaseHistory",JSON.stringify(arr))
-      })
-    </script>
-    <!-- <script src="../Assets/Js/cart.js"></script> -->
+   
+    <script src="../Assets/Js/cart.js"></script>
   </body>
 </html>

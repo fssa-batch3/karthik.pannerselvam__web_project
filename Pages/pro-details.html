@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="shortcut icon"
+    href="../Assets/Images/logo.png"
+
+  />
     <title>Product-details</title>
 </head>
 <body>
@@ -70,7 +75,7 @@
               <a href="../Pages/FAQ's.html" class="navbar-link label-lg link:hover">FAQS</a>
             </li>
             <li>
-              <a href="../Pages/Cart.html" class="navbar-link label-lg link:hover">My Cart</a>
+              <a id="cart" class="navbar-link label-lg link:hover">My Cart</a>
             </li>
 
           </ul>
@@ -126,9 +131,11 @@ const urlParams = new URLSearchParams(url)
 const change = urlParams.get("name")
 // console.log(change)
 
-const use = details.find((details) => details["uuid"] === change)
+const use = details.find((details) => details["uuid"] === change);
+console.log(use);
 
-let userName = userdetails.find((e)=> e["e_mail"] === details[0]["email"]) 
+// let userName = userdetails.find((e)=> e["e_mail"] === details.email) ;
+// console.log(userName);
 
 
       let whole_box;
@@ -149,6 +156,8 @@ let userName = userdetails.find((e)=> e["e_mail"] === details[0]["email"])
       let inner_box;
       let p_price;
       let nft_price;
+      let owner_div;
+      let div_button;
       let btn_buy;
       let btn_cart;
 
@@ -189,18 +198,22 @@ let userName = userdetails.find((e)=> e["e_mail"] === details[0]["email"])
       p_name.innerText= use["nftname"];
       right_box.append(p_name);
 
+      owner_div = document.createElement("div");
+      owner_div.setAttribute("class","author-art");
+      right_box.append(owner_div)
+
       ownedby = document.createElement("p");
       ownedby.innerText = "Owned by";
-      right_box.append(ownedby);
+      owner_div.append(ownedby);
 
-      s_name = document.createElement("span");
-      s_name.innerText = userName["u_name"]
+      s_name = document.createElement("h3");
+      s_name.innerText = use["username"]
       s_name.setAttribute("id", "s-name");
-      ownedby.append(s_name);
+      owner_div.append(s_name);
 
       div_icons = document.createElement("div")
       div_icons.setAttribute("class", "icons");
-      s_name.append(div_icons);
+      right_box.append(div_icons);
 
       position = document.createElement("p")
       position.innerText = "#20202";
@@ -217,34 +230,42 @@ let userName = userdetails.find((e)=> e["e_mail"] === details[0]["email"])
 
       mini_box  = document.createElement("div");
       mini_box.setAttribute("class", "mini-box");
-      right_box.append(mini_box);
-
-      sale_end = document.createElement("p");
-      sale_end.innerText= "Sale ends in";
-      mini_box.append(sale_end);
+      right_box.append(mini_box)
 
       inner_box = document.createElement("div");
       inner_box.setAttribute("class","inner-box");
       mini_box.append(inner_box);
 
-      p_price = document.createElement("p");
-      p_price.innerText = "Price";
+      p_price = document.createElement("h3");
+      p_price.innerText = "Price:";
       inner_box.append(p_price);
 
-      nft_price= document.createElement("h3");
-      nft_price.innerText = use["p_price"];
-      p_price.append(nft_price);
+      nft_price = document.createElement("h3");
+      nft_price.innerText = '$'+use["p_price"];
+      inner_box.append(nft_price);
+
+    
+
+      div_button = document.createElement("div");
+      div_button.setAttribute("class","button-box");
+      mini_box.append(div_button);
 
       btn_buy = document.createElement("button");
       btn_buy.setAttribute("class","btn");
       btn_buy.innerText = "Buy";
-      nft_price.append(btn_buy);
+      btn_buy.setAttribute("href","../Pages/payment.html")
+      div_button.append(btn_buy);
 
       btn_cart = document.createElement("button");
       btn_cart.setAttribute("id","Add-to-cart");
       btn_cart.setAttribute("class","btn");
       btn_cart.innerText = "Add to Cart"; 
-      nft_price.append(btn_cart);
+      div_button.append(btn_cart);
+
+
+      let userid= JSON.parse(localStorage.getItem("user_data"));
+      let addtocart = document.getElementById("cart");
+      addtocart.setAttribute("href","../Pages/Cart.html?userid="+userid.user_id)
 
 
       
@@ -256,9 +277,8 @@ let get_email = JSON.parse(localStorage.getItem("user_data"))
 
 
 
-console.log(get_email,user_details[1].e_mail);
 
-let get_obj = user_details.find((F) => F.e_mail == get_email)
+let get_obj = user_details.find((F) => F.e_mail == get_email.mail)
 console.log(get_obj);
  
 
@@ -268,7 +288,7 @@ viewImage.setAttribute("width","40");
 viewImage.setAttribute("height","40");
 viewImage.setAttribute("alt","img1-cover");
 viewImage.setAttribute("id","view_image");
-viewImage.setAttribute("src",get_obj.user_img)
+viewImage.setAttribute("src","")
 
 document.querySelector(".img1-cover").remove();
 document.querySelector(".profil-btn a").append(viewImage);
@@ -297,18 +317,20 @@ console.log(viewImage);
         let p_uuid = change;
         let p_price = use["p_price"];
         let p_img = use["image"];
-        let nft_name = use["nftname"]
+        let nft_name = use["nftname"];
+        let uuid = logged_user.user_id  ;
 
         let obj={
           logged_user,
           p_uuid,
           p_price,
           p_img, 
-          nft_name
+          nft_name,
+          uuid
         }
         
         if(localStorage.getItem("cart_details") != null){
-          arr=JSON.parse(localStorage.getItem("cart_details"))
+          arr=JSON.parse(localStorage.getItem("cart_details")) || []
         }
 
         arr.push(obj);
@@ -317,9 +339,6 @@ console.log(viewImage);
         localStorage.setItem("cart_details",JSON.stringify(arr));
 
         alert("Succesfully Added To Cart 🎉! Check Your Cart")
-
-         window.location.href = "../Pages/Cart.html"
-
       })
 
     </script>

@@ -115,7 +115,7 @@
     let user_data = JSON.parse(localStorage.getItem("user_data"));
     console.log(user_data);
 
-    let user = userdatas.find((e) => e["e_mail"] == user_data);
+    let user = userdatas.find((e) => e["e_mail"] == user_data.mail);
 
 // Create button element
 const button = document.createElement('button');
@@ -147,6 +147,7 @@ document.getElementById("new-product").addEventListener("submit", function (even
   event.preventDefault();
 
   let Logged_email = JSON.parse(localStorage.getItem("user_data"));
+  let Logged_username = JSON.parse(localStorage.getItem("userdetails"))
 
 
   let image_url = document.getElementById("image");
@@ -168,7 +169,7 @@ document.getElementById("new-product").addEventListener("submit", function (even
   // updates["link"] = link;
   let id = crypto.randomUUID();
 
-  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id,email:Logged_email}
+  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id,email:Logged_email,username:user.u_name}
   console.log(obj);
 
   let all = [];
@@ -186,5 +187,7 @@ document.getElementById("new-product").addEventListener("submit", function (even
    window.location.href="./Seller-hero-page.html"
   }
 });
+
+
   </script>
 </html>

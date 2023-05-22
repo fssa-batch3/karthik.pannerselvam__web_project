@@ -13,6 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="shortcut icon"
+    href="../Assets/Images/logo.png"
+
+  />
     <!--Stylesheet-->
     <style media="screen">
       :root{
@@ -154,10 +159,10 @@
       <h3>Login Here</h3>
 
       <label for="email">Email</label>
-      <input type="email"  placeholder="Email or Phone" required id="username" />
+      <input type="email"  placeholder="Email or Phone" required id="username" value="karthik@gmail.com" />
 
       <label for="password">Password</label>
-      <input type="password"  placeholder="Password" id="password" required  />
+      <input type="password"  placeholder="Password" id="password" required value="Karthik@123"/>
 
       <button class="bot" type="submit"> Log In</button>
 
@@ -180,15 +185,17 @@ event.preventDefault()
 
   let check = false
   let role;
- 
+ let arr = []
  for(let i = 0; i < phone.length; i++){   
-  window.localStorage.setItem("user_data",JSON.stringify(phone[i].e_mail))
- 
-  if( email == phone[i].e_mail && password == phone[i].p_word){
-    check = true
-    role = phone[i].role
-    break;
-  }
+   
+   if( email == phone[i].e_mail && password == phone[i].p_word){
+     check = true
+     role = phone[i].role
+     let obj={mail:phone[i].e_mail,user_id:phone[i].uuid}
+     arr.push(obj)
+     window.localStorage.setItem("user_data",JSON.stringify(arr))
+     break;
+    }
  }
     
 if(check===true){
