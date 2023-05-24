@@ -41,7 +41,7 @@
     let user_data = JSON.parse(localStorage.getItem("user_data"));
     console.log(user_data);
 
-    let user = userdatas.find((e) => e["e_mail"] == user_data.mail);
+    let user = userdatas.find((e) => e["e_mail"] == user_data[0].mail);
 
     console.log(user);
 
@@ -71,7 +71,7 @@
     container.append(bottom);
 
     profile_img = document.createElement("img");
-    profile_img.setAttribute("src", user["user_img"]);
+    profile_img.setAttribute("src", userdatas["user_img"]);
     profile_img.setAttribute("alt", "User-img");
     profile_img.setAttribute("class", "profile-img");
     bottom.append(profile_img);

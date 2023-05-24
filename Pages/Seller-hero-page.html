@@ -1087,24 +1087,23 @@
      let art = JSON.parse(localStorage.getItem("art"))
      
       for (let i = 0; i < art.length; i++) {
-       const element = art[i];
-       console.log(element)
+     
        list = document.createElement("li");
 
        let user_details = JSON.parse(localStorage.getItem("userdetails"));
 console.log(user_details);
 let user_data = JSON.parse(localStorage.getItem("user_data"));
-let get_email = user_data.mail;
+let get_email = user_data[0]["mail"];
 // console.log(get_email,user_details[1].e_mail);
 
-let get_obj = user_details.find((F) => F.e_mail == get_email)
+let get_obj = user_details.find((F) => F.e_mail == get_email);
 console.log(get_obj)
 
   //<div class="discover-card card">//
 
   discover_card_card = document.createElement("div");
   discover_card_card.setAttribute("class", "discover-card card");
-  discover_card_card.setAttribute("id",element["id"]);
+  discover_card_card.setAttribute("id",art[i]["id"]);
   list.append(discover_card_card);
 
   // <div class="card-banner img-holder">
@@ -1116,7 +1115,7 @@ console.log(get_obj)
   // <img class = "img-cover">//
 
   img_cover = document.createElement("img");
-  img_cover.setAttribute("src", element["image"]);
+  img_cover.setAttribute("src", art[i]["image"]);
   img_cover.setAttribute("class", "img-cover");
   img_cover.setAttribute("width", "500");
   img_cover.setAttribute("height", "500");
@@ -1148,7 +1147,7 @@ console.log(get_obj)
 
   // <img class="img"> //
   img = document.createElement("img");
-  img.setAttribute("src", get_obj.user_img);
+  img.setAttribute("src", "");
   img.setAttribute("class", "img");
   card_profile.append(img);
 
@@ -1156,7 +1155,7 @@ console.log(get_obj)
 
   username = document.createElement("a");
   username.setAttribute("class", "link:hover");
-  username.innerText = get_obj.u_name;
+  username.innerText = art[i]["username"];
   card_profile.append(username);
 
   // <h3 class="title-sm card-title">
@@ -1181,17 +1180,17 @@ discover_card_card.append(update_delete);
     // art[indexOfCard] = discover_card_card;
     // localStorage.setItem("art",JSON.stringify(discover_card_card))
 
-    window.location.href = "./product-edit.html?id=" + element["uuid"]
+    window.location.href = "./product-edit.html?id=" + art["uuid"]
   })
 //   <span class="material-symbols-outlined">
 delete_log = document.createElement("span");
 delete_log.setAttribute("class", "material-symbols-outlined");
-delete_log.setAttribute("id", element["uuid"]);
+delete_log.setAttribute("id", art[i]["uuid"]);
 delete_log.innerText= "delete";
 update_delete.append(delete_log);
 
 delete_log.addEventListener("click",(e)=>{
-  let id = element["uuid"]
+  let id = art[i]["uuid"]
   let del = art.find((e)=>e["uuid"] === id)
   art.splice(i,1)
 
@@ -1208,7 +1207,7 @@ delete_log.addEventListener("click",(e)=>{
 
   a_nftname = document.createElement("a");
   a_nftname.setAttribute("class", "link:hover");
-  a_nftname.innerText = element["nftname"];
+  a_nftname.innerText = art[i]["nftname"];
   h3_title_sm.append(a_nftname);
 
   // <div class="card-meta">
@@ -1242,7 +1241,7 @@ delete_log.addEventListener("click",(e)=>{
 
   span2 = document.createElement("span");
   span2.setAttribute("class", "span");
-  span2.innerText = element["p_price"];
+  span2.innerText = art[i]["p_price"];
   card_price.append(span2);
   console.log(span2)
 

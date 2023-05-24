@@ -90,7 +90,7 @@ for (let i = 0; i < art.length; i++) {
   console.log(getting_mail);
   username = document.createElement("a");
   username.setAttribute("class", "link:hover");
-  username.innerText = getting_mail.username;
+  username.innerText = art[i].username;
   card_profile.append(username);
 
   // <h3 class="title-sm card-title">

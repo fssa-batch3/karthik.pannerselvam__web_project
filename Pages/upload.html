@@ -109,14 +109,7 @@
   </body>
 
   <script>
-     let userdatas = JSON.parse(localStorage.getItem("userdetails"));
-    console.log(userdatas);
-
-    let user_data = JSON.parse(localStorage.getItem("user_data"));
-    console.log(user_data);
-
-    let user = userdatas.find((e) => e["e_mail"] == user_data.mail);
-
+    
 // Create button element
 const button = document.createElement('button');
 button.classList.add('btn-icon', 'profil-btn');
@@ -129,7 +122,7 @@ link.setAttribute('href', 'profile.html');
 
 // Create image element
 const image = document.createElement('img');
-image.setAttribute('src', userdatas.user_img);
+image.setAttribute('src', '');
 image.setAttribute('width', '40');
 image.setAttribute('height', '50');
 image.setAttribute('alt', 'Fiona doe');
@@ -144,10 +137,19 @@ button.appendChild(link);
 document.querySelector(".container").append(button)
 
 document.getElementById("new-product").addEventListener("submit", function (event) {
-  event.preventDefault();
+event.preventDefault();
 
-  let Logged_email = JSON.parse(localStorage.getItem("user_data"));
-  let Logged_username = JSON.parse(localStorage.getItem("userdetails"))
+let Logged_user = JSON.parse(localStorage.getItem("user_data"));
+let Logged_email = Logged_user[0]["mail"];
+
+let user_list = JSON.parse(localStorage.getItem("userdetails"));
+
+let username_Check = user_list.find((e) => e.e_mail == Logged_email);
+console.log(username_Check);
+
+let logged_username = username_Check.u_name;
+
+console.log(logged_username);
 
 
   let image_url = document.getElementById("image");
@@ -169,7 +171,7 @@ document.getElementById("new-product").addEventListener("submit", function (even
   // updates["link"] = link;
   let id = crypto.randomUUID();
 
-  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id,email:Logged_email,username:user.u_name}
+  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id,email:Logged_email,username:logged_username}
   console.log(obj);
 
   let all = [];

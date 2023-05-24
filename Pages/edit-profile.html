@@ -115,12 +115,7 @@
       <label for="Bio">Bio</label>
       <input type="text" required="Enter about yourself" id="User-bio">
 
-      <label for="Role">Role</label>
-      <select name="card" id="Categories">
-      <option value="Art">Art</option>
-      <option value="Anime">Anime</option>
-      <option value="Sports">Sports</option>
-    </select>     
+      
       <label for="User_img">Upload Image Link</label>
       <input type="url" required="Upload your image as a link" id="User-img">
 
@@ -145,7 +140,7 @@
 
 
 const  loggedUser = JSON.parse(window.localStorage.getItem("user_data"));
-let user_email = loggedUser.mail;
+let user_email = loggedUser[0].mail;
 console.log(user_email);
 
       const user_details = JSON.parse(window.localStorage.getItem("userdetails"))

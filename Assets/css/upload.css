@@ -42,7 +42,6 @@ h1 {
 .Input_details {
   width: fit-content;
   height: max-content;
-  border-radius: 10px;
   border-color: azure;
   border-radius: 5px;
 }

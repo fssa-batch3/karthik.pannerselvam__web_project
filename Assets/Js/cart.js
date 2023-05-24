@@ -1,14 +1,15 @@
 let cart = JSON.parse(localStorage.getItem("cart_details"));
+let whole_user_list = JSON.parse(localStorage.getItem("userdetails"));
 
 let user_data = JSON.parse(localStorage.getItem("user_data"));
 console.log(user_data);
-let user = user_data.find((e) => e["mail"] == user_data["mail"]);
+let user = whole_user_list.find((e) => e["e_mail"] == user_data[0]["mail"]);
 console.log(user);
 
-const url = window.location.search;
-const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get("userid");
-console.log(myParam);
+// const url = window.location.search;
+// const urlParams = new URLSearchParams(window.location.search);
+// const myParam = urlParams.get("userid");
+// console.log(myParam);
 
 //  let user_id_cart = JSON.parse(localStorage.getItem("user_data"));
 
@@ -182,11 +183,14 @@ purchase.addEventListener("click", function (e) {
   console.log(arr);
   window.localStorage.setItem("purchaseHistory", JSON.stringify(arr));
   window.alert("Thanks for the purchase");
+  let remove_div = document.querySelector(".product");
+  remove_div.remove();
 });
 
 let remove = document.getElementById("remove-cart");
 console.log(remove);
 
+// remove item in cart
 remove.addEventListener("click", (e) => {
   e.preventDefault();
   let product_id = cart[0]["p_uuid"];
