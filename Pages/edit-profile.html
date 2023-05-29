@@ -13,143 +13,16 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../Assets/css/style.css"
+    <link
+    rel="shortcut icon"
+    href="../Assets/Images/logo.png"
+
+  />
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="../Assets/css/edit-profile.css">
     
     <!--Stylesheet-->
-    <style media="screen">
-      
-      :root{
-        --linear-gradient-1: linear-gradient(
-    to top left,
-    hsla(0, 72%, 51%, 0.4) 0%,
-    hsla(262, 83%, 58%, 0.4)
-  );
-      }
-      *,
-      *:before,
-      *:after {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body {
-        height: 100vh;
-        background: var(--linear-gradient-1) #080710 no-repeat center/cover;        
-      }
-      .logo img{
-        margin: 2rem;
-      }
-      .background {
-        width: 430px;
-        height: 680px;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-      }
-      
-      form {
-        height: 620px;
-        width: 450px;
-        background-color: rgba(255, 255, 255, 0.13);
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-        padding: 50px 35px;
-      }
-      form * {
-        font-family: "Poppins", sans-serif;
-        color: #ffffff;
-        letter-spacing: 0.5px;
-        outline: none;
-        border: none;
-      }
-      form h3 {
-        font-size: 28px;
-        font-weight: 400;
-        line-height: 0px;
-        text-align: center;
-      }
-
-      label {
-        display: block;
-        margin-top: 23px;
-        font-size: 16px;
-        font-weight: 500;
-      }
-      input {
-        display: block;
-        height: 40px;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.07);
-        border-radius: 3px;
-        padding: 0 10px;
-        margin-top: 8px;
-        font-size: 14px;
-        font-weight: 300;
-      }
-      ::placeholder {
-        color: #e5e5e5;
-      }
-      .color {
-        margin-top: 25px;
-        width: 50%;
-        background-color: #ffffff;
-        color: #6558ca;
-        padding: 2.5px 0;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 5px;
-        margin-left: 2rem;
-      }
-      .delete{
-        width: 50%;
-        background-color: #ffffff;
-        color: #6558ca;
-        padding: 2.5px 0;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 5px;
-        margin-left: 2rem;
-      }
-      .color:hover{
-        background-color: #1845ad;
-        color: #eaf0fb!important;
-      }
-      
-      .social {
-        margin-top: 30px;
-        display: flex;
-      }
-      .social div {
-        background: red;
-        width: 150px;
-        border-radius: 3px;
-        padding: 5px 10px 10px 5px;
-        background-color: rgba(255, 255, 255, 0.27);
-        color: #eaf0fb;
-        text-align: center;
-        cursor: pointer;
-      }
-      .social div:hover {
-        background-color: rgba(255, 255, 255, 0.47);
-      }
-      .social .fb {
-        margin-left: 25px;
-      }
-      .social i {
-        margin-right: 4px;
-      }
-      a{
-        text-decoration: none;
-        color: #080710;
-      }
-    </style>
+  
   </head>
   <body>
 
@@ -208,28 +81,56 @@
       </header>
     <div class="background">
     <form id="edit-form">
-      <h3>Edit Profile</h3>
+      <h3 class="edit
+      ">Edit Profile</h3>
 
+      <div class="left">
       <label for="Firstname">First Name</label>
-      <input type="text"  id="f-name" />
+      <input type="text"  id="f-name" pattern="[A-Za-z]{0-10}" />
 
       <label for="lastname">Lastname</label>
-      <input type="text"  id="l-name" />
+      <input type="text"  id="l-name" pattern="[A-Za-z]{0-10}"/>
 
       <label for=" E-mail">E-mail</label>
-      <input type="text"  id="mail-id" />
+      <input type="text"  id="mail-id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
 
       <label for="phone-number">phone-number</label>
       <input type="ph-no" id="ph-no">
 
       <label for="birthday">Birthday:</label>
       <input type="date" id="dob" name="birthday">
+    </div>
 
+    <div class="right">
       <label for="address">Address</label>
       <input type="text" id="u-address">
 
+      <label for="address" id="u-categories">categories</label>
+      <select name="card" id="Categories">
+        <option value="Art">Art</option>
+        <option value="Anime">Anime</option>
+        <option value="Sports">Sports</option>
+      </select>     
+
+      <label for="Bio">Bio</label>
+      <input type="text" required="Enter about yourself" id="User-bio">
+
+      
+      <label for="User_img">Upload Image Link</label>
+      <input type="url" required="Upload your image as a link" id="User-img">
+
+      <label for="location">location</label>
+      <input type="text"  required="" id="u-location">
+
+      <label for="language">Language</label>
+      <input type="text" id="u-language">
+<div class="buttons">
       <button class="color" type="submit">Save Changes</button>
       <button class="delete" id="delete" >Delete User</button>
+    </div>
+    </div>
+
+    
 
     </div>
     </form>
@@ -238,7 +139,9 @@
   <script>
 
 
-const user_email = JSON.parse(window.localStorage.getItem("user_data"))
+const  loggedUser = JSON.parse(window.localStorage.getItem("user_data"));
+let user_email = loggedUser[0].mail;
+console.log(user_email);
 
       const user_details = JSON.parse(window.localStorage.getItem("userdetails"))
       let get_obj = user_details.find(function(user_obj){
@@ -249,6 +152,9 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
       });
       console.log(get_obj)
 
+
+
+      
       const fname = document.getElementById("f-name");
       const lname = document.getElementById("l-name");
       const mail = document.getElementById("mail-id");  
@@ -256,8 +162,11 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
       // const phone = document.getElementById("mobilenumber");
       fname.value =  get_obj["f_name"] ;
       lname.value =  get_obj["l_name"] ;
-      mail.value  =  user_email ;
+      mail.value  =  get_obj["e_mail"];
       phone.value =  get_obj["phone_num"] ;
+
+      
+      // const phone = document.getElementById("mobilenumber")
       let form = document.getElementById("edit-form");
       form.addEventListener("submit" , function(event){
       event.preventDefault()
@@ -266,16 +175,28 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
       let mail = document.getElementById("mail-id").value;
       let phone = document.getElementById("ph-no").value;
       let dob = document.getElementById("dob").value;
-      let address = document.getElementById("u-address")
+      let address = document.getElementById("u-address").value;
+      let categories = document.getElementById("Categories").value;
+      let User_bio = document.getElementById("User-bio").value;
+      let user_img = document.getElementById("User-img").value
+      let user_location = document.getElementById("u-location").value;
+      let user_language = document.getElementById("u-language").value;
+      
 
       let new_data = {
-        fname,
-        lname,
-        mail,
-        phone,
+        f_name:fname,
+        l_name:lname,
+        e_mail:mail,
+        phone_num:phone,
         dob,
         address,
+        categories,
+        User_bio,
+        user_img,
+        user_location,
+        user_language
       };
+      console.log(new_data)
 
       // if( mail.value != user_email ){
       //   alert("You can't change the email-id")
@@ -291,6 +212,7 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
     user_details[index] = updates;
     localStorage.setItem("userdetails", JSON.stringify(user_details))
     alert("You have successfully updated your account details!");
+    window.location  = "../Pages/profile.html";
     });
 
 
@@ -305,7 +227,8 @@ const user_email = JSON.parse(window.localStorage.getItem("user_data"))
     }
     else{
       user_details.splice(index,1)
-      window.localStorage.setItem("userdetails",JSON.stringify(user_details))
+      window.localStorage.setItem("userdetails",JSON.stringify(user_details));
+      window.location.href="../index.html";
     }
       });
 

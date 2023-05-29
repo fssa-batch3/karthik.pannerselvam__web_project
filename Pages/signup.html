@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <title>Sign Up</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -13,16 +12,15 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
-    
+
     <!--Stylesheet-->
     <style media="screen">
-      
-      :root{
+      :root {
         --linear-gradient-1: linear-gradient(
-    to top left,
-    hsla(0, 72%, 51%, 0.4) 0%,
-    hsla(262, 83%, 58%, 0.4)
-  );
+          to top left,
+          hsla(0, 72%, 51%, 0.4) 0%,
+          hsla(262, 83%, 58%, 0.4)
+        );
       }
       *,
       *:before,
@@ -33,13 +31,13 @@
       }
       body {
         height: 100vh;
-        background: var(--linear-gradient-1) #080710 no-repeat center/cover;        
+        background: var(--linear-gradient-1) #080710 no-repeat center/cover;
       }
-      input:valid{
+      input:valid {
         border-color: #16ee45;
         border-width: 2px;
       }
-      .logo img{
+      .logo img {
         margin: 2rem;
       }
       .background {
@@ -50,9 +48,9 @@
         left: 50%;
         top: 50%;
       }
-      
+
       form {
-        height: 770px;
+        height: 800px;
         width: 400px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
@@ -84,7 +82,8 @@
         font-size: 16px;
         font-weight: 500;
       }
-      input,select {
+      input,
+      select {
         display: block;
         height: 40px;
         width: 100%;
@@ -95,7 +94,7 @@
         font-size: 14px;
         font-weight: 300;
       }
-      
+
       ::placeholder {
         color: #e5e5e5;
       }
@@ -111,7 +110,7 @@
         cursor: pointer;
         margin-left: 5rem;
       }
-      button:hover{
+      button:hover {
         background-color: #1845ad;
         color: #eaf0fb;
       }
@@ -138,117 +137,204 @@
       .social i {
         margin-right: 4px;
       }
-      a{
+      a {
         text-decoration: none;
         color: #080710;
       }
-      #first input:valid{
+      #first input:valid {
         border: 5px solid green;
       }
-      #first input:invalid{
+      #first input:invalid {
         border: 5px solid yellow;
       }
-      
-      option{
-        color: #080710; 
+
+      option {
+        color: #080710;
       }
     </style>
   </head>
   <body>
     <div class="logo">
       <a href="../index.html">
-      <img src="../Assets/Images/logo.png"
-      width="100"
-       height="50"
-       alt="logo"
-       >
+        <img
+          src="../Assets/Images/logo.png"
+          width="100"
+          height="50"
+          alt="logo"
+        />
       </a>
     </div>
     <div class="background">
-    <form onsubmit = "details()">
-      <h3>Signup Here</h3>
+      <form onsubmit="details()">
+        <h3>Signup Here</h3>
 
-      <label for="Firstname">Firstname</label>
-      <input type="text" required="required" autocomplete="off" pattern="[A-Za-z]{1,32}"  placeholder="First name" id="First" title="Type your first name" />
+        <label for="Firstname">Firstname</label>
+        <input
+          type="text"
+          required="required"
+          autocomplete="off"
+          pattern="[A-Za-z]{1,32}"
+          placeholder="First name"
+          id="First"
+          title="Type your first name"
+          value="karthik"
+        />
 
-      <label for="lastname">Lastname</label>
-      <input type="text" required="required" autocomplete="off"  placeholder="Last name" id="last" />
+        <label for="lastname">Lastname</label>
+        <input
+          type="text"
+          required="required"
+          autocomplete="off"
+          pattern="[A-Za-z]{1,32}"
+          placeholder="Last name"
+          id="last"
+          value="pannerselvam"
+        />
 
-      <label for="options">Role :</label>
-      <select name="" class="sell-user" id="options">
-        <option value="seller">seller</option>
-        <option value="user">User</option>
-      </select>
+        <label for="username">username</label>
+        <input
+          type="text"
+          required="required"
+          autocomplete="off"
+          pattern="^[a-zA-Z0-9_]*$"
+          placeholder="example_1234"
+          id="u-name"
+          value="karthik_xoxo"
+        />
 
-      <label for=" E-mail">E-mail</label>
-      <input type="email" required="required" autocomplete="off"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email" id="E-mail" "/>
+        <label for="options">Role :</label>
+        <select name="" class="sell-user" id="options">
+          <option value="seller">seller</option>
+          <option value="user">Buyer</option>
+        </select>
 
-      <label for="ph-no">Phone.no</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter phone-number" required="true">
+        <label for=" E-mail">E-mail</label>
+        <input
+          type="email"
+          required="required"
+          autocomplete="off"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          placeholder="Enter
+        Email"
+          id="E-mail"
+          value="karthik@gmail.com"
+        />
 
-      <label for="password">Set-Password</label>
-      <input type="password"  placeholder="Password" id="password" required="true" />
+        <label for="ph-no">Phone.no</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter phone-number"
+          pattern="[0-9]{10}"
+          required="true"
+          value="7814420767"
+        />
 
-     
-    
-      <button>Sign Up</button>
-      <div class="social">
-        <div class="go"><i class="fab fa-google"></i> Google</div>
-        <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
-      </div>
+        <label for="password">Set-Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          required="true"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          value="Karthik@123"
+        />
+
+        <button>Sign Up</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i> Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+        </div>
+      </form>
     </div>
-    </form>
   </body>
 
   <!-- Script -->
   <script>
-    function details(){
-    event.preventDefault()
-    // let validate = false;
-    let arr = []
-    let validation = false
-    let local =JSON.parse( window.localStorage.getItem("userdetails"))
-    let userdata = new Object()
-    let id = Date.now();
-    let firstname = document.getElementById ("First");
-    let secondname = document.getElementById("last");
-    let phone_no = document.getElementById("phone");
-    let email = document.getElementById("E-mail");
-    let password = document.getElementById("password");
-    let user_select = document.getElementById("options");
-   
-    userdata.f_name = firstname.value.trim();
-    userdata.l_name = secondname.value.trim();
-    userdata.role = user_select.value;
-    userdata.e_mail = email.value.trim().toLowerCase();
-    userdata.phone_num = phone_no.value.trim();
-    userdata.p_word = password.value.trim();
-    userdata.id = id; 
-    
-    console.log(userdata.f_name)
-    if(local !== null){
-      validation = local.find((obj) => obj["e_mail"] === userdata.e_mail)
-      console.log(validation)
+    function details() {
+      event.preventDefault();
+      // let validate = false;
+      let arr = [];
+      let validation = false;
+      let local = JSON.parse(window.localStorage.getItem("userdetails"));
+      let f_name = document.getElementById("First").value.trim();
+      let l_name = document.getElementById("last").value.trim();
+      let u_name = document.getElementById("u-name").value.trim();
+      let phone_num = document.getElementById("phone").value.trim();
+      let e_mail = document.getElementById("E-mail").value.trim().toLowerCase();
+      let p_word = document.getElementById("password").value.trim();
+      let role = document.getElementById("options").value;
+      let uuid = Date.now();
+
+      let userdata = {
+        f_name,
+        l_name,
+        u_name,
+        phone_num,
+        p_word,
+        role,
+        e_mail,
+        uuid,
+      };
+
+      console.log(userdata);
+
+      if (local !== null) {
+        validation = local.find((obj) => obj["e_mail"] === userdata.e_mail);
+      }
+      arr.push(userdata);
+      if (validation) {
+        return alert("User already Exists");
+      } else {
+        if (local === null) {
+          window.localStorage.setItem("userdetails", JSON.stringify(arr));
+          console.log(userdata.f_name);
+          alert("User successfuly added");
+          window.location.href = "../pages/login.html";
+        } else {
+          let owner = window.localStorage.getItem("userdetails");
+          let json = JSON.parse(owner);
+          json.push(userdata);
+          window.localStorage.setItem("userdetails", JSON.stringify(json));
+          alert("User successfuly added");
+          window.location.href = "../pages/login.html";
+        }
+      }
     }
-    arr.push(userdata);
-    if(validation){
-      return alert("User already Exists")
-    }else{
-    if(local === null){
-      window.localStorage.setItem("userdetails", JSON.stringify(arr));
-      console.log(userdata.f_name);
-      window.location.href = "../pages/hero-main.html";
-    }
-    else{
-       let owner = window.localStorage.getItem("userdetails");
-       let json = JSON.parse(owner);
-       console.log(userdata.f_name)
-       json.push(userdata);
-       window.localStorage.setItem("userdetails", JSON.stringify(json));  
-       window.location.href = "../pages/login.html";
-    }
-  
-    }
-    };
   </script>
+
+  <!-- <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      onValue,
+    } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCNvVnUvhEXvkZ-UA9v2-CbK4NWFa_wpo0",
+      authDomain: "nftguru.firebaseapp.com",
+      projectId: "nftguru",
+      storageBucket: "nftguru.appspot.com",
+      messagingSenderId: "16761703116",
+      appId: "1:16761703116:web:ec2a82b8c70f0ba3c75069",
+      measurementId: "G-H5XN45P115",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    let database = getDatabase();
+    console.log(database);
+
+    const starCountRef = ref(database, "e_mail/");
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log(data);
+    });
+  </script> -->
 </html>

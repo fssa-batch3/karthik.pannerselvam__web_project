@@ -5,9 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../Assets/css/upload.css" />
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="./Seller-hero-page.html">
     <title>Upload</title>
   </head>
   <body>
+     <header class="header" data-header>
+    <div class="container">
+      
+        <img
+          src="../Assets/Images/logo.png"
+          width="126"
+          height="38"
+          alt="home"
+          class="logo"
+        />
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="../Pages/hero-main.html" class="navbar-link label-lg link:hover">Home</a>
+          </li>
+
+          <li>
+            <a href="../Pages/explore.html" class="navbar-link label-lg link:hover">Explore</a>
+          </li>
+
+          <li>
+            <a href="../Pages/FAQ's.html" class="navbar-link label-lg link:hover">FAQS</a>
+          </li>
+
+        </ul>
+      </nav>
+
+        <!-- <button 
+          class="btn-icon profil-btn"
+          aria-label="Metalink account: naruto"
+        >
+        <a href="profile.html">
+          <img
+            src="../Assets/Images/naruto.jpg" 
+            width="40"
+            height="50"
+            alt="Fiona doe"
+            class="img1-cover"
+          />
+        </a>
+        </button> -->
+
+      
+      </div>
+    </div>
+
+    <!-- Upload section -->
+  </header>
     <form class="upside" id ="new-product">
       <h1>Create new item</h1>
       <h3>Image, Video, Audio, or 3D Model</h3>
@@ -15,35 +66,31 @@
         File types supported: JPG,PNG,GIF,SVG,MP4,WEBM,MP3,WAV,OGG,GLB,GLTF. Max
         size: 40MB
       </p>
-    </div>
     <div class="up-image">
       <img src="../Assets/Images/Art-2.jpeg"  width="250px" height="250px">
+      <form>
       <div class="geturl">
-        <input type="url" id="image" placeholder="Upload image link">
+        <input type="url" id="image" class="Input_details"   placeholder="Upload image link" required="enter a valide link" >
       </div>
     </div>
-
+    <div class="categories">
+      <label for="select">Categories :</label>
+  <select name="card" id="Categories">
+    <option value="Art">Art</option>
+    <option value="Anime">Anime</option>
+    <option value="Sports">Sports</option>
+  </select>
+    </div>
     <div class="name">
       <h2>Name<sup>*</sup></h2>
-      <input type="text" id="nftname" placeholder="new nft for demo" />
+      <input type="text" id="nftname" class="Input_details" placeholder="new nft for demo" pattern="[A-Za-z]{0-16}" required title="Enter only alphabets only" />
     </div>
     <div>
       <h2>Price</h2>
-      <input type="number" id="price" >
+      <input type="text" class="Input_details" id="price" pattern="[0-9]{0-3}" required="Enter your price for the product" >
     </div>
-    <div class="link">
-      <h2>External Link</h2>
-      <p>
-        Nftguru will include a link to this URL on this item's detail page, so
-        that users can click to learn more about it. You are welcome to link to
-        your own webpage with more details.
-      </p>
-      <input
-        type="url"
-        id="external-link"
-        placeholder="https://www.youtube.com/"
-      />
-    </div>
+    
+
 
     <div class="link">
       <h2>Description</h2>
@@ -52,18 +99,57 @@
         that users can click to learn more about it. You are welcome to link to
         your own webpage with more details.
       </p>
-      <textarea id="description"> </textarea>
+      <textarea id="description" required="Write the description for your product
+      "> </textarea>
       <div>
-        <button type="submit" id="update">Upload</button>
+        <button type="submit" class="btn
+        " id="update" href="./upload.html" >Upload</button>
       </div>
     </form>
   </body>
 
   <script>
+    
+// Create button element
+const button = document.createElement('button');
+button.classList.add('btn-icon', 'profil-btn');
+button.setAttribute('aria-label', 'Metalink account: naruto');
+
+
+// Create link element
+const link = document.createElement('a');
+link.setAttribute('href', 'profile.html');
+
+// Create image element
+const image = document.createElement('img');
+image.setAttribute('src', '');
+image.setAttribute('width', '40');
+image.setAttribute('height', '50');
+image.setAttribute('alt', 'Fiona doe');
+image.classList.add('img1-cover');
+
+// Append the image element to the link element
+link.appendChild(image);
+
+// Append the link element to the button element
+button.appendChild(link);
+
+document.querySelector(".container").append(button)
 
 document.getElementById("new-product").addEventListener("submit", function (event) {
-  event.preventDefault();
+event.preventDefault();
 
+let Logged_user = JSON.parse(localStorage.getItem("user_data"));
+let Logged_email = Logged_user[0]["mail"];
+
+let user_list = JSON.parse(localStorage.getItem("userdetails"));
+
+let username_Check = user_list.find((e) => e.e_mail == Logged_email);
+console.log(username_Check);
+
+let logged_username = username_Check.u_name;
+
+console.log(logged_username);
 
 
   let image_url = document.getElementById("image");
@@ -74,6 +160,8 @@ document.getElementById("new-product").addEventListener("submit", function (even
   // console.log(rating);
   // updates["Product_name"] = title;
 
+  let list = document.getElementById("Categories");
+
   let price = document.getElementById("price");
   // console.log(title);
   // updates["pro-price"] = title;
@@ -81,20 +169,27 @@ document.getElementById("new-product").addEventListener("submit", function (even
   let link = document.getElementById("description");
   // console.log(link);
   // updates["link"] = link;
+  let id = crypto.randomUUID();
 
-  let obj = {image: image_url.value, nftname:rating.value, p_price: price.value, p_link: link.value}
+  let obj = {image: image_url.value, nftname:rating.value,categories: list .value, p_price: price.value, p_link: link.value,uuid:id,email:Logged_email,username:logged_username}
   console.log(obj);
 
   let all = [];
+  all.push(obj)
 
-  if (localStorage.getItem("new_card") != null) {
-    all = JSON.parse(localStorage.getItem("new_card"));
-    console.log(all);
+    if (localStorage.getItem("art") === null) {
+   localStorage.setItem("art",JSON.stringify(all));
+   window.location.href="./Seller-hero-page.html"
   }
-
-  all.push(obj);
-
-  localStorage.setItem("new_card", JSON.stringify(all));
+  else{
+  
+   let tot = JSON.parse(localStorage.getItem("art"))
+   tot.push(obj)
+   localStorage.setItem("art",JSON.stringify(tot));
+   window.location.href="./Seller-hero-page.html"
+  }
 });
+
+
   </script>
 </html>

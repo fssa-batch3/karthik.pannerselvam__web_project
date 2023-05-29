@@ -130,7 +130,6 @@ img {
 input,
 button {
   background: none;
-  border: none;
   font: inherit;
 }
 
@@ -796,6 +795,10 @@ body {
   margin-inline: auto;
   margin-block-start: 24px;
 }
+
+/*-----------------------------------*\
+  #FEEDBACK
+\*-----------------------------------*/
 
 /*-----------------------------------*\
   #NEWSLETTER

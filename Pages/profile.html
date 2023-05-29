@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../Assets/Images/logo.png" />
     <link rel="stylesheet" href="../Assets/css/profile.css" />
     <title>User profile</title>
   </head>
@@ -12,7 +13,7 @@
       <p>My Account</p>
     </header>
 
-    <a class="previous" href="../Pages/hero-main.html">
+    <a class="previous" onclick="page_redirection()">
       <img
         src="../Assets/Images/previous.png"
         width="25"
@@ -22,90 +23,201 @@
     </a>
 
     <div class="logout">
-      <button onclick="document.location='../index.html'">Log Out</button>
-    </div>
-
-    <div class="profilebox">
-      <div class="container">
-        <div class="top">
-          <img src="../Assets/Images/background-blue.jpg" / alt="background">
-        </div>
-
-        <div class="bottom-div">
-          <img
-            class="profile-img"
-            src="../Assets/Images/naruto.jpg"
-            alt="naruto"
-          />
-          <p>@UzumakiMinato</p>
-          <h2>Naruto Uzumaki</h2>
-          <img
-            class="facebook"
-            src="../Assets/Images/facebook.png"
-            alt="facebook"
-          />
-          <img
-            class="instagram"
-            src="../Assets/Images/instagram.png"
-            alt="instagram"
-          />
-          <div class="btn">
-            <button onclick="document.location='../pages/edit-profile.html'">
-              Edit Profile
-            </button>
-          </div>
-          <h3>Native Currency: ₹INR</h3>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="split">
-          <ul class="sales">
-            <li class="nope">Location</li>
-            <li class="nope">Language</li>
-            <li class="nope">Categories</li>
-            <li class="nope">Reputation Score</li>
-          </ul>
-
-          <ul class="sala">
-            <li class="nope">India</li>
-            <li class="nope">Tamil,English.</li>
-            <li class="nope">Motion Graphics, Illustriation, Abstract.</li>
-            <li class="nope">Reputation Score</li>
-          </ul>
-        </div>
-
-        <div class="split-down">
-          <ul class="down">
-            <li class="nope">Highest Sale Price Received</li>
-            <li class="nope">Total Combined Sales</li>
-            <li class="nope">Total NFTs Sold</li>
-          </ul>
-
-          <ul class="sala1">
-            <li class="nope">₹ 1,00,500</li>
-            <li class="nope">₹ 3,15,300</li>
-            <li class="nope">252</li>
-          </ul>
-        </div>
-
-        <div class="biodata">
-          <p class="heading">Bio</p>
-          <p>
-            Iam a digital artist based in Paris, France. My work has been
-            featured in various galleries in Paris and New York City. I love
-            playing with the characteristics of light in all its forms, and I
-            like to challenge the way color is normally perceived in nature.
-          </p>
-        </div>
-      </div>
+      <button onclick="redirection()">Log Out</button>
     </div>
   </body>
 
   <script>
-    // const user_name = localStorage.getItem("userd");
-    // console.log(user_name);
+    function redirection() {
+      window.location = "../index.html";
+    }
+    function edit_redirect() {
+      window.location = "./edit-profile.html";
+    }
 
-    // document.getElementById("user_name").innerText = user_name;
+    let userdatas = JSON.parse(localStorage.getItem("userdetails"));
+
+    let user_data = JSON.parse(localStorage.getItem("user_data"));
+
+    let user = userdatas.find((e) => e["e_mail"] == user_data[0].mail);
+    console.log(user);
+
+    function page_redirection() {
+      if (user.role == "seller") {
+        window.location = "../Pages/Seller-hero-page.html";
+      } else {
+        window.location = "../Pages/hero-main.html";
+      }
+    }
+
+    let body = document.querySelector("body");
+
+    let profilebox = document.createElement("div");
+    profilebox.setAttribute("class", "profilebox");
+
+    let container = document.createElement("div");
+    container.setAttribute("class", "container");
+    profilebox.append(container);
+
+    let div = document.createElement("div");
+    div.setAttribute("class", "top");
+    container.append(div);
+
+    let background = document.createElement("img");
+    background.setAttribute(
+      "src",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdB95_WcrK-jnZlZCiX_gP7mZJ8SXvgLC9NzgMbL-qZFLpzyJJ0edRmp9w46biU2ZA12Y&usqp=CAU"
+    );
+    background.setAttribute("alt", "background-color");
+    div.append(background);
+
+    let bottom = document.createElement("div");
+    bottom.setAttribute("class", "bottom-div");
+    container.append(bottom);
+
+    let profile_img = document.createElement("img");
+    profile_img.setAttribute("src", user["user_img"]);
+    profile_img.setAttribute("alt", "User-img");
+    profile_img.setAttribute("class", "profile-img");
+    bottom.append(profile_img);
+
+    let user_email = document.createElement("p");
+    user_email.innerText = user.e_mail;
+    user_email.setAttribute("class", "user_email");
+    bottom.append(user_email);
+
+    let user_name = document.createElement("h2");
+    user_name.innerText = user.u_name;
+    user_name.setAttribute("class", "user_name");
+    user_email.append(user_name);
+
+    let edit_btn = document.createElement("button");
+    edit_btn.setAttribute("class", "btn");
+    edit_btn.innerText = "Edit";
+    edit_btn.setAttribute("onclick", "edit_redirect()");
+    user_name.append(edit_btn);
+
+    let country_code = document.createElement("h3");
+    country_code.setAttribute("class", "country-code");
+    country_code.innerText = "Native Currency: ₹INR";
+    user_name.append(country_code);
+
+    let right_box = document.createElement("div");
+    right_box.setAttribute("class", "right");
+    profilebox.append(right_box);
+
+    let box_split = document.createElement("div");
+    box_split.setAttribute("class", "split");
+    right_box.append(box_split);
+
+    let un_list = document.createElement("ul");
+    un_list.setAttribute("class", "sales");
+    box_split.append(un_list);
+
+    let list = document.createElement("li");
+    list.setAttribute("class", "nope");
+    list.innerText = "Location";
+    un_list.append(list);
+
+    let list1 = document.createElement("li");
+    list1.setAttribute("class", "nope");
+    list1.innerText = "Language";
+    un_list.append(list1);
+
+    let list2 = document.createElement("li");
+    list2.setAttribute("class", "nope");
+    list2.innerText = "Categories";
+    un_list.append(list2);
+
+    let list3 = document.createElement("li");
+    list3.setAttribute("class", "nope");
+    list3.innerText = "Reputation Score";
+    un_list.append(list3);
+
+    let un_list2 = document.createElement("ul");
+    un_list2.setAttribute("class", "sala");
+    un_list2.setAttribute("id", "location");
+    box_split.append(un_list2);
+
+    let list3 = document.createElement("li");
+    list3.setAttribute("class", "nope");
+    list3.setAttribute("id", "language");
+    list3.innerText = user.user_location;
+    un_list2.append(list3);
+
+    let list4 = document.createElement("li");
+    list4.setAttribute("class", "nope");
+    list4.setAttribute("id", "categories");
+    list4.innerText = user.user_language;
+    un_list2.append(list4);
+
+    let list5 = document.createElement("li");
+    list5.setAttribute("class", "nope");
+    list5.innerText = user.categories;
+    un_list2.append(list5);
+
+    let list6 = document.createElement("li");
+    list6.setAttribute("class", "nope");
+    list6.innerText = "⭐⭐⭐";
+    un_list2.append(list6);
+
+    let split_down = document.createElement("div");
+    split_down.setAttribute("class", "split-down");
+    box_split.append(split_down);
+
+    let un_list3 = document.createElement("ul");
+    un_list3.setAttribute("class", "down");
+    split_down.append(un_list3);
+
+    let list7 = document.createElement("li");
+    list7.setAttribute("class", "nope");
+    list7.innerText = "Highest Sale Price Received";
+    un_list3.append(list7);
+
+    let list8 = document.createElement("li");
+    list8.setAttribute("class", "nope");
+    list8.innerText = "Total Combined Sales";
+    un_list3.append(list8);
+
+    let list9 = document.createElement("li");
+    list9.setAttribute("class", "nope");
+    list9.innerText = "Total NFTs Sold";
+    un_list3.append(list9);
+
+    let un_list4 = document.createElement("ul");
+    un_list4.setAttribute("class", "sala1");
+    un_list3.append(un_list4);
+
+    let list10 = document.createElement("li");
+    list10.setAttribute("class", "nope");
+    list10.innerText = "₹ 1,00,500";
+    un_list4.append(list10);
+
+    let list11 = document.createElement("li");
+    list11.setAttribute("class", "nope");
+    list11.innerText = "₹ 3,15,300";
+    un_list4.append(list11);
+
+    let list12 = document.createElement("li");
+    list12.setAttribute("class", "nope");
+    list12.innerText = "252";
+    un_list4.append(list12);
+
+    let description = document.createElement("div");
+    description.setAttribute("class", "biodata");
+    box_split.append(description);
+
+    let h3_bio = document.createElement("h3");
+    h3_bio.setAttribute("class", "heading");
+    h3_bio.innerText = "Bio";
+    description.append(h3_bio);
+
+    let bio_description = document.createElement("p");
+    bio_description.setAttribute("class", "bio");
+    bio_description.setAttribute("id", "description");
+    bio_description.innerText = user.User_bio;
+    description.append(bio_description);
+
+    body.append(profilebox);
   </script>
 </html>

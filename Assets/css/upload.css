@@ -13,7 +13,7 @@
   --ff-urbanist: "Urbanist", sans-serif;
 }
 body {
-  background: var(--linear-gradient-1) #080710;
+  background: var(--linear-gradient-1), #080710;
   font-family: var(--ff-urbanist);
 }
 h1 {
@@ -23,8 +23,25 @@ h1 {
 .geturl input {
   padding: 3px 10px;
   border-color: aliceblue;
-  border-radius: 5px;
 }
 .geturl {
   margin-top: 10px;
+}
+.upside {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.013);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  margin-left: 5.5rem;
+  margin-top: 15rem;
+  column-gap: 10rem;
+}
+.Input_details {
+  width: fit-content;
+  height: max-content;
+  border-color: azure;
+  border-radius: 5px;
 }

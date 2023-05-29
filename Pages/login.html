@@ -13,6 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="shortcut icon"
+    href="../Assets/Images/logo.png"
+
+  />
     <!--Stylesheet-->
     <style media="screen">
       :root{
@@ -153,11 +158,11 @@
     <form id="information">
       <h3>Login Here</h3>
 
-      <label for="username">Username/Email</label>
-      <input type="text"  placeholder="Email or Phone"  id="username" />
+      <label for="email">Email</label>
+      <input type="email"  placeholder="Email or Phone" required id="username" value="karthik@gmail.com" />
 
       <label for="password">Password</label>
-      <input type="password"  placeholder="Password" id="password" />
+      <input type="password"  placeholder="Password" id="password" required value="Karthik@123"/>
 
       <button class="bot" type="submit"> Log In</button>
 
@@ -177,45 +182,40 @@ event.preventDefault()
   let email = document.getElementById("username").value.trim();
   let password = document.getElementById("password").value.trim();
 
-  if(email == "" || email== null ) {
-    alert("Enter Your Email ID")
-    return false;
-  }
- 
-  
- for(let i = 0; i < phone.length; i++){ 
 
- 
-  if( email === phone[i].e_mail && password === phone[i].p_word){
-    // arr.push(phone[i].e_mail)
-    window.localStorage.setItem("user_data",JSON.stringify(phone[i].e_mail))
-    if (phone[i].role=="seller") {
-    windows.location.href = "../pages/seller-hero-page.html"
-   }else if(phone[i].role == "user"){
+  let check = false
+  let role;
+ let arr = []
+ for(let i = 0; i < phone.length; i++){   
+   
+   if( email == phone[i].e_mail && password == phone[i].p_word){
+     check = true
+     role = phone[i].role
+     let obj={mail:phone[i].e_mail,user_id:phone[i].uuid}
+     arr.push(obj)
+     window.localStorage.setItem("user_data",JSON.stringify(arr))
+     break;
+    }
+ }
+    
+if(check===true){
+
+
+    if (role == "seller") {
+      alert("successfully logged In as a seller");
+    window.location.href = "../pages/Seller-hero-page.html";
+   }
+    else{
+    alert("success logged In as a customer");
     window.location.href = "../Pages/hero-main.html";
    }
-     alert("success")
-} 
-}
+  }
+  else{
+    alert("email or password is wrong")
+  }
  })
 
 
 </script>
   </body>
   </html>
-  
-    
- 
-
-
-
-
-
-
-
-
-
-
-    
-
-

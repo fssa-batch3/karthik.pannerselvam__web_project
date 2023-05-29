@@ -1,0 +1,199 @@
+:root {
+  --linear-gradient-1: linear-gradient(
+    to top left,
+    hsla(0, 72%, 51%, 0.4) 0%,
+    hsla(262, 83%, 58%, 0.4)
+  );
+}
+body {
+  width: none;
+  height: 900px;
+  background-image: var(--linear-gradient-1);
+  border-radius: var(--radius-circle);
+}
+
+.product-image {
+  width: 50%;
+}
+.product-details {
+  float: left;
+  width: 37%;
+}
+.product-price {
+  float: left;
+  width: 12%;
+}
+.product-quantity {
+  float: left;
+  width: 10%;
+}
+.product-quantity input {
+  background-color: azure;
+  border-radius: 0.5rem;
+}
+
+.product-removal {
+  float: left;
+  width: 9%;
+}
+.product-line-price {
+  float: left;
+  width: 12%;
+  text-align: right;
+}
+
+/* Global "table" column settings */
+.product-image {
+  float: left;
+  width: 20%;
+}
+.product-details {
+  float: left;
+  width: 37%;
+}
+.product-price {
+  float: left;
+  width: 12%;
+}
+.product-quantity {
+  float: left;
+  width: 10%;
+}
+.product-removal {
+  float: left;
+  width: 9%;
+}
+.product-line-price {
+  float: left;
+  width: 12%;
+  text-align: right;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1;
+}
+
+/* Apply clearfix in a few places */
+.shopping-cart,
+.column-labels,
+.product,
+
+
+/* Apply dollar signs */
+.product .product-price:before,
+.product .product-line-price:before,
+.totals-value:before {
+  content: "$";
+}
+
+/* Body/Header stuff */
+body {
+  padding: 0px 30px 30px 20px;
+  color: #241717;
+  font-weight: 100;
+}
+.shopping-cart {
+  margin-top: 25rem;
+  height: 520px;
+  background-color: rgba(49, 24, 24, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+h1 {
+  font-weight: 100;
+}
+
+label {
+  color: #aaa;
+}
+
+/* Column headers */
+.column-labels label {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px;
+}
+
+/* Product entries */
+.product {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px;
+}
+
+.product-image img {
+  width: 100px;
+}
+
+.product-title {
+  margin-right: 20px;
+}
+.product-description {
+  margin: 5px 20px 5px 0;
+  line-height: 1.4em;
+}
+
+.product-quantity input {
+  width: 40px;
+}
+
+.btn {
+  border: 0;
+  padding: 4px 4px;
+  background-color: #c66;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.remove-product:hover {
+  background-color: #a44;
+}
+
+/* Totals section */
+.totals-item {
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.totals-item label {
+  float: left;
+  clear: both;
+  width: 79%;
+  text-align: right;
+}
+
+.totals-value {
+  float: right;
+  width: 21%;
+  text-align: right;
+}
+
+.checkout {
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: #6b6;
+  color: #201717;
+  font-size: 25px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
