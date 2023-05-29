@@ -122,20 +122,15 @@
 
 let details= JSON.parse(localStorage.getItem("art"));
 
-let userdetails = JSON.parse(localStorage.getItem("userdetails"))
-// console.log(details)
+let userdetails = JSON.parse(localStorage.getItem("userdetails"));
+// URL params 
 const url = window.location.search;
-// console.log(url)
 const urlParams = new URLSearchParams(url)
-// console.log(urlParams)
 const change = urlParams.get("name")
-// console.log(change)
 
 const use = details.find((details) => details["uuid"] === change);
 console.log(use);
 
-// let userName = userdetails.find((e)=> e["e_mail"] === details.email) ;
-// console.log(userName);
 
 
       let whole_box;
@@ -298,7 +293,6 @@ console.log(viewImage);
 
       document.querySelector("div.whole-container").append(whole_box);
 
-      // let userName = userdetails.find((e)=> e["e_mail"] === details[0]["email"])
 
 
 

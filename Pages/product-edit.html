@@ -194,18 +194,11 @@
      const thisArt = cardDetails.find((e)=> e.uuid == get_id);
     
     
-      // console.log(thisArt)
-      // const thisArt = cardDetails.find (function(object){
-      //   let iid= object["uuid"]
-      //   if(iid == get_id){
-      //     return true
-      //   } 
-      // })
+      
 
       const image = document.getElementById("img-link");
       const nftname  = document.getElementById("new_pname");
       const p_price = document.getElementById("new-price");
-      // const u_product = document.getElementById("update-product")
      
      nftname.value = thisArt["nftname"]      
       image.value = thisArt["image"]      
@@ -220,9 +213,7 @@
         newCard["p_price"] = p_price.value
         console.log(newCard)
 
-      //   const nftname = document.getElementById("img-link");
-      // const image = document.getElementById("new_pname");
-      // const p_price = document.getElementById("new-price");
+
         let nlink = {
        nftname, image,p_price
       }
